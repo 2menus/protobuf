@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+package menu;
+option go_package = "github.com/2menu/protobuf/menu";
+
+// ACOUNT
+message Account {
+    string id = 1;
+    string full_name = 2;
+    string email = 3;  
+    string secret_key = 4;  
+}
+
+message AccountListRequest {}
+
+message AccountListResponse {
+    repeated Account account_list = 1;
+}
+
+message AccountDetailsRequest {
+    string account_id = 1;
+}
+
+// MENU
+message Menu {
+    string id = 1;
+    string full_name = 2;
+    string pic = 3;
+}
+
+message MenuListRequest {
+    string account_id = 1;
+}
+
+message MenuListResponse {
+    repeated Menu menu_list = 1;
+}
+
+message MenuDetailsRequest {
+    string menu_id = 1;
+}
+
+// SECTIONS
+message Section {
+    string id = 1;
+    string full_name = 2;
+    string pic = 3;
+}
+
+message SectionListRequest {
+    string menu_id = 1;
+}
+
+message SectionListResponse {
+    repeated Section section_list = 1;
+}
+
+message SectionDetailsRequest {
+    string section_id = 1;
+}
+
+// ITEMS
+message Item {
+    string id = 1;
+    string full_name = 3;
+    float  price = 4;
+    string item_description = 5;
+    string pic = 6;
+}
+
+message ItemListRequest {
+    string section_id = 1;
+}
+
+message ItemListResponse {
+    repeated Item item_list = 1;
+}
+
+message ItemDetailsRequest {
+    string item_id = 1;
+}
+
+service MenuDataProducer {
+    // Account methods
+    rpc AccountList(AccountListRequest) returns (AccountListResponse) {};
+    rpc AccountDetails(AccountDetailsRequest) returns (Account) {};
+
+    // Menu methods
+    rpc MenuList(MenuListRequest) returns (MenuListResponse) {};
+    rpc MenuDetails(MenuDetailsRequest) returns (Menu) {};
+
+    // Section methods
+    rpc SectionList(SectionListRequest) returns (SectionListResponse) {};
+    rpc SectionDetails(SectionDetailsRequest) returns (Section) {};
+
+
+    // Item methods
+    rpc ItemList(ItemListRequest) returns (ItemListResponse) {};
+    rpc ItemDetails(ItemDetailsRequest) returns (Item) {};
+}
