@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package menu;
-option go_package = "github.com/2menu/protobuf/menu";
+option go_package = "github.com/2menus/protobuf/menu";
 
 // ACOUNT
 message Account {
