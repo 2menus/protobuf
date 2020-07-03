@@ -26,6 +26,7 @@ message Menu {
     string id = 1;
     string full_name = 2;
     string pic = 3;
+    string alias = 4;
 }
 
 message MenuListRequest {
@@ -38,6 +39,11 @@ message MenuListResponse {
 
 message MenuDetailsRequest {
     string menu_id = 1;
+}
+
+message FindMenuRequest {
+    string account_id = 1;
+    string alias = 2;
 }
 
 // SECTIONS
@@ -88,6 +94,7 @@ service MenuDataProducer {
     // Menu methods
     rpc MenuList(MenuListRequest) returns (MenuListResponse) {};
     rpc MenuDetails(MenuDetailsRequest) returns (Menu) {};
+    rpc FindMenu(FindMenuRequest) returns (Menu) {}
 
     // Section methods
     rpc SectionList(SectionListRequest) returns (SectionListResponse) {};
