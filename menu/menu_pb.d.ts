@@ -1,5 +1,31 @@
 import * as jspb from "google-protobuf"
 
+export class Country extends jspb.Message {
+  getName(): string;
+  setName(value: string): Country;
+
+  getCurrencyCode(): string;
+  setCurrencyCode(value: string): Country;
+
+  getCurrencySymbol(): string;
+  setCurrencySymbol(value: string): Country;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Country.AsObject;
+  static toObject(includeInstance: boolean, msg: Country): Country.AsObject;
+  static serializeBinaryToWriter(message: Country, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Country;
+  static deserializeBinaryFromReader(message: Country, reader: jspb.BinaryReader): Country;
+}
+
+export namespace Country {
+  export type AsObject = {
+    name: string,
+    currencyCode: string,
+    currencySymbol: string,
+  }
+}
+
 export class Account extends jspb.Message {
   getId(): string;
   setId(value: string): Account;
@@ -12,6 +38,14 @@ export class Account extends jspb.Message {
 
   getSecretKey(): string;
   setSecretKey(value: string): Account;
+
+  getTopCardImage(): string;
+  setTopCardImage(value: string): Account;
+
+  getCountry(): Country | undefined;
+  setCountry(value?: Country): Account;
+  hasCountry(): boolean;
+  clearCountry(): Account;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Account.AsObject;
@@ -27,6 +61,8 @@ export namespace Account {
     fullName: string,
     email: string,
     secretKey: string,
+    topCardImage: string,
+    country?: Country.AsObject,
   }
 }
 
@@ -95,6 +131,9 @@ export class Menu extends jspb.Message {
   getAlias(): string;
   setAlias(value: string): Menu;
 
+  getOwnersMessage(): string;
+  setOwnersMessage(value: string): Menu;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Menu.AsObject;
   static toObject(includeInstance: boolean, msg: Menu): Menu.AsObject;
@@ -109,6 +148,7 @@ export namespace Menu {
     fullName: string,
     pic: string,
     alias: string,
+    ownersMessage: string,
   }
 }
 
