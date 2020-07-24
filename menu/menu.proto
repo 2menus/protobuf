@@ -3,12 +3,20 @@ syntax = "proto3";
 package menu;
 option go_package = "github.com/2menus/protobuf/menu";
 
+message Country {
+    string name = 1;
+    string currency_code = 2;
+    string currency_symbol = 3;
+}
+
 // ACOUNT
 message Account {
     string id = 1;
     string full_name = 2;
     string email = 3;  
-    string secret_key = 4;  
+    string secret_key = 4;
+    string top_card_image = 5;  
+    Country country = 6;
 }
 
 message AccountListRequest {}
@@ -27,6 +35,7 @@ message Menu {
     string full_name = 2;
     string pic = 3;
     string alias = 4;
+    string owners_message = 5;
 }
 
 message MenuListRequest {
