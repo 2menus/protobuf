@@ -393,6 +393,86 @@ proto.menu.MenuDataProducerPromiseClient.prototype.menuDetails =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.menu.FindMenuRequest,
+ *   !proto.menu.Menu>}
+ */
+const methodDescriptor_MenuDataProducer_FindMenu = new grpc.web.MethodDescriptor(
+  '/menu.MenuDataProducer/FindMenu',
+  grpc.web.MethodType.UNARY,
+  proto.menu.FindMenuRequest,
+  proto.menu.Menu,
+  /**
+   * @param {!proto.menu.FindMenuRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.Menu.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.menu.FindMenuRequest,
+ *   !proto.menu.Menu>}
+ */
+const methodInfo_MenuDataProducer_FindMenu = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.menu.Menu,
+  /**
+   * @param {!proto.menu.FindMenuRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.Menu.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.menu.FindMenuRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.menu.Menu)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.Menu>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.menu.MenuDataProducerClient.prototype.findMenu =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/menu.MenuDataProducer/FindMenu',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataProducer_FindMenu,
+      callback);
+};
+
+
+/**
+ * @param {!proto.menu.FindMenuRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.menu.Menu>}
+ *     A native promise that resolves to the response
+ */
+proto.menu.MenuDataProducerPromiseClient.prototype.findMenu =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/menu.MenuDataProducer/FindMenu',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataProducer_FindMenu);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.menu.SectionListRequest,
  *   !proto.menu.SectionListResponse>}
  */
