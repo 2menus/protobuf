@@ -1,4 +1,4 @@
-// source: menu.proto
+// source: menu_api.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.menu.ItemListRequest');
+goog.provide('proto.menu.v1.SectionDetailsRequest');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,16 +24,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.menu.ItemListRequest = function(opt_data) {
+proto.menu.v1.SectionDetailsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.menu.ItemListRequest, jspb.Message);
+goog.inherits(proto.menu.v1.SectionDetailsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.menu.ItemListRequest.displayName = 'proto.menu.ItemListRequest';
+  proto.menu.v1.SectionDetailsRequest.displayName = 'proto.menu.v1.SectionDetailsRequest';
 }
 
 
@@ -51,8 +51,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.menu.ItemListRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.menu.ItemListRequest.toObject(opt_includeInstance, this);
+proto.menu.v1.SectionDetailsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.menu.v1.SectionDetailsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -61,11 +61,11 @@ proto.menu.ItemListRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.menu.ItemListRequest} msg The msg instance to transform.
+ * @param {!proto.menu.v1.SectionDetailsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.ItemListRequest.toObject = function(includeInstance, msg) {
+proto.menu.v1.SectionDetailsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     sectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -81,23 +81,23 @@ proto.menu.ItemListRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.menu.ItemListRequest}
+ * @return {!proto.menu.v1.SectionDetailsRequest}
  */
-proto.menu.ItemListRequest.deserializeBinary = function(bytes) {
+proto.menu.v1.SectionDetailsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.menu.ItemListRequest;
-  return proto.menu.ItemListRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.menu.v1.SectionDetailsRequest;
+  return proto.menu.v1.SectionDetailsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.menu.ItemListRequest} msg The message object to deserialize into.
+ * @param {!proto.menu.v1.SectionDetailsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.menu.ItemListRequest}
+ * @return {!proto.menu.v1.SectionDetailsRequest}
  */
-proto.menu.ItemListRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.menu.v1.SectionDetailsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -121,9 +121,9 @@ proto.menu.ItemListRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.menu.ItemListRequest.prototype.serializeBinary = function() {
+proto.menu.v1.SectionDetailsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.menu.ItemListRequest.serializeBinaryToWriter(this, writer);
+  proto.menu.v1.SectionDetailsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -131,11 +131,11 @@ proto.menu.ItemListRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.menu.ItemListRequest} message
+ * @param {!proto.menu.v1.SectionDetailsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.ItemListRequest.serializeBinaryToWriter = function(message, writer) {
+proto.menu.v1.SectionDetailsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSectionId();
   if (f.length > 0) {
@@ -151,16 +151,16 @@ proto.menu.ItemListRequest.serializeBinaryToWriter = function(message, writer) {
  * optional string section_id = 1;
  * @return {string}
  */
-proto.menu.ItemListRequest.prototype.getSectionId = function() {
+proto.menu.v1.SectionDetailsRequest.prototype.getSectionId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.menu.ItemListRequest} returns this
+ * @return {!proto.menu.v1.SectionDetailsRequest} returns this
  */
-proto.menu.ItemListRequest.prototype.setSectionId = function(value) {
+proto.menu.v1.SectionDetailsRequest.prototype.setSectionId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

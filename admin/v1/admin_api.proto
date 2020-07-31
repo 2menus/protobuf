@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package admin.v1;
+option go_package = "github.com/2menus/protobuf/adminv1";
+
+import "menu/v1/menu.proto";
+import "google/protobuf/empty.proto";
+
+message CreateMenuRequest {
+    string id = 1;
+    string name = 2; 
+    string full_name = 3;
+    string country = 4;
+}
+
+message UpdateMenuRequest {
+    string id = 1;
+    string full_name = 2;
+    string country = 3;
+}
+
+message DeleteMenuRequest {
+    string id = 1;
+}
+
+service Admin {
+    rpc CreateMenu(CreateMenuRequest) returns (menu.v1.Menu) {};
+    rpc UpdateMenu(UpdateMenuRequest) returns (menu.v1.Menu) {};
+    rpc DeleteMenu(DeleteMenuRequest) returns (google.protobuf.Empty) {};
+}

@@ -1,4 +1,4 @@
-// source: menu.proto
+// source: admin_api.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.menu.FindMenuRequest');
+goog.provide('proto.admin.v1.CreateMenuRequest');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,16 +24,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.menu.FindMenuRequest = function(opt_data) {
+proto.admin.v1.CreateMenuRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.menu.FindMenuRequest, jspb.Message);
+goog.inherits(proto.admin.v1.CreateMenuRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.menu.FindMenuRequest.displayName = 'proto.menu.FindMenuRequest';
+  proto.admin.v1.CreateMenuRequest.displayName = 'proto.admin.v1.CreateMenuRequest';
 }
 
 
@@ -51,8 +51,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.menu.FindMenuRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.menu.FindMenuRequest.toObject(opt_includeInstance, this);
+proto.admin.v1.CreateMenuRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.admin.v1.CreateMenuRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -61,14 +61,16 @@ proto.menu.FindMenuRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.menu.FindMenuRequest} msg The msg instance to transform.
+ * @param {!proto.admin.v1.CreateMenuRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.FindMenuRequest.toObject = function(includeInstance, msg) {
+proto.admin.v1.CreateMenuRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    alias: jspb.Message.getFieldWithDefault(msg, 2, "")
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    fullName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    country: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -82,23 +84,23 @@ proto.menu.FindMenuRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.menu.FindMenuRequest}
+ * @return {!proto.admin.v1.CreateMenuRequest}
  */
-proto.menu.FindMenuRequest.deserializeBinary = function(bytes) {
+proto.admin.v1.CreateMenuRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.menu.FindMenuRequest;
-  return proto.menu.FindMenuRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.admin.v1.CreateMenuRequest;
+  return proto.admin.v1.CreateMenuRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.menu.FindMenuRequest} msg The message object to deserialize into.
+ * @param {!proto.admin.v1.CreateMenuRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.menu.FindMenuRequest}
+ * @return {!proto.admin.v1.CreateMenuRequest}
  */
-proto.menu.FindMenuRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.admin.v1.CreateMenuRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -107,11 +109,19 @@ proto.menu.FindMenuRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAccountId(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAlias(value);
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFullName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountry(value);
       break;
     default:
       reader.skipField();
@@ -126,9 +136,9 @@ proto.menu.FindMenuRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.menu.FindMenuRequest.prototype.serializeBinary = function() {
+proto.admin.v1.CreateMenuRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.menu.FindMenuRequest.serializeBinaryToWriter(this, writer);
+  proto.admin.v1.CreateMenuRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -136,23 +146,37 @@ proto.menu.FindMenuRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.menu.FindMenuRequest} message
+ * @param {!proto.admin.v1.CreateMenuRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.FindMenuRequest.serializeBinaryToWriter = function(message, writer) {
+proto.admin.v1.CreateMenuRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAccountId();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getAlias();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getFullName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCountry();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -160,38 +184,74 @@ proto.menu.FindMenuRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string account_id = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.menu.FindMenuRequest.prototype.getAccountId = function() {
+proto.admin.v1.CreateMenuRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.menu.FindMenuRequest} returns this
+ * @return {!proto.admin.v1.CreateMenuRequest} returns this
  */
-proto.menu.FindMenuRequest.prototype.setAccountId = function(value) {
+proto.admin.v1.CreateMenuRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string alias = 2;
+ * optional string name = 2;
  * @return {string}
  */
-proto.menu.FindMenuRequest.prototype.getAlias = function() {
+proto.admin.v1.CreateMenuRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.menu.FindMenuRequest} returns this
+ * @return {!proto.admin.v1.CreateMenuRequest} returns this
  */
-proto.menu.FindMenuRequest.prototype.setAlias = function(value) {
+proto.admin.v1.CreateMenuRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string full_name = 3;
+ * @return {string}
+ */
+proto.admin.v1.CreateMenuRequest.prototype.getFullName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.admin.v1.CreateMenuRequest} returns this
+ */
+proto.admin.v1.CreateMenuRequest.prototype.setFullName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string country = 4;
+ * @return {string}
+ */
+proto.admin.v1.CreateMenuRequest.prototype.getCountry = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.admin.v1.CreateMenuRequest} returns this
+ */
+proto.admin.v1.CreateMenuRequest.prototype.setCountry = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

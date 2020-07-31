@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package menu.v1;
+option go_package = "github.com/2menus/protobuf/menuv1";
+
+import "menu/v1/menu.proto";
+
+message MenusRequest {
+    string owner_id = 1;
+}
+
+message MenusResponse {
+    repeated Menu menu_list = 1;
+}
+
+message MenuDetailsRequest {
+    string menu_id = 1;
+}
+
+message SectionsRequest {
+    string menu_id = 1;
+}
+
+message SectionsResponse {
+    repeated Section section_list = 1;
+}
+
+// TODO: DELETE IT PROBABLY IN FUTURE
+message SectionDetailsRequest {
+    string section_id = 1;
+}
+
+message ItemsRequest {
+    string section_id = 1;
+}
+
+message ItemsResponse {
+    repeated Item item_list = 1;
+}
+
+message ItemDetailsRequest {
+    string item_id = 1;
+}
+
+service MenuDataProducer {
+    // Menu methods
+    rpc Menus(MenusRequest) returns (MenusResponse) {};
+    rpc MenuDetails(MenuDetailsRequest) returns (Menu) {};
+
+    // Section methods
+    rpc Sections(SectionsRequest) returns (SectionsResponse) {};
+    rpc SectionDetails(SectionDetailsRequest) returns (Section) {};
+
+    // Item methods
+    rpc Items(ItemsRequest) returns (ItemsResponse) {};
+    rpc ItemDetails(ItemDetailsRequest) returns (Item) {};
+}
