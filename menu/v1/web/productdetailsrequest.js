@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.menu.v1.ItemsRequest');
+goog.provide('proto.menu.v1.ProductDetailsRequest');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,16 +24,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.menu.v1.ItemsRequest = function(opt_data) {
+proto.menu.v1.ProductDetailsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.menu.v1.ItemsRequest, jspb.Message);
+goog.inherits(proto.menu.v1.ProductDetailsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.menu.v1.ItemsRequest.displayName = 'proto.menu.v1.ItemsRequest';
+  proto.menu.v1.ProductDetailsRequest.displayName = 'proto.menu.v1.ProductDetailsRequest';
 }
 
 
@@ -51,8 +51,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.menu.v1.ItemsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.menu.v1.ItemsRequest.toObject(opt_includeInstance, this);
+proto.menu.v1.ProductDetailsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.menu.v1.ProductDetailsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -61,13 +61,13 @@ proto.menu.v1.ItemsRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.menu.v1.ItemsRequest} msg The msg instance to transform.
+ * @param {!proto.menu.v1.ProductDetailsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.v1.ItemsRequest.toObject = function(includeInstance, msg) {
+proto.menu.v1.ProductDetailsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    productId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -81,23 +81,23 @@ proto.menu.v1.ItemsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.menu.v1.ItemsRequest}
+ * @return {!proto.menu.v1.ProductDetailsRequest}
  */
-proto.menu.v1.ItemsRequest.deserializeBinary = function(bytes) {
+proto.menu.v1.ProductDetailsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.menu.v1.ItemsRequest;
-  return proto.menu.v1.ItemsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.menu.v1.ProductDetailsRequest;
+  return proto.menu.v1.ProductDetailsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.menu.v1.ItemsRequest} msg The message object to deserialize into.
+ * @param {!proto.menu.v1.ProductDetailsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.menu.v1.ItemsRequest}
+ * @return {!proto.menu.v1.ProductDetailsRequest}
  */
-proto.menu.v1.ItemsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.menu.v1.ProductDetailsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -106,7 +106,7 @@ proto.menu.v1.ItemsRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSectionId(value);
+      msg.setProductId(value);
       break;
     default:
       reader.skipField();
@@ -121,9 +121,9 @@ proto.menu.v1.ItemsRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.menu.v1.ItemsRequest.prototype.serializeBinary = function() {
+proto.menu.v1.ProductDetailsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.menu.v1.ItemsRequest.serializeBinaryToWriter(this, writer);
+  proto.menu.v1.ProductDetailsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -131,13 +131,13 @@ proto.menu.v1.ItemsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.menu.v1.ItemsRequest} message
+ * @param {!proto.menu.v1.ProductDetailsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.v1.ItemsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.menu.v1.ProductDetailsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSectionId();
+  f = message.getProductId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -148,19 +148,19 @@ proto.menu.v1.ItemsRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string section_id = 1;
+ * optional string product_id = 1;
  * @return {string}
  */
-proto.menu.v1.ItemsRequest.prototype.getSectionId = function() {
+proto.menu.v1.ProductDetailsRequest.prototype.getProductId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.menu.v1.ItemsRequest} returns this
+ * @return {!proto.menu.v1.ProductDetailsRequest} returns this
  */
-proto.menu.v1.ItemsRequest.prototype.setSectionId = function(value) {
+proto.menu.v1.ProductDetailsRequest.prototype.setProductId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

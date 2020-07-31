@@ -16,15 +16,15 @@ import * as grpcWeb from 'grpc-web';
 import * as menu_v1_menu_pb from './menu/v1/menu_pb';
 
 import {
-  ItemDetailsRequest,
-  ItemsRequest,
-  ItemsResponse,
+  CategoriesRequest,
+  CategoriesResponse,
+  CategoryDetailsRequest,
   MenuDetailsRequest,
   MenusRequest,
   MenusResponse,
-  SectionDetailsRequest,
-  SectionsRequest,
-  SectionsResponse} from './menu_api_pb';
+  ProductDetailsRequest,
+  ProductsRequest,
+  ProductsResponse} from './menu_api_pb';
 
 export class MenuDataProducerClient {
   client_: grpcWeb.AbstractClientBase;
@@ -125,164 +125,164 @@ export class MenuDataProducerClient {
     this.methodInfoMenuDetails);
   }
 
-  methodInfoSections = new grpcWeb.AbstractClientBase.MethodInfo(
-    SectionsResponse,
-    (request: SectionsRequest) => {
+  methodInfoCategories = new grpcWeb.AbstractClientBase.MethodInfo(
+    CategoriesResponse,
+    (request: CategoriesRequest) => {
       return request.serializeBinary();
     },
-    SectionsResponse.deserializeBinary
+    CategoriesResponse.deserializeBinary
   );
 
-  sections(
-    request: SectionsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<SectionsResponse>;
+  categories(
+    request: CategoriesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<CategoriesResponse>;
 
-  sections(
-    request: SectionsRequest,
+  categories(
+    request: CategoriesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: SectionsResponse) => void): grpcWeb.ClientReadableStream<SectionsResponse>;
+               response: CategoriesResponse) => void): grpcWeb.ClientReadableStream<CategoriesResponse>;
 
-  sections(
-    request: SectionsRequest,
+  categories(
+    request: CategoriesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: SectionsResponse) => void) {
+               response: CategoriesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/menu.v1.MenuDataProducer/Sections',
+          '/menu.v1.MenuDataProducer/Categories',
         request,
         metadata || {},
-        this.methodInfoSections,
+        this.methodInfoCategories,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/menu.v1.MenuDataProducer/Sections',
+      '/menu.v1.MenuDataProducer/Categories',
     request,
     metadata || {},
-    this.methodInfoSections);
+    this.methodInfoCategories);
   }
 
-  methodInfoSectionDetails = new grpcWeb.AbstractClientBase.MethodInfo(
-    menu_v1_menu_pb.Section,
-    (request: SectionDetailsRequest) => {
+  methodInfoCategoryDetails = new grpcWeb.AbstractClientBase.MethodInfo(
+    menu_v1_menu_pb.Category,
+    (request: CategoryDetailsRequest) => {
       return request.serializeBinary();
     },
-    menu_v1_menu_pb.Section.deserializeBinary
+    menu_v1_menu_pb.Category.deserializeBinary
   );
 
-  sectionDetails(
-    request: SectionDetailsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Section>;
+  categoryDetails(
+    request: CategoryDetailsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Category>;
 
-  sectionDetails(
-    request: SectionDetailsRequest,
+  categoryDetails(
+    request: CategoryDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Section) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Section>;
+               response: menu_v1_menu_pb.Category) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Category>;
 
-  sectionDetails(
-    request: SectionDetailsRequest,
+  categoryDetails(
+    request: CategoryDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Section) => void) {
+               response: menu_v1_menu_pb.Category) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/menu.v1.MenuDataProducer/SectionDetails',
+          '/menu.v1.MenuDataProducer/CategoryDetails',
         request,
         metadata || {},
-        this.methodInfoSectionDetails,
+        this.methodInfoCategoryDetails,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/menu.v1.MenuDataProducer/SectionDetails',
+      '/menu.v1.MenuDataProducer/CategoryDetails',
     request,
     metadata || {},
-    this.methodInfoSectionDetails);
+    this.methodInfoCategoryDetails);
   }
 
-  methodInfoItems = new grpcWeb.AbstractClientBase.MethodInfo(
-    ItemsResponse,
-    (request: ItemsRequest) => {
+  methodInfoProducts = new grpcWeb.AbstractClientBase.MethodInfo(
+    ProductsResponse,
+    (request: ProductsRequest) => {
       return request.serializeBinary();
     },
-    ItemsResponse.deserializeBinary
+    ProductsResponse.deserializeBinary
   );
 
-  items(
-    request: ItemsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<ItemsResponse>;
+  products(
+    request: ProductsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<ProductsResponse>;
 
-  items(
-    request: ItemsRequest,
+  products(
+    request: ProductsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: ItemsResponse) => void): grpcWeb.ClientReadableStream<ItemsResponse>;
+               response: ProductsResponse) => void): grpcWeb.ClientReadableStream<ProductsResponse>;
 
-  items(
-    request: ItemsRequest,
+  products(
+    request: ProductsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: ItemsResponse) => void) {
+               response: ProductsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/menu.v1.MenuDataProducer/Items',
+          '/menu.v1.MenuDataProducer/Products',
         request,
         metadata || {},
-        this.methodInfoItems,
+        this.methodInfoProducts,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/menu.v1.MenuDataProducer/Items',
+      '/menu.v1.MenuDataProducer/Products',
     request,
     metadata || {},
-    this.methodInfoItems);
+    this.methodInfoProducts);
   }
 
-  methodInfoItemDetails = new grpcWeb.AbstractClientBase.MethodInfo(
-    menu_v1_menu_pb.Item,
-    (request: ItemDetailsRequest) => {
+  methodInfoProductDetails = new grpcWeb.AbstractClientBase.MethodInfo(
+    menu_v1_menu_pb.Product,
+    (request: ProductDetailsRequest) => {
       return request.serializeBinary();
     },
-    menu_v1_menu_pb.Item.deserializeBinary
+    menu_v1_menu_pb.Product.deserializeBinary
   );
 
-  itemDetails(
-    request: ItemDetailsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Item>;
+  productDetails(
+    request: ProductDetailsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Product>;
 
-  itemDetails(
-    request: ItemDetailsRequest,
+  productDetails(
+    request: ProductDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Item) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Item>;
+               response: menu_v1_menu_pb.Product) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Product>;
 
-  itemDetails(
-    request: ItemDetailsRequest,
+  productDetails(
+    request: ProductDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Item) => void) {
+               response: menu_v1_menu_pb.Product) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/menu.v1.MenuDataProducer/ItemDetails',
+          '/menu.v1.MenuDataProducer/ProductDetails',
         request,
         metadata || {},
-        this.methodInfoItemDetails,
+        this.methodInfoProductDetails,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/menu.v1.MenuDataProducer/ItemDetails',
+      '/menu.v1.MenuDataProducer/ProductDetails',
     request,
     metadata || {},
-    this.methodInfoItemDetails);
+    this.methodInfoProductDetails);
   }
 
 }

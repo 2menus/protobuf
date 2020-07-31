@@ -236,320 +236,320 @@ proto.menu.v1.MenuDataProducerPromiseClient.prototype.menuDetails =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.menu.v1.SectionsRequest,
- *   !proto.menu.v1.SectionsResponse>}
+ *   !proto.menu.v1.CategoriesRequest,
+ *   !proto.menu.v1.CategoriesResponse>}
  */
-const methodDescriptor_MenuDataProducer_Sections = new grpc.web.MethodDescriptor(
-  '/menu.v1.MenuDataProducer/Sections',
+const methodDescriptor_MenuDataProducer_Categories = new grpc.web.MethodDescriptor(
+  '/menu.v1.MenuDataProducer/Categories',
   grpc.web.MethodType.UNARY,
-  proto.menu.v1.SectionsRequest,
-  proto.menu.v1.SectionsResponse,
+  proto.menu.v1.CategoriesRequest,
+  proto.menu.v1.CategoriesResponse,
   /**
-   * @param {!proto.menu.v1.SectionsRequest} request
+   * @param {!proto.menu.v1.CategoriesRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.menu.v1.SectionsResponse.deserializeBinary
+  proto.menu.v1.CategoriesResponse.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.menu.v1.SectionsRequest,
- *   !proto.menu.v1.SectionsResponse>}
+ *   !proto.menu.v1.CategoriesRequest,
+ *   !proto.menu.v1.CategoriesResponse>}
  */
-const methodInfo_MenuDataProducer_Sections = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.menu.v1.SectionsResponse,
+const methodInfo_MenuDataProducer_Categories = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.menu.v1.CategoriesResponse,
   /**
-   * @param {!proto.menu.v1.SectionsRequest} request
+   * @param {!proto.menu.v1.CategoriesRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.menu.v1.SectionsResponse.deserializeBinary
+  proto.menu.v1.CategoriesResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.menu.v1.SectionsRequest} request The
+ * @param {!proto.menu.v1.CategoriesRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.SectionsResponse)}
+ * @param {function(?grpc.web.Error, ?proto.menu.v1.CategoriesResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.SectionsResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.CategoriesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.menu.v1.MenuDataProducerClient.prototype.sections =
+proto.menu.v1.MenuDataProducerClient.prototype.categories =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/menu.v1.MenuDataProducer/Sections',
+      '/menu.v1.MenuDataProducer/Categories',
       request,
       metadata || {},
-      methodDescriptor_MenuDataProducer_Sections,
+      methodDescriptor_MenuDataProducer_Categories,
       callback);
 };
 
 
 /**
- * @param {!proto.menu.v1.SectionsRequest} request The
+ * @param {!proto.menu.v1.CategoriesRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.SectionsResponse>}
+ * @return {!Promise<!proto.menu.v1.CategoriesResponse>}
  *     A native promise that resolves to the response
  */
-proto.menu.v1.MenuDataProducerPromiseClient.prototype.sections =
+proto.menu.v1.MenuDataProducerPromiseClient.prototype.categories =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/menu.v1.MenuDataProducer/Sections',
+      '/menu.v1.MenuDataProducer/Categories',
       request,
       metadata || {},
-      methodDescriptor_MenuDataProducer_Sections);
+      methodDescriptor_MenuDataProducer_Categories);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.menu.v1.SectionDetailsRequest,
- *   !proto.menu.v1.Section>}
+ *   !proto.menu.v1.CategoryDetailsRequest,
+ *   !proto.menu.v1.Category>}
  */
-const methodDescriptor_MenuDataProducer_SectionDetails = new grpc.web.MethodDescriptor(
-  '/menu.v1.MenuDataProducer/SectionDetails',
+const methodDescriptor_MenuDataProducer_CategoryDetails = new grpc.web.MethodDescriptor(
+  '/menu.v1.MenuDataProducer/CategoryDetails',
   grpc.web.MethodType.UNARY,
-  proto.menu.v1.SectionDetailsRequest,
-  menu_v1_menu_pb.Section,
+  proto.menu.v1.CategoryDetailsRequest,
+  menu_v1_menu_pb.Category,
   /**
-   * @param {!proto.menu.v1.SectionDetailsRequest} request
+   * @param {!proto.menu.v1.CategoryDetailsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Section.deserializeBinary
+  menu_v1_menu_pb.Category.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.menu.v1.SectionDetailsRequest,
- *   !proto.menu.v1.Section>}
+ *   !proto.menu.v1.CategoryDetailsRequest,
+ *   !proto.menu.v1.Category>}
  */
-const methodInfo_MenuDataProducer_SectionDetails = new grpc.web.AbstractClientBase.MethodInfo(
-  menu_v1_menu_pb.Section,
+const methodInfo_MenuDataProducer_CategoryDetails = new grpc.web.AbstractClientBase.MethodInfo(
+  menu_v1_menu_pb.Category,
   /**
-   * @param {!proto.menu.v1.SectionDetailsRequest} request
+   * @param {!proto.menu.v1.CategoryDetailsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Section.deserializeBinary
+  menu_v1_menu_pb.Category.deserializeBinary
 );
 
 
 /**
- * @param {!proto.menu.v1.SectionDetailsRequest} request The
+ * @param {!proto.menu.v1.CategoryDetailsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.Section)}
+ * @param {function(?grpc.web.Error, ?proto.menu.v1.Category)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Section>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Category>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.menu.v1.MenuDataProducerClient.prototype.sectionDetails =
+proto.menu.v1.MenuDataProducerClient.prototype.categoryDetails =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/menu.v1.MenuDataProducer/SectionDetails',
+      '/menu.v1.MenuDataProducer/CategoryDetails',
       request,
       metadata || {},
-      methodDescriptor_MenuDataProducer_SectionDetails,
+      methodDescriptor_MenuDataProducer_CategoryDetails,
       callback);
 };
 
 
 /**
- * @param {!proto.menu.v1.SectionDetailsRequest} request The
+ * @param {!proto.menu.v1.CategoryDetailsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.Section>}
+ * @return {!Promise<!proto.menu.v1.Category>}
  *     A native promise that resolves to the response
  */
-proto.menu.v1.MenuDataProducerPromiseClient.prototype.sectionDetails =
+proto.menu.v1.MenuDataProducerPromiseClient.prototype.categoryDetails =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/menu.v1.MenuDataProducer/SectionDetails',
+      '/menu.v1.MenuDataProducer/CategoryDetails',
       request,
       metadata || {},
-      methodDescriptor_MenuDataProducer_SectionDetails);
+      methodDescriptor_MenuDataProducer_CategoryDetails);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.menu.v1.ItemsRequest,
- *   !proto.menu.v1.ItemsResponse>}
+ *   !proto.menu.v1.ProductsRequest,
+ *   !proto.menu.v1.ProductsResponse>}
  */
-const methodDescriptor_MenuDataProducer_Items = new grpc.web.MethodDescriptor(
-  '/menu.v1.MenuDataProducer/Items',
+const methodDescriptor_MenuDataProducer_Products = new grpc.web.MethodDescriptor(
+  '/menu.v1.MenuDataProducer/Products',
   grpc.web.MethodType.UNARY,
-  proto.menu.v1.ItemsRequest,
-  proto.menu.v1.ItemsResponse,
+  proto.menu.v1.ProductsRequest,
+  proto.menu.v1.ProductsResponse,
   /**
-   * @param {!proto.menu.v1.ItemsRequest} request
+   * @param {!proto.menu.v1.ProductsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.menu.v1.ItemsResponse.deserializeBinary
+  proto.menu.v1.ProductsResponse.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.menu.v1.ItemsRequest,
- *   !proto.menu.v1.ItemsResponse>}
+ *   !proto.menu.v1.ProductsRequest,
+ *   !proto.menu.v1.ProductsResponse>}
  */
-const methodInfo_MenuDataProducer_Items = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.menu.v1.ItemsResponse,
+const methodInfo_MenuDataProducer_Products = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.menu.v1.ProductsResponse,
   /**
-   * @param {!proto.menu.v1.ItemsRequest} request
+   * @param {!proto.menu.v1.ProductsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.menu.v1.ItemsResponse.deserializeBinary
+  proto.menu.v1.ProductsResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.menu.v1.ItemsRequest} request The
+ * @param {!proto.menu.v1.ProductsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.ItemsResponse)}
+ * @param {function(?grpc.web.Error, ?proto.menu.v1.ProductsResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.ItemsResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.ProductsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.menu.v1.MenuDataProducerClient.prototype.items =
+proto.menu.v1.MenuDataProducerClient.prototype.products =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/menu.v1.MenuDataProducer/Items',
+      '/menu.v1.MenuDataProducer/Products',
       request,
       metadata || {},
-      methodDescriptor_MenuDataProducer_Items,
+      methodDescriptor_MenuDataProducer_Products,
       callback);
 };
 
 
 /**
- * @param {!proto.menu.v1.ItemsRequest} request The
+ * @param {!proto.menu.v1.ProductsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.ItemsResponse>}
+ * @return {!Promise<!proto.menu.v1.ProductsResponse>}
  *     A native promise that resolves to the response
  */
-proto.menu.v1.MenuDataProducerPromiseClient.prototype.items =
+proto.menu.v1.MenuDataProducerPromiseClient.prototype.products =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/menu.v1.MenuDataProducer/Items',
+      '/menu.v1.MenuDataProducer/Products',
       request,
       metadata || {},
-      methodDescriptor_MenuDataProducer_Items);
+      methodDescriptor_MenuDataProducer_Products);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.menu.v1.ItemDetailsRequest,
- *   !proto.menu.v1.Item>}
+ *   !proto.menu.v1.ProductDetailsRequest,
+ *   !proto.menu.v1.Product>}
  */
-const methodDescriptor_MenuDataProducer_ItemDetails = new grpc.web.MethodDescriptor(
-  '/menu.v1.MenuDataProducer/ItemDetails',
+const methodDescriptor_MenuDataProducer_ProductDetails = new grpc.web.MethodDescriptor(
+  '/menu.v1.MenuDataProducer/ProductDetails',
   grpc.web.MethodType.UNARY,
-  proto.menu.v1.ItemDetailsRequest,
-  menu_v1_menu_pb.Item,
+  proto.menu.v1.ProductDetailsRequest,
+  menu_v1_menu_pb.Product,
   /**
-   * @param {!proto.menu.v1.ItemDetailsRequest} request
+   * @param {!proto.menu.v1.ProductDetailsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Item.deserializeBinary
+  menu_v1_menu_pb.Product.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.menu.v1.ItemDetailsRequest,
- *   !proto.menu.v1.Item>}
+ *   !proto.menu.v1.ProductDetailsRequest,
+ *   !proto.menu.v1.Product>}
  */
-const methodInfo_MenuDataProducer_ItemDetails = new grpc.web.AbstractClientBase.MethodInfo(
-  menu_v1_menu_pb.Item,
+const methodInfo_MenuDataProducer_ProductDetails = new grpc.web.AbstractClientBase.MethodInfo(
+  menu_v1_menu_pb.Product,
   /**
-   * @param {!proto.menu.v1.ItemDetailsRequest} request
+   * @param {!proto.menu.v1.ProductDetailsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Item.deserializeBinary
+  menu_v1_menu_pb.Product.deserializeBinary
 );
 
 
 /**
- * @param {!proto.menu.v1.ItemDetailsRequest} request The
+ * @param {!proto.menu.v1.ProductDetailsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.Item)}
+ * @param {function(?grpc.web.Error, ?proto.menu.v1.Product)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Item>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Product>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.menu.v1.MenuDataProducerClient.prototype.itemDetails =
+proto.menu.v1.MenuDataProducerClient.prototype.productDetails =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/menu.v1.MenuDataProducer/ItemDetails',
+      '/menu.v1.MenuDataProducer/ProductDetails',
       request,
       metadata || {},
-      methodDescriptor_MenuDataProducer_ItemDetails,
+      methodDescriptor_MenuDataProducer_ProductDetails,
       callback);
 };
 
 
 /**
- * @param {!proto.menu.v1.ItemDetailsRequest} request The
+ * @param {!proto.menu.v1.ProductDetailsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.Item>}
+ * @return {!Promise<!proto.menu.v1.Product>}
  *     A native promise that resolves to the response
  */
-proto.menu.v1.MenuDataProducerPromiseClient.prototype.itemDetails =
+proto.menu.v1.MenuDataProducerPromiseClient.prototype.productDetails =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/menu.v1.MenuDataProducer/ItemDetails',
+      '/menu.v1.MenuDataProducer/ProductDetails',
       request,
       metadata || {},
-      methodDescriptor_MenuDataProducer_ItemDetails);
+      methodDescriptor_MenuDataProducer_ProductDetails);
 };
 
 

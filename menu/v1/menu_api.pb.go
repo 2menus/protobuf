@@ -170,7 +170,7 @@ func (x *MenuDetailsRequest) GetMenuId() string {
 	return ""
 }
 
-type SectionsRequest struct {
+type CategoriesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -178,8 +178,8 @@ type SectionsRequest struct {
 	MenuId string `protobuf:"bytes,1,opt,name=menu_id,json=menuId,proto3" json:"menu_id,omitempty"`
 }
 
-func (x *SectionsRequest) Reset() {
-	*x = SectionsRequest{}
+func (x *CategoriesRequest) Reset() {
+	*x = CategoriesRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_menu_api_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -187,13 +187,13 @@ func (x *SectionsRequest) Reset() {
 	}
 }
 
-func (x *SectionsRequest) String() string {
+func (x *CategoriesRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SectionsRequest) ProtoMessage() {}
+func (*CategoriesRequest) ProtoMessage() {}
 
-func (x *SectionsRequest) ProtoReflect() protoreflect.Message {
+func (x *CategoriesRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_menu_api_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -205,28 +205,28 @@ func (x *SectionsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SectionsRequest.ProtoReflect.Descriptor instead.
-func (*SectionsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CategoriesRequest.ProtoReflect.Descriptor instead.
+func (*CategoriesRequest) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *SectionsRequest) GetMenuId() string {
+func (x *CategoriesRequest) GetMenuId() string {
 	if x != nil {
 		return x.MenuId
 	}
 	return ""
 }
 
-type SectionsResponse struct {
+type CategoriesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SectionList []*Section `protobuf:"bytes,1,rep,name=section_list,json=sectionList,proto3" json:"section_list,omitempty"`
+	CategoryList []*Category `protobuf:"bytes,1,rep,name=category_list,json=categoryList,proto3" json:"category_list,omitempty"`
 }
 
-func (x *SectionsResponse) Reset() {
-	*x = SectionsResponse{}
+func (x *CategoriesResponse) Reset() {
+	*x = CategoriesResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_menu_api_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -234,13 +234,13 @@ func (x *SectionsResponse) Reset() {
 	}
 }
 
-func (x *SectionsResponse) String() string {
+func (x *CategoriesResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SectionsResponse) ProtoMessage() {}
+func (*CategoriesResponse) ProtoMessage() {}
 
-func (x *SectionsResponse) ProtoReflect() protoreflect.Message {
+func (x *CategoriesResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_menu_api_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -252,29 +252,29 @@ func (x *SectionsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SectionsResponse.ProtoReflect.Descriptor instead.
-func (*SectionsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CategoriesResponse.ProtoReflect.Descriptor instead.
+func (*CategoriesResponse) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *SectionsResponse) GetSectionList() []*Section {
+func (x *CategoriesResponse) GetCategoryList() []*Category {
 	if x != nil {
-		return x.SectionList
+		return x.CategoryList
 	}
 	return nil
 }
 
 // TODO: DELETE IT PROBABLY IN FUTURE
-type SectionDetailsRequest struct {
+type CategoryDetailsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SectionId string `protobuf:"bytes,1,opt,name=section_id,json=sectionId,proto3" json:"section_id,omitempty"`
+	CategoryId string `protobuf:"bytes,1,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
 }
 
-func (x *SectionDetailsRequest) Reset() {
-	*x = SectionDetailsRequest{}
+func (x *CategoryDetailsRequest) Reset() {
+	*x = CategoryDetailsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_menu_api_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -282,13 +282,13 @@ func (x *SectionDetailsRequest) Reset() {
 	}
 }
 
-func (x *SectionDetailsRequest) String() string {
+func (x *CategoryDetailsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SectionDetailsRequest) ProtoMessage() {}
+func (*CategoryDetailsRequest) ProtoMessage() {}
 
-func (x *SectionDetailsRequest) ProtoReflect() protoreflect.Message {
+func (x *CategoryDetailsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_menu_api_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -300,28 +300,28 @@ func (x *SectionDetailsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SectionDetailsRequest.ProtoReflect.Descriptor instead.
-func (*SectionDetailsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CategoryDetailsRequest.ProtoReflect.Descriptor instead.
+func (*CategoryDetailsRequest) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *SectionDetailsRequest) GetSectionId() string {
+func (x *CategoryDetailsRequest) GetCategoryId() string {
 	if x != nil {
-		return x.SectionId
+		return x.CategoryId
 	}
 	return ""
 }
 
-type ItemsRequest struct {
+type ProductsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SectionId string `protobuf:"bytes,1,opt,name=section_id,json=sectionId,proto3" json:"section_id,omitempty"`
+	CategoryId string `protobuf:"bytes,1,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
 }
 
-func (x *ItemsRequest) Reset() {
-	*x = ItemsRequest{}
+func (x *ProductsRequest) Reset() {
+	*x = ProductsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_menu_api_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -329,13 +329,13 @@ func (x *ItemsRequest) Reset() {
 	}
 }
 
-func (x *ItemsRequest) String() string {
+func (x *ProductsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ItemsRequest) ProtoMessage() {}
+func (*ProductsRequest) ProtoMessage() {}
 
-func (x *ItemsRequest) ProtoReflect() protoreflect.Message {
+func (x *ProductsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_menu_api_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -347,28 +347,28 @@ func (x *ItemsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ItemsRequest.ProtoReflect.Descriptor instead.
-func (*ItemsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ProductsRequest.ProtoReflect.Descriptor instead.
+func (*ProductsRequest) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *ItemsRequest) GetSectionId() string {
+func (x *ProductsRequest) GetCategoryId() string {
 	if x != nil {
-		return x.SectionId
+		return x.CategoryId
 	}
 	return ""
 }
 
-type ItemsResponse struct {
+type ProductsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ItemList []*Item `protobuf:"bytes,1,rep,name=item_list,json=itemList,proto3" json:"item_list,omitempty"`
+	ProductList []*Product `protobuf:"bytes,1,rep,name=product_list,json=productList,proto3" json:"product_list,omitempty"`
 }
 
-func (x *ItemsResponse) Reset() {
-	*x = ItemsResponse{}
+func (x *ProductsResponse) Reset() {
+	*x = ProductsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_menu_api_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -376,13 +376,13 @@ func (x *ItemsResponse) Reset() {
 	}
 }
 
-func (x *ItemsResponse) String() string {
+func (x *ProductsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ItemsResponse) ProtoMessage() {}
+func (*ProductsResponse) ProtoMessage() {}
 
-func (x *ItemsResponse) ProtoReflect() protoreflect.Message {
+func (x *ProductsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_menu_api_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -394,28 +394,28 @@ func (x *ItemsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ItemsResponse.ProtoReflect.Descriptor instead.
-func (*ItemsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ProductsResponse.ProtoReflect.Descriptor instead.
+func (*ProductsResponse) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *ItemsResponse) GetItemList() []*Item {
+func (x *ProductsResponse) GetProductList() []*Product {
 	if x != nil {
-		return x.ItemList
+		return x.ProductList
 	}
 	return nil
 }
 
-type ItemDetailsRequest struct {
+type ProductDetailsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ItemId string `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ProductId string `protobuf:"bytes,1,opt,name=product_id,json=productId,proto3" json:"product_id,omitempty"`
 }
 
-func (x *ItemDetailsRequest) Reset() {
-	*x = ItemDetailsRequest{}
+func (x *ProductDetailsRequest) Reset() {
+	*x = ProductDetailsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_menu_api_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -423,13 +423,13 @@ func (x *ItemDetailsRequest) Reset() {
 	}
 }
 
-func (x *ItemDetailsRequest) String() string {
+func (x *ProductDetailsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ItemDetailsRequest) ProtoMessage() {}
+func (*ProductDetailsRequest) ProtoMessage() {}
 
-func (x *ItemDetailsRequest) ProtoReflect() protoreflect.Message {
+func (x *ProductDetailsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_menu_api_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -441,14 +441,14 @@ func (x *ItemDetailsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ItemDetailsRequest.ProtoReflect.Descriptor instead.
-func (*ItemDetailsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ProductDetailsRequest.ProtoReflect.Descriptor instead.
+func (*ProductDetailsRequest) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *ItemDetailsRequest) GetItemId() string {
+func (x *ProductDetailsRequest) GetProductId() string {
 	if x != nil {
-		return x.ItemId
+		return x.ProductId
 	}
 	return ""
 }
@@ -468,55 +468,59 @@ var file_menu_api_proto_rawDesc = []byte{
 	0x75, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x2d, 0x0a, 0x12, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x65, 0x74,
 	0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x6d,
 	0x65, 0x6e, 0x75, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x65,
-	0x6e, 0x75, 0x49, 0x64, 0x22, 0x2a, 0x0a, 0x0f, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x6d, 0x65, 0x6e, 0x75, 0x5f,
-	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x65, 0x6e, 0x75, 0x49, 0x64,
-	0x22, 0x47, 0x0a, 0x10, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x0c, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
-	0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x6d, 0x65, 0x6e,
-	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x73, 0x65,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x36, 0x0a, 0x15, 0x53, 0x65, 0x63,
-	0x74, 0x69, 0x6f, 0x6e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x49,
-	0x64, 0x22, 0x2d, 0x0a, 0x0c, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64,
-	0x22, 0x3b, 0x0a, 0x0d, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x12, 0x2a, 0x0a, 0x09, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01,
-	0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x49,
-	0x74, 0x65, 0x6d, 0x52, 0x08, 0x69, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x2d, 0x0a,
-	0x12, 0x49, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x69, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x32, 0x89, 0x03, 0x0a,
-	0x10, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x61, 0x74, 0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x65,
-	0x72, 0x12, 0x38, 0x0a, 0x05, 0x4d, 0x65, 0x6e, 0x75, 0x73, 0x12, 0x15, 0x2e, 0x6d, 0x65, 0x6e,
-	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x16, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3b, 0x0a, 0x0b, 0x4d,
-	0x65, 0x6e, 0x75, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1b, 0x2e, 0x6d, 0x65, 0x6e,
-	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0d, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76,
-	0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x22, 0x00, 0x12, 0x41, 0x0a, 0x08, 0x53, 0x65, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x73, 0x12, 0x18, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x53,
-	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19,
-	0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x0e, 0x53,
-	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1e, 0x2e,
-	0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x44,
-	0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x10, 0x2e,
-	0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x22,
-	0x00, 0x12, 0x38, 0x0a, 0x05, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x15, 0x2e, 0x6d, 0x65, 0x6e,
-	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x16, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x74, 0x65, 0x6d,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3b, 0x0a, 0x0b, 0x49,
-	0x74, 0x65, 0x6d, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1b, 0x2e, 0x6d, 0x65, 0x6e,
-	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0d, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76,
-	0x31, 0x2e, 0x49, 0x74, 0x65, 0x6d, 0x22, 0x00, 0x42, 0x23, 0x5a, 0x21, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x32, 0x6d, 0x65, 0x6e, 0x75, 0x73, 0x2f, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x6d, 0x65, 0x6e, 0x75, 0x76, 0x31, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x75, 0x49, 0x64, 0x22, 0x2c, 0x0a, 0x11, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69,
+	0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x6d, 0x65, 0x6e,
+	0x75, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x65, 0x6e, 0x75,
+	0x49, 0x64, 0x22, 0x4c, 0x0a, 0x12, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x0d, 0x63, 0x61, 0x74, 0x65,
+	0x67, 0x6f, 0x72, 0x79, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x11, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f,
+	0x72, 0x79, 0x52, 0x0c, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x4c, 0x69, 0x73, 0x74,
+	0x22, 0x39, 0x0a, 0x16, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x61,
+	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0a, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x49, 0x64, 0x22, 0x32, 0x0a, 0x0f, 0x50,
+	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f,
+	0x0a, 0x0b, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x49, 0x64, 0x22,
+	0x47, 0x0a, 0x10, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x0c, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x6c,
+	0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x6d, 0x65, 0x6e, 0x75,
+	0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52, 0x0b, 0x70, 0x72, 0x6f,
+	0x64, 0x75, 0x63, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x36, 0x0a, 0x15, 0x50, 0x72, 0x6f, 0x64,
+	0x75, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x49, 0x64,
+	0x32, 0xa4, 0x03, 0x0a, 0x10, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x61, 0x74, 0x61, 0x50, 0x72, 0x6f,
+	0x64, 0x75, 0x63, 0x65, 0x72, 0x12, 0x38, 0x0a, 0x05, 0x4d, 0x65, 0x6e, 0x75, 0x73, 0x12, 0x15,
+	0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x73, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e,
+	0x4d, 0x65, 0x6e, 0x75, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x3b, 0x0a, 0x0b, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1b,
+	0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x65, 0x74,
+	0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0d, 0x2e, 0x6d, 0x65,
+	0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x22, 0x00, 0x12, 0x47, 0x0a, 0x0a,
+	0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x12, 0x1a, 0x2e, 0x6d, 0x65, 0x6e,
+	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31,
+	0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x47, 0x0a, 0x0f, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72,
+	0x79, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1f, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e,
+	0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x44, 0x65, 0x74, 0x61, 0x69,
+	0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x11, 0x2e, 0x6d, 0x65, 0x6e, 0x75,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x22, 0x00, 0x12, 0x41,
+	0x0a, 0x08, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x12, 0x18, 0x2e, 0x6d, 0x65, 0x6e,
+	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50,
+	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x44, 0x0a, 0x0e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x73, 0x12, 0x1e, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72,
+	0x6f, 0x64, 0x75, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x10, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72,
+	0x6f, 0x64, 0x75, 0x63, 0x74, 0x22, 0x00, 0x42, 0x23, 0x5a, 0x21, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x32, 0x6d, 0x65, 0x6e, 0x75, 0x73, 0x2f, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x6d, 0x65, 0x6e, 0x75, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -533,35 +537,35 @@ func file_menu_api_proto_rawDescGZIP() []byte {
 
 var file_menu_api_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_menu_api_proto_goTypes = []interface{}{
-	(*MenusRequest)(nil),          // 0: menu.v1.MenusRequest
-	(*MenusResponse)(nil),         // 1: menu.v1.MenusResponse
-	(*MenuDetailsRequest)(nil),    // 2: menu.v1.MenuDetailsRequest
-	(*SectionsRequest)(nil),       // 3: menu.v1.SectionsRequest
-	(*SectionsResponse)(nil),      // 4: menu.v1.SectionsResponse
-	(*SectionDetailsRequest)(nil), // 5: menu.v1.SectionDetailsRequest
-	(*ItemsRequest)(nil),          // 6: menu.v1.ItemsRequest
-	(*ItemsResponse)(nil),         // 7: menu.v1.ItemsResponse
-	(*ItemDetailsRequest)(nil),    // 8: menu.v1.ItemDetailsRequest
-	(*Menu)(nil),                  // 9: menu.v1.Menu
-	(*Section)(nil),               // 10: menu.v1.Section
-	(*Item)(nil),                  // 11: menu.v1.Item
+	(*MenusRequest)(nil),           // 0: menu.v1.MenusRequest
+	(*MenusResponse)(nil),          // 1: menu.v1.MenusResponse
+	(*MenuDetailsRequest)(nil),     // 2: menu.v1.MenuDetailsRequest
+	(*CategoriesRequest)(nil),      // 3: menu.v1.CategoriesRequest
+	(*CategoriesResponse)(nil),     // 4: menu.v1.CategoriesResponse
+	(*CategoryDetailsRequest)(nil), // 5: menu.v1.CategoryDetailsRequest
+	(*ProductsRequest)(nil),        // 6: menu.v1.ProductsRequest
+	(*ProductsResponse)(nil),       // 7: menu.v1.ProductsResponse
+	(*ProductDetailsRequest)(nil),  // 8: menu.v1.ProductDetailsRequest
+	(*Menu)(nil),                   // 9: menu.v1.Menu
+	(*Category)(nil),               // 10: menu.v1.Category
+	(*Product)(nil),                // 11: menu.v1.Product
 }
 var file_menu_api_proto_depIdxs = []int32{
 	9,  // 0: menu.v1.MenusResponse.menu_list:type_name -> menu.v1.Menu
-	10, // 1: menu.v1.SectionsResponse.section_list:type_name -> menu.v1.Section
-	11, // 2: menu.v1.ItemsResponse.item_list:type_name -> menu.v1.Item
+	10, // 1: menu.v1.CategoriesResponse.category_list:type_name -> menu.v1.Category
+	11, // 2: menu.v1.ProductsResponse.product_list:type_name -> menu.v1.Product
 	0,  // 3: menu.v1.MenuDataProducer.Menus:input_type -> menu.v1.MenusRequest
 	2,  // 4: menu.v1.MenuDataProducer.MenuDetails:input_type -> menu.v1.MenuDetailsRequest
-	3,  // 5: menu.v1.MenuDataProducer.Sections:input_type -> menu.v1.SectionsRequest
-	5,  // 6: menu.v1.MenuDataProducer.SectionDetails:input_type -> menu.v1.SectionDetailsRequest
-	6,  // 7: menu.v1.MenuDataProducer.Items:input_type -> menu.v1.ItemsRequest
-	8,  // 8: menu.v1.MenuDataProducer.ItemDetails:input_type -> menu.v1.ItemDetailsRequest
+	3,  // 5: menu.v1.MenuDataProducer.Categories:input_type -> menu.v1.CategoriesRequest
+	5,  // 6: menu.v1.MenuDataProducer.CategoryDetails:input_type -> menu.v1.CategoryDetailsRequest
+	6,  // 7: menu.v1.MenuDataProducer.Products:input_type -> menu.v1.ProductsRequest
+	8,  // 8: menu.v1.MenuDataProducer.ProductDetails:input_type -> menu.v1.ProductDetailsRequest
 	1,  // 9: menu.v1.MenuDataProducer.Menus:output_type -> menu.v1.MenusResponse
 	9,  // 10: menu.v1.MenuDataProducer.MenuDetails:output_type -> menu.v1.Menu
-	4,  // 11: menu.v1.MenuDataProducer.Sections:output_type -> menu.v1.SectionsResponse
-	10, // 12: menu.v1.MenuDataProducer.SectionDetails:output_type -> menu.v1.Section
-	7,  // 13: menu.v1.MenuDataProducer.Items:output_type -> menu.v1.ItemsResponse
-	11, // 14: menu.v1.MenuDataProducer.ItemDetails:output_type -> menu.v1.Item
+	4,  // 11: menu.v1.MenuDataProducer.Categories:output_type -> menu.v1.CategoriesResponse
+	10, // 12: menu.v1.MenuDataProducer.CategoryDetails:output_type -> menu.v1.Category
+	7,  // 13: menu.v1.MenuDataProducer.Products:output_type -> menu.v1.ProductsResponse
+	11, // 14: menu.v1.MenuDataProducer.ProductDetails:output_type -> menu.v1.Product
 	9,  // [9:15] is the sub-list for method output_type
 	3,  // [3:9] is the sub-list for method input_type
 	3,  // [3:3] is the sub-list for extension type_name
@@ -613,7 +617,7 @@ func file_menu_api_proto_init() {
 			}
 		}
 		file_menu_api_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SectionsRequest); i {
+			switch v := v.(*CategoriesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -625,7 +629,7 @@ func file_menu_api_proto_init() {
 			}
 		}
 		file_menu_api_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SectionsResponse); i {
+			switch v := v.(*CategoriesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -637,7 +641,7 @@ func file_menu_api_proto_init() {
 			}
 		}
 		file_menu_api_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SectionDetailsRequest); i {
+			switch v := v.(*CategoryDetailsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -649,7 +653,7 @@ func file_menu_api_proto_init() {
 			}
 		}
 		file_menu_api_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ItemsRequest); i {
+			switch v := v.(*ProductsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -661,7 +665,7 @@ func file_menu_api_proto_init() {
 			}
 		}
 		file_menu_api_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ItemsResponse); i {
+			switch v := v.(*ProductsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -673,7 +677,7 @@ func file_menu_api_proto_init() {
 			}
 		}
 		file_menu_api_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ItemDetailsRequest); i {
+			switch v := v.(*ProductDetailsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -720,12 +724,12 @@ type MenuDataProducerClient interface {
 	// Menu methods
 	Menus(ctx context.Context, in *MenusRequest, opts ...grpc.CallOption) (*MenusResponse, error)
 	MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*Menu, error)
-	// Section methods
-	Sections(ctx context.Context, in *SectionsRequest, opts ...grpc.CallOption) (*SectionsResponse, error)
-	SectionDetails(ctx context.Context, in *SectionDetailsRequest, opts ...grpc.CallOption) (*Section, error)
-	// Item methods
-	Items(ctx context.Context, in *ItemsRequest, opts ...grpc.CallOption) (*ItemsResponse, error)
-	ItemDetails(ctx context.Context, in *ItemDetailsRequest, opts ...grpc.CallOption) (*Item, error)
+	// Category methods
+	Categories(ctx context.Context, in *CategoriesRequest, opts ...grpc.CallOption) (*CategoriesResponse, error)
+	CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*Category, error)
+	// Product methods
+	Products(ctx context.Context, in *ProductsRequest, opts ...grpc.CallOption) (*ProductsResponse, error)
+	ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*Product, error)
 }
 
 type menuDataProducerClient struct {
@@ -754,36 +758,36 @@ func (c *menuDataProducerClient) MenuDetails(ctx context.Context, in *MenuDetail
 	return out, nil
 }
 
-func (c *menuDataProducerClient) Sections(ctx context.Context, in *SectionsRequest, opts ...grpc.CallOption) (*SectionsResponse, error) {
-	out := new(SectionsResponse)
-	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/Sections", in, out, opts...)
+func (c *menuDataProducerClient) Categories(ctx context.Context, in *CategoriesRequest, opts ...grpc.CallOption) (*CategoriesResponse, error) {
+	out := new(CategoriesResponse)
+	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/Categories", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *menuDataProducerClient) SectionDetails(ctx context.Context, in *SectionDetailsRequest, opts ...grpc.CallOption) (*Section, error) {
-	out := new(Section)
-	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/SectionDetails", in, out, opts...)
+func (c *menuDataProducerClient) CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*Category, error) {
+	out := new(Category)
+	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/CategoryDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *menuDataProducerClient) Items(ctx context.Context, in *ItemsRequest, opts ...grpc.CallOption) (*ItemsResponse, error) {
-	out := new(ItemsResponse)
-	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/Items", in, out, opts...)
+func (c *menuDataProducerClient) Products(ctx context.Context, in *ProductsRequest, opts ...grpc.CallOption) (*ProductsResponse, error) {
+	out := new(ProductsResponse)
+	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/Products", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *menuDataProducerClient) ItemDetails(ctx context.Context, in *ItemDetailsRequest, opts ...grpc.CallOption) (*Item, error) {
-	out := new(Item)
-	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/ItemDetails", in, out, opts...)
+func (c *menuDataProducerClient) ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*Product, error) {
+	out := new(Product)
+	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/ProductDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -795,12 +799,12 @@ type MenuDataProducerServer interface {
 	// Menu methods
 	Menus(context.Context, *MenusRequest) (*MenusResponse, error)
 	MenuDetails(context.Context, *MenuDetailsRequest) (*Menu, error)
-	// Section methods
-	Sections(context.Context, *SectionsRequest) (*SectionsResponse, error)
-	SectionDetails(context.Context, *SectionDetailsRequest) (*Section, error)
-	// Item methods
-	Items(context.Context, *ItemsRequest) (*ItemsResponse, error)
-	ItemDetails(context.Context, *ItemDetailsRequest) (*Item, error)
+	// Category methods
+	Categories(context.Context, *CategoriesRequest) (*CategoriesResponse, error)
+	CategoryDetails(context.Context, *CategoryDetailsRequest) (*Category, error)
+	// Product methods
+	Products(context.Context, *ProductsRequest) (*ProductsResponse, error)
+	ProductDetails(context.Context, *ProductDetailsRequest) (*Product, error)
 }
 
 // UnimplementedMenuDataProducerServer can be embedded to have forward compatible implementations.
@@ -813,17 +817,17 @@ func (*UnimplementedMenuDataProducerServer) Menus(context.Context, *MenusRequest
 func (*UnimplementedMenuDataProducerServer) MenuDetails(context.Context, *MenuDetailsRequest) (*Menu, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MenuDetails not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) Sections(context.Context, *SectionsRequest) (*SectionsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Sections not implemented")
+func (*UnimplementedMenuDataProducerServer) Categories(context.Context, *CategoriesRequest) (*CategoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Categories not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) SectionDetails(context.Context, *SectionDetailsRequest) (*Section, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SectionDetails not implemented")
+func (*UnimplementedMenuDataProducerServer) CategoryDetails(context.Context, *CategoryDetailsRequest) (*Category, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CategoryDetails not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) Items(context.Context, *ItemsRequest) (*ItemsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Items not implemented")
+func (*UnimplementedMenuDataProducerServer) Products(context.Context, *ProductsRequest) (*ProductsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Products not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) ItemDetails(context.Context, *ItemDetailsRequest) (*Item, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ItemDetails not implemented")
+func (*UnimplementedMenuDataProducerServer) ProductDetails(context.Context, *ProductDetailsRequest) (*Product, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductDetails not implemented")
 }
 
 func RegisterMenuDataProducerServer(s *grpc.Server, srv MenuDataProducerServer) {
@@ -866,74 +870,74 @@ func _MenuDataProducer_MenuDetails_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MenuDataProducer_Sections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SectionsRequest)
+func _MenuDataProducer_Categories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CategoriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MenuDataProducerServer).Sections(ctx, in)
+		return srv.(MenuDataProducerServer).Categories(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/menu.v1.MenuDataProducer/Sections",
+		FullMethod: "/menu.v1.MenuDataProducer/Categories",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MenuDataProducerServer).Sections(ctx, req.(*SectionsRequest))
+		return srv.(MenuDataProducerServer).Categories(ctx, req.(*CategoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MenuDataProducer_SectionDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SectionDetailsRequest)
+func _MenuDataProducer_CategoryDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CategoryDetailsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MenuDataProducerServer).SectionDetails(ctx, in)
+		return srv.(MenuDataProducerServer).CategoryDetails(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/menu.v1.MenuDataProducer/SectionDetails",
+		FullMethod: "/menu.v1.MenuDataProducer/CategoryDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MenuDataProducerServer).SectionDetails(ctx, req.(*SectionDetailsRequest))
+		return srv.(MenuDataProducerServer).CategoryDetails(ctx, req.(*CategoryDetailsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MenuDataProducer_Items_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ItemsRequest)
+func _MenuDataProducer_Products_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MenuDataProducerServer).Items(ctx, in)
+		return srv.(MenuDataProducerServer).Products(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/menu.v1.MenuDataProducer/Items",
+		FullMethod: "/menu.v1.MenuDataProducer/Products",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MenuDataProducerServer).Items(ctx, req.(*ItemsRequest))
+		return srv.(MenuDataProducerServer).Products(ctx, req.(*ProductsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MenuDataProducer_ItemDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ItemDetailsRequest)
+func _MenuDataProducer_ProductDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductDetailsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MenuDataProducerServer).ItemDetails(ctx, in)
+		return srv.(MenuDataProducerServer).ProductDetails(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/menu.v1.MenuDataProducer/ItemDetails",
+		FullMethod: "/menu.v1.MenuDataProducer/ProductDetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MenuDataProducerServer).ItemDetails(ctx, req.(*ItemDetailsRequest))
+		return srv.(MenuDataProducerServer).ProductDetails(ctx, req.(*ProductDetailsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -951,20 +955,20 @@ var _MenuDataProducer_serviceDesc = grpc.ServiceDesc{
 			Handler:    _MenuDataProducer_MenuDetails_Handler,
 		},
 		{
-			MethodName: "Sections",
-			Handler:    _MenuDataProducer_Sections_Handler,
+			MethodName: "Categories",
+			Handler:    _MenuDataProducer_Categories_Handler,
 		},
 		{
-			MethodName: "SectionDetails",
-			Handler:    _MenuDataProducer_SectionDetails_Handler,
+			MethodName: "CategoryDetails",
+			Handler:    _MenuDataProducer_CategoryDetails_Handler,
 		},
 		{
-			MethodName: "Items",
-			Handler:    _MenuDataProducer_Items_Handler,
+			MethodName: "Products",
+			Handler:    _MenuDataProducer_Products_Handler,
 		},
 		{
-			MethodName: "ItemDetails",
-			Handler:    _MenuDataProducer_ItemDetails_Handler,
+			MethodName: "ProductDetails",
+			Handler:    _MenuDataProducer_ProductDetails_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

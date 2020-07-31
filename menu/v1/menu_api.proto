@@ -17,29 +17,29 @@ message MenuDetailsRequest {
     string menu_id = 1;
 }
 
-message SectionsRequest {
+message CategoriesRequest {
     string menu_id = 1;
 }
 
-message SectionsResponse {
-    repeated Section section_list = 1;
+message CategoriesResponse {
+    repeated Category category_list = 1;
 }
 
 // TODO: DELETE IT PROBABLY IN FUTURE
-message SectionDetailsRequest {
-    string section_id = 1;
+message CategoryDetailsRequest {
+    string category_id = 1;
 }
 
-message ItemsRequest {
-    string section_id = 1;
+message ProductsRequest {
+    string category_id = 1;
 }
 
-message ItemsResponse {
-    repeated Item item_list = 1;
+message ProductsResponse {
+    repeated Product product_list = 1;
 }
 
-message ItemDetailsRequest {
-    string item_id = 1;
+message ProductDetailsRequest {
+    string product_id = 1;
 }
 
 service MenuDataProducer {
@@ -47,11 +47,11 @@ service MenuDataProducer {
     rpc Menus(MenusRequest) returns (MenusResponse) {};
     rpc MenuDetails(MenuDetailsRequest) returns (Menu) {};
 
-    // Section methods
-    rpc Sections(SectionsRequest) returns (SectionsResponse) {};
-    rpc SectionDetails(SectionDetailsRequest) returns (Section) {};
+    // Category methods
+    rpc Categories(CategoriesRequest) returns (CategoriesResponse) {};
+    rpc CategoryDetails(CategoryDetailsRequest) returns (Category) {};
 
-    // Item methods
-    rpc Items(ItemsRequest) returns (ItemsResponse) {};
-    rpc ItemDetails(ItemDetailsRequest) returns (Item) {};
+    // Product methods
+    rpc Products(ProductsRequest) returns (ProductsResponse) {};
+    rpc ProductDetails(ProductDetailsRequest) returns (Product) {};
 }

@@ -9,29 +9,25 @@ message Country {
     string currency_symbol = 3;
 }
 
-// MENU
 message Menu {
     string id = 1;
-    string name = 5;
-    string full_name = 2;
-    string pic = 3 [deprecated = true];
-    string owners_message = 6;
-    string top_card_image = 7;  
-    Country country = 8;
+    string name = 2;
+    string full_name = 3;
+    string owners_message = 4;
+    string top_card_image = 5;  
+    Country country = 6;
 }
 
-// SECTIONS
-message Section {
+message Category {
     string id = 1;
-    string name = 4;
-    string full_name = 2;
-    string pic = 3 [deprecated = true];
+    string name = 2;
+    string full_name = 3;
+    string pic = 4;
 }
 
-// ITEMS
-message Item {
+message Product {
     string id = 1;
-    string name = 7;
+    string name = 2;
     string full_name = 3;
     float  price = 4;
     string item_description = 5;
