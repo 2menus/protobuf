@@ -8,7 +8,6 @@ package v1
 
 import (
 	context "context"
-	menuv1 "github.com/2menus/protobuf/menuv1"
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -82,7 +81,7 @@ type MenusResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MenuList []*menuv1.Menu `protobuf:"bytes,1,rep,name=menu_list,json=menuList,proto3" json:"menu_list,omitempty"`
+	MenuList []*Menu `protobuf:"bytes,1,rep,name=menu_list,json=menuList,proto3" json:"menu_list,omitempty"`
 }
 
 func (x *MenusResponse) Reset() {
@@ -117,7 +116,7 @@ func (*MenusResponse) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *MenusResponse) GetMenuList() []*menuv1.Menu {
+func (x *MenusResponse) GetMenuList() []*Menu {
 	if x != nil {
 		return x.MenuList
 	}
@@ -223,7 +222,7 @@ type CategoriesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CategoryList []*menuv1.Category `protobuf:"bytes,1,rep,name=category_list,json=categoryList,proto3" json:"category_list,omitempty"`
+	CategoryList []*Category `protobuf:"bytes,1,rep,name=category_list,json=categoryList,proto3" json:"category_list,omitempty"`
 }
 
 func (x *CategoriesResponse) Reset() {
@@ -258,7 +257,7 @@ func (*CategoriesResponse) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *CategoriesResponse) GetCategoryList() []*menuv1.Category {
+func (x *CategoriesResponse) GetCategoryList() []*Category {
 	if x != nil {
 		return x.CategoryList
 	}
@@ -365,7 +364,7 @@ type ProductsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ProductList []*menuv1.Product `protobuf:"bytes,1,rep,name=product_list,json=productList,proto3" json:"product_list,omitempty"`
+	ProductList []*Product `protobuf:"bytes,1,rep,name=product_list,json=productList,proto3" json:"product_list,omitempty"`
 }
 
 func (x *ProductsResponse) Reset() {
@@ -400,7 +399,7 @@ func (*ProductsResponse) Descriptor() ([]byte, []int) {
 	return file_menu_api_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *ProductsResponse) GetProductList() []*menuv1.Product {
+func (x *ProductsResponse) GetProductList() []*Product {
 	if x != nil {
 		return x.ProductList
 	}
@@ -547,9 +546,9 @@ var file_menu_api_proto_goTypes = []interface{}{
 	(*ProductsRequest)(nil),        // 6: menu.v1.ProductsRequest
 	(*ProductsResponse)(nil),       // 7: menu.v1.ProductsResponse
 	(*ProductDetailsRequest)(nil),  // 8: menu.v1.ProductDetailsRequest
-	(*menuv1.Menu)(nil),            // 9: menu.v1.Menu
-	(*menuv1.Category)(nil),        // 10: menu.v1.Category
-	(*menuv1.Product)(nil),         // 11: menu.v1.Product
+	(*Menu)(nil),                   // 9: menu.v1.Menu
+	(*Category)(nil),               // 10: menu.v1.Category
+	(*Product)(nil),                // 11: menu.v1.Product
 }
 var file_menu_api_proto_depIdxs = []int32{
 	9,  // 0: menu.v1.MenusResponse.menu_list:type_name -> menu.v1.Menu
@@ -579,6 +578,7 @@ func file_menu_api_proto_init() {
 	if File_menu_api_proto != nil {
 		return
 	}
+	file_menu_v1_menu_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_menu_api_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MenusRequest); i {
@@ -723,13 +723,13 @@ const _ = grpc.SupportPackageIsVersion6
 type MenuDataProducerClient interface {
 	// Menu methods
 	Menus(ctx context.Context, in *MenusRequest, opts ...grpc.CallOption) (*MenusResponse, error)
-	MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*menuv1.Menu, error)
+	MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*Menu, error)
 	// Category methods
 	Categories(ctx context.Context, in *CategoriesRequest, opts ...grpc.CallOption) (*CategoriesResponse, error)
-	CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*menuv1.Category, error)
+	CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*Category, error)
 	// Product methods
 	Products(ctx context.Context, in *ProductsRequest, opts ...grpc.CallOption) (*ProductsResponse, error)
-	ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*menuv1.Product, error)
+	ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*Product, error)
 }
 
 type menuDataProducerClient struct {
@@ -749,8 +749,8 @@ func (c *menuDataProducerClient) Menus(ctx context.Context, in *MenusRequest, op
 	return out, nil
 }
 
-func (c *menuDataProducerClient) MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*menuv1.Menu, error) {
-	out := new(menuv1.Menu)
+func (c *menuDataProducerClient) MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*Menu, error) {
+	out := new(Menu)
 	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/MenuDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -767,8 +767,8 @@ func (c *menuDataProducerClient) Categories(ctx context.Context, in *CategoriesR
 	return out, nil
 }
 
-func (c *menuDataProducerClient) CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*menuv1.Category, error) {
-	out := new(menuv1.Category)
+func (c *menuDataProducerClient) CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*Category, error) {
+	out := new(Category)
 	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/CategoryDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -785,8 +785,8 @@ func (c *menuDataProducerClient) Products(ctx context.Context, in *ProductsReque
 	return out, nil
 }
 
-func (c *menuDataProducerClient) ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*menuv1.Product, error) {
-	out := new(menuv1.Product)
+func (c *menuDataProducerClient) ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*Product, error) {
+	out := new(Product)
 	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/ProductDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -798,13 +798,13 @@ func (c *menuDataProducerClient) ProductDetails(ctx context.Context, in *Product
 type MenuDataProducerServer interface {
 	// Menu methods
 	Menus(context.Context, *MenusRequest) (*MenusResponse, error)
-	MenuDetails(context.Context, *MenuDetailsRequest) (*menuv1.Menu, error)
+	MenuDetails(context.Context, *MenuDetailsRequest) (*Menu, error)
 	// Category methods
 	Categories(context.Context, *CategoriesRequest) (*CategoriesResponse, error)
-	CategoryDetails(context.Context, *CategoryDetailsRequest) (*menuv1.Category, error)
+	CategoryDetails(context.Context, *CategoryDetailsRequest) (*Category, error)
 	// Product methods
 	Products(context.Context, *ProductsRequest) (*ProductsResponse, error)
-	ProductDetails(context.Context, *ProductDetailsRequest) (*menuv1.Product, error)
+	ProductDetails(context.Context, *ProductDetailsRequest) (*Product, error)
 }
 
 // UnimplementedMenuDataProducerServer can be embedded to have forward compatible implementations.
@@ -814,19 +814,19 @@ type UnimplementedMenuDataProducerServer struct {
 func (*UnimplementedMenuDataProducerServer) Menus(context.Context, *MenusRequest) (*MenusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Menus not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) MenuDetails(context.Context, *MenuDetailsRequest) (*menuv1.Menu, error) {
+func (*UnimplementedMenuDataProducerServer) MenuDetails(context.Context, *MenuDetailsRequest) (*Menu, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MenuDetails not implemented")
 }
 func (*UnimplementedMenuDataProducerServer) Categories(context.Context, *CategoriesRequest) (*CategoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Categories not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) CategoryDetails(context.Context, *CategoryDetailsRequest) (*menuv1.Category, error) {
+func (*UnimplementedMenuDataProducerServer) CategoryDetails(context.Context, *CategoryDetailsRequest) (*Category, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CategoryDetails not implemented")
 }
 func (*UnimplementedMenuDataProducerServer) Products(context.Context, *ProductsRequest) (*ProductsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Products not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) ProductDetails(context.Context, *ProductDetailsRequest) (*menuv1.Product, error) {
+func (*UnimplementedMenuDataProducerServer) ProductDetails(context.Context, *ProductDetailsRequest) (*Product, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductDetails not implemented")
 }
 

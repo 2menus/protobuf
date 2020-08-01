@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package menu.v1;
-option go_package = "github.com/2menus/protobuf/menuv1";
+option go_package = "github.com/2menus/protobuf/menu/v1";
 
 message Country {
     string name = 1;

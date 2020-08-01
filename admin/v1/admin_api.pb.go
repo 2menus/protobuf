@@ -8,7 +8,7 @@ package v1
 
 import (
 	context "context"
-	menuv1 "github.com/2menus/protobuf/menuv1"
+	v1 "github.com/2menus/protobuf/menu/v1"
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	grpc "google.golang.org/grpc"
@@ -270,7 +270,7 @@ var file_admin_api_proto_goTypes = []interface{}{
 	(*CreateMenuRequest)(nil), // 0: admin.v1.CreateMenuRequest
 	(*UpdateMenuRequest)(nil), // 1: admin.v1.UpdateMenuRequest
 	(*DeleteMenuRequest)(nil), // 2: admin.v1.DeleteMenuRequest
-	(*menuv1.Menu)(nil),       // 3: menu.v1.Menu
+	(*v1.Menu)(nil),           // 3: menu.v1.Menu
 	(*empty.Empty)(nil),       // 4: google.protobuf.Empty
 }
 var file_admin_api_proto_depIdxs = []int32{
@@ -362,8 +362,8 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type AdminClient interface {
-	CreateMenu(ctx context.Context, in *CreateMenuRequest, opts ...grpc.CallOption) (*menuv1.Menu, error)
-	UpdateMenu(ctx context.Context, in *UpdateMenuRequest, opts ...grpc.CallOption) (*menuv1.Menu, error)
+	CreateMenu(ctx context.Context, in *CreateMenuRequest, opts ...grpc.CallOption) (*v1.Menu, error)
+	UpdateMenu(ctx context.Context, in *UpdateMenuRequest, opts ...grpc.CallOption) (*v1.Menu, error)
 	DeleteMenu(ctx context.Context, in *DeleteMenuRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 }
 
@@ -375,8 +375,8 @@ func NewAdminClient(cc grpc.ClientConnInterface) AdminClient {
 	return &adminClient{cc}
 }
 
-func (c *adminClient) CreateMenu(ctx context.Context, in *CreateMenuRequest, opts ...grpc.CallOption) (*menuv1.Menu, error) {
-	out := new(menuv1.Menu)
+func (c *adminClient) CreateMenu(ctx context.Context, in *CreateMenuRequest, opts ...grpc.CallOption) (*v1.Menu, error) {
+	out := new(v1.Menu)
 	err := c.cc.Invoke(ctx, "/admin.v1.Admin/CreateMenu", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -384,8 +384,8 @@ func (c *adminClient) CreateMenu(ctx context.Context, in *CreateMenuRequest, opt
 	return out, nil
 }
 
-func (c *adminClient) UpdateMenu(ctx context.Context, in *UpdateMenuRequest, opts ...grpc.CallOption) (*menuv1.Menu, error) {
-	out := new(menuv1.Menu)
+func (c *adminClient) UpdateMenu(ctx context.Context, in *UpdateMenuRequest, opts ...grpc.CallOption) (*v1.Menu, error) {
+	out := new(v1.Menu)
 	err := c.cc.Invoke(ctx, "/admin.v1.Admin/UpdateMenu", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -404,8 +404,8 @@ func (c *adminClient) DeleteMenu(ctx context.Context, in *DeleteMenuRequest, opt
 
 // AdminServer is the server API for Admin service.
 type AdminServer interface {
-	CreateMenu(context.Context, *CreateMenuRequest) (*menuv1.Menu, error)
-	UpdateMenu(context.Context, *UpdateMenuRequest) (*menuv1.Menu, error)
+	CreateMenu(context.Context, *CreateMenuRequest) (*v1.Menu, error)
+	UpdateMenu(context.Context, *UpdateMenuRequest) (*v1.Menu, error)
 	DeleteMenu(context.Context, *DeleteMenuRequest) (*empty.Empty, error)
 }
 
@@ -413,10 +413,10 @@ type AdminServer interface {
 type UnimplementedAdminServer struct {
 }
 
-func (*UnimplementedAdminServer) CreateMenu(context.Context, *CreateMenuRequest) (*menuv1.Menu, error) {
+func (*UnimplementedAdminServer) CreateMenu(context.Context, *CreateMenuRequest) (*v1.Menu, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMenu not implemented")
 }
-func (*UnimplementedAdminServer) UpdateMenu(context.Context, *UpdateMenuRequest) (*menuv1.Menu, error) {
+func (*UnimplementedAdminServer) UpdateMenu(context.Context, *UpdateMenuRequest) (*v1.Menu, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMenu not implemented")
 }
 func (*UnimplementedAdminServer) DeleteMenu(context.Context, *DeleteMenuRequest) (*empty.Empty, error) {
