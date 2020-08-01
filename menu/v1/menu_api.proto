@@ -10,7 +10,7 @@ message MenusRequest {
 }
 
 message MenusResponse {
-    repeated Menu menu_list = 1;
+    repeated Menu menus = 1;
 }
 
 message MenuDetailsRequest {
@@ -22,7 +22,7 @@ message CategoriesRequest {
 }
 
 message CategoriesResponse {
-    repeated Category category_list = 1;
+    repeated Category categories = 1;
 }
 
 // TODO: DELETE IT PROBABLY IN FUTURE
@@ -35,7 +35,7 @@ message ProductsRequest {
 }
 
 message ProductsResponse {
-    repeated Product product_list = 1;
+    repeated Product products = 1;
 }
 
 message ProductDetailsRequest {

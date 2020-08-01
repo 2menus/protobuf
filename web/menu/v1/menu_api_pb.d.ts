@@ -21,10 +21,10 @@ export namespace MenusRequest {
 }
 
 export class MenusResponse extends jspb.Message {
-  getMenuListList(): Array<menu_v1_menu_pb.Menu>;
-  setMenuListList(value: Array<menu_v1_menu_pb.Menu>): MenusResponse;
-  clearMenuListList(): MenusResponse;
-  addMenuList(value?: menu_v1_menu_pb.Menu, index?: number): menu_v1_menu_pb.Menu;
+  getMenusList(): Array<menu_v1_menu_pb.Menu>;
+  setMenusList(value: Array<menu_v1_menu_pb.Menu>): MenusResponse;
+  clearMenusList(): MenusResponse;
+  addMenus(value?: menu_v1_menu_pb.Menu, index?: number): menu_v1_menu_pb.Menu;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MenusResponse.AsObject;
@@ -36,7 +36,7 @@ export class MenusResponse extends jspb.Message {
 
 export namespace MenusResponse {
   export type AsObject = {
-    menuListList: Array<menu_v1_menu_pb.Menu.AsObject>,
+    menusList: Array<menu_v1_menu_pb.Menu.AsObject>,
   }
 }
 
@@ -77,10 +77,10 @@ export namespace CategoriesRequest {
 }
 
 export class CategoriesResponse extends jspb.Message {
-  getCategoryListList(): Array<menu_v1_menu_pb.Category>;
-  setCategoryListList(value: Array<menu_v1_menu_pb.Category>): CategoriesResponse;
-  clearCategoryListList(): CategoriesResponse;
-  addCategoryList(value?: menu_v1_menu_pb.Category, index?: number): menu_v1_menu_pb.Category;
+  getCategoriesList(): Array<menu_v1_menu_pb.Category>;
+  setCategoriesList(value: Array<menu_v1_menu_pb.Category>): CategoriesResponse;
+  clearCategoriesList(): CategoriesResponse;
+  addCategories(value?: menu_v1_menu_pb.Category, index?: number): menu_v1_menu_pb.Category;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CategoriesResponse.AsObject;
@@ -92,7 +92,7 @@ export class CategoriesResponse extends jspb.Message {
 
 export namespace CategoriesResponse {
   export type AsObject = {
-    categoryListList: Array<menu_v1_menu_pb.Category.AsObject>,
+    categoriesList: Array<menu_v1_menu_pb.Category.AsObject>,
   }
 }
 
@@ -133,10 +133,10 @@ export namespace ProductsRequest {
 }
 
 export class ProductsResponse extends jspb.Message {
-  getProductListList(): Array<menu_v1_menu_pb.Product>;
-  setProductListList(value: Array<menu_v1_menu_pb.Product>): ProductsResponse;
-  clearProductListList(): ProductsResponse;
-  addProductList(value?: menu_v1_menu_pb.Product, index?: number): menu_v1_menu_pb.Product;
+  getProductsList(): Array<menu_v1_menu_pb.Product>;
+  setProductsList(value: Array<menu_v1_menu_pb.Product>): ProductsResponse;
+  clearProductsList(): ProductsResponse;
+  addProducts(value?: menu_v1_menu_pb.Product, index?: number): menu_v1_menu_pb.Product;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductsResponse.AsObject;
@@ -148,7 +148,7 @@ export class ProductsResponse extends jspb.Message {
 
 export namespace ProductsResponse {
   export type AsObject = {
-    productListList: Array<menu_v1_menu_pb.Product.AsObject>,
+    productsList: Array<menu_v1_menu_pb.Product.AsObject>,
   }
 }
 

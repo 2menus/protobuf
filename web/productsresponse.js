@@ -75,7 +75,7 @@ proto.menu.v1.ProductsResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.menu.v1.ProductsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    productListList: jspb.Message.toObjectList(msg.getProductListList(),
+    productsList: jspb.Message.toObjectList(msg.getProductsList(),
     proto.menu.v1.Product.toObject, includeInstance)
   };
 
@@ -116,7 +116,7 @@ proto.menu.v1.ProductsResponse.deserializeBinaryFromReader = function(msg, reade
     case 1:
       var value = new proto.menu.v1.Product;
       reader.readMessage(value,proto.menu.v1.Product.deserializeBinaryFromReader);
-      msg.addProductList(value);
+      msg.addProducts(value);
       break;
     default:
       reader.skipField();
@@ -147,7 +147,7 @@ proto.menu.v1.ProductsResponse.prototype.serializeBinary = function() {
  */
 proto.menu.v1.ProductsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProductListList();
+  f = message.getProductsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -159,10 +159,10 @@ proto.menu.v1.ProductsResponse.serializeBinaryToWriter = function(message, write
 
 
 /**
- * repeated Product product_list = 1;
+ * repeated Product products = 1;
  * @return {!Array<!proto.menu.v1.Product>}
  */
-proto.menu.v1.ProductsResponse.prototype.getProductListList = function() {
+proto.menu.v1.ProductsResponse.prototype.getProductsList = function() {
   return /** @type{!Array<!proto.menu.v1.Product>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.menu.v1.Product, 1));
 };
@@ -172,7 +172,7 @@ proto.menu.v1.ProductsResponse.prototype.getProductListList = function() {
  * @param {!Array<!proto.menu.v1.Product>} value
  * @return {!proto.menu.v1.ProductsResponse} returns this
 */
-proto.menu.v1.ProductsResponse.prototype.setProductListList = function(value) {
+proto.menu.v1.ProductsResponse.prototype.setProductsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -182,7 +182,7 @@ proto.menu.v1.ProductsResponse.prototype.setProductListList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.menu.v1.Product}
  */
-proto.menu.v1.ProductsResponse.prototype.addProductList = function(opt_value, opt_index) {
+proto.menu.v1.ProductsResponse.prototype.addProducts = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.menu.v1.Product, opt_index);
 };
 
@@ -191,8 +191,8 @@ proto.menu.v1.ProductsResponse.prototype.addProductList = function(opt_value, op
  * Clears the list making it empty but non-null.
  * @return {!proto.menu.v1.ProductsResponse} returns this
  */
-proto.menu.v1.ProductsResponse.prototype.clearProductListList = function() {
-  return this.setProductListList([]);
+proto.menu.v1.ProductsResponse.prototype.clearProductsList = function() {
+  return this.setProductsList([]);
 };
 
 
