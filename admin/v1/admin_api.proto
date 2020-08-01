@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package admin.v1;
-option go_package = "github.com/2menus/protobuf/adminv1";
+option go_package = "github.com/2menus/protobuf/admin/v1";
 
 import "menu/v1/menu.proto";
 import "google/protobuf/empty.proto";
