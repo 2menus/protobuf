@@ -1,4 +1,4 @@
-// source: menu_api.proto
+// source: menu/v1/menu_api.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.menu.v1.CategoryDetailsRequest');
+goog.provide('proto.menu.v1.ProductDetailsRequest');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,16 +24,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.menu.v1.CategoryDetailsRequest = function(opt_data) {
+proto.menu.v1.ProductDetailsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.menu.v1.CategoryDetailsRequest, jspb.Message);
+goog.inherits(proto.menu.v1.ProductDetailsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.menu.v1.CategoryDetailsRequest.displayName = 'proto.menu.v1.CategoryDetailsRequest';
+  proto.menu.v1.ProductDetailsRequest.displayName = 'proto.menu.v1.ProductDetailsRequest';
 }
 
 
@@ -51,8 +51,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.menu.v1.CategoryDetailsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.menu.v1.CategoryDetailsRequest.toObject(opt_includeInstance, this);
+proto.menu.v1.ProductDetailsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.menu.v1.ProductDetailsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -61,13 +61,13 @@ proto.menu.v1.CategoryDetailsRequest.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.menu.v1.CategoryDetailsRequest} msg The msg instance to transform.
+ * @param {!proto.menu.v1.ProductDetailsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.v1.CategoryDetailsRequest.toObject = function(includeInstance, msg) {
+proto.menu.v1.ProductDetailsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    productId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -81,23 +81,23 @@ proto.menu.v1.CategoryDetailsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.menu.v1.CategoryDetailsRequest}
+ * @return {!proto.menu.v1.ProductDetailsRequest}
  */
-proto.menu.v1.CategoryDetailsRequest.deserializeBinary = function(bytes) {
+proto.menu.v1.ProductDetailsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.menu.v1.CategoryDetailsRequest;
-  return proto.menu.v1.CategoryDetailsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.menu.v1.ProductDetailsRequest;
+  return proto.menu.v1.ProductDetailsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.menu.v1.CategoryDetailsRequest} msg The message object to deserialize into.
+ * @param {!proto.menu.v1.ProductDetailsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.menu.v1.CategoryDetailsRequest}
+ * @return {!proto.menu.v1.ProductDetailsRequest}
  */
-proto.menu.v1.CategoryDetailsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.menu.v1.ProductDetailsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -106,7 +106,7 @@ proto.menu.v1.CategoryDetailsRequest.deserializeBinaryFromReader = function(msg,
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCategoryId(value);
+      msg.setProductId(value);
       break;
     default:
       reader.skipField();
@@ -121,9 +121,9 @@ proto.menu.v1.CategoryDetailsRequest.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.menu.v1.CategoryDetailsRequest.prototype.serializeBinary = function() {
+proto.menu.v1.ProductDetailsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.menu.v1.CategoryDetailsRequest.serializeBinaryToWriter(this, writer);
+  proto.menu.v1.ProductDetailsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -131,13 +131,13 @@ proto.menu.v1.CategoryDetailsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.menu.v1.CategoryDetailsRequest} message
+ * @param {!proto.menu.v1.ProductDetailsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.v1.CategoryDetailsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.menu.v1.ProductDetailsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCategoryId();
+  f = message.getProductId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -148,19 +148,19 @@ proto.menu.v1.CategoryDetailsRequest.serializeBinaryToWriter = function(message,
 
 
 /**
- * optional string category_id = 1;
+ * optional string product_id = 1;
  * @return {string}
  */
-proto.menu.v1.CategoryDetailsRequest.prototype.getCategoryId = function() {
+proto.menu.v1.ProductDetailsRequest.prototype.getProductId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.menu.v1.CategoryDetailsRequest} returns this
+ * @return {!proto.menu.v1.ProductDetailsRequest} returns this
  */
-proto.menu.v1.CategoryDetailsRequest.prototype.setCategoryId = function(value) {
+proto.menu.v1.ProductDetailsRequest.prototype.setProductId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

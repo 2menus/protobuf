@@ -1,4 +1,4 @@
-// source: admin_api.proto
+// source: menu/v1/menu.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.admin.v1.CreateMenuRequest');
+goog.provide('proto.menu.v1.Country');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,16 +24,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.admin.v1.CreateMenuRequest = function(opt_data) {
+proto.menu.v1.Country = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.admin.v1.CreateMenuRequest, jspb.Message);
+goog.inherits(proto.menu.v1.Country, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.admin.v1.CreateMenuRequest.displayName = 'proto.admin.v1.CreateMenuRequest';
+  proto.menu.v1.Country.displayName = 'proto.menu.v1.Country';
 }
 
 
@@ -51,8 +51,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.admin.v1.CreateMenuRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.admin.v1.CreateMenuRequest.toObject(opt_includeInstance, this);
+proto.menu.v1.Country.prototype.toObject = function(opt_includeInstance) {
+  return proto.menu.v1.Country.toObject(opt_includeInstance, this);
 };
 
 
@@ -61,16 +61,15 @@ proto.admin.v1.CreateMenuRequest.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.admin.v1.CreateMenuRequest} msg The msg instance to transform.
+ * @param {!proto.menu.v1.Country} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.admin.v1.CreateMenuRequest.toObject = function(includeInstance, msg) {
+proto.menu.v1.Country.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fullName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    country: jspb.Message.getFieldWithDefault(msg, 4, "")
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    currencyCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    currencySymbol: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -84,23 +83,23 @@ proto.admin.v1.CreateMenuRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.admin.v1.CreateMenuRequest}
+ * @return {!proto.menu.v1.Country}
  */
-proto.admin.v1.CreateMenuRequest.deserializeBinary = function(bytes) {
+proto.menu.v1.Country.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.admin.v1.CreateMenuRequest;
-  return proto.admin.v1.CreateMenuRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.menu.v1.Country;
+  return proto.menu.v1.Country.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.admin.v1.CreateMenuRequest} msg The message object to deserialize into.
+ * @param {!proto.menu.v1.Country} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.admin.v1.CreateMenuRequest}
+ * @return {!proto.menu.v1.Country}
  */
-proto.admin.v1.CreateMenuRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.menu.v1.Country.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -109,19 +108,15 @@ proto.admin.v1.CreateMenuRequest.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setCurrencyCode(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFullName(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCountry(value);
+      msg.setCurrencySymbol(value);
       break;
     default:
       reader.skipField();
@@ -136,9 +131,9 @@ proto.admin.v1.CreateMenuRequest.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.admin.v1.CreateMenuRequest.prototype.serializeBinary = function() {
+proto.menu.v1.Country.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.admin.v1.CreateMenuRequest.serializeBinaryToWriter(this, writer);
+  proto.menu.v1.Country.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -146,112 +141,87 @@ proto.admin.v1.CreateMenuRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.admin.v1.CreateMenuRequest} message
+ * @param {!proto.menu.v1.Country} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.admin.v1.CreateMenuRequest.serializeBinaryToWriter = function(message, writer) {
+proto.menu.v1.Country.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getName();
+  f = message.getCurrencyCode();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getFullName();
+  f = message.getCurrencySymbol();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getCountry();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string id = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.admin.v1.CreateMenuRequest.prototype.getId = function() {
+proto.menu.v1.Country.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.admin.v1.CreateMenuRequest} returns this
+ * @return {!proto.menu.v1.Country} returns this
  */
-proto.admin.v1.CreateMenuRequest.prototype.setId = function(value) {
+proto.menu.v1.Country.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string name = 2;
+ * optional string currency_code = 2;
  * @return {string}
  */
-proto.admin.v1.CreateMenuRequest.prototype.getName = function() {
+proto.menu.v1.Country.prototype.getCurrencyCode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.admin.v1.CreateMenuRequest} returns this
+ * @return {!proto.menu.v1.Country} returns this
  */
-proto.admin.v1.CreateMenuRequest.prototype.setName = function(value) {
+proto.menu.v1.Country.prototype.setCurrencyCode = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string full_name = 3;
+ * optional string currency_symbol = 3;
  * @return {string}
  */
-proto.admin.v1.CreateMenuRequest.prototype.getFullName = function() {
+proto.menu.v1.Country.prototype.getCurrencySymbol = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.admin.v1.CreateMenuRequest} returns this
+ * @return {!proto.menu.v1.Country} returns this
  */
-proto.admin.v1.CreateMenuRequest.prototype.setFullName = function(value) {
+proto.menu.v1.Country.prototype.setCurrencySymbol = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string country = 4;
- * @return {string}
- */
-proto.admin.v1.CreateMenuRequest.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.admin.v1.CreateMenuRequest} returns this
- */
-proto.admin.v1.CreateMenuRequest.prototype.setCountry = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

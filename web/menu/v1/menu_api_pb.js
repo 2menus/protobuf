@@ -1,4 +1,4 @@
-// source: menu_api.proto
+// source: menu/v1/menu_api.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -12,7 +12,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var menu_v1_menu_pb = require('./menu/v1/menu_pb.js');
+var menu_v1_menu_pb = require('../../menu/v1/menu_pb.js');
 goog.object.extend(proto, menu_v1_menu_pb);
 goog.exportSymbol('proto.menu.v1.CategoriesRequest', null, global);
 goog.exportSymbol('proto.menu.v1.CategoriesResponse', null, global);

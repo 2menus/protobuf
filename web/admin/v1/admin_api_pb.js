@@ -1,4 +1,4 @@
-// source: admin_api.proto
+// source: admin/v1/admin_api.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -12,7 +12,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var menu_v1_menu_pb = require('./menu/v1/menu_pb.js');
+var menu_v1_menu_pb = require('../../menu/v1/menu_pb.js');
 goog.object.extend(proto, menu_v1_menu_pb);
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 goog.object.extend(proto, google_protobuf_empty_pb);

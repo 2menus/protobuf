@@ -1,4 +1,4 @@
-// source: admin_api.proto
+// source: menu/v1/menu_api.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.admin.v1.DeleteMenuRequest');
+goog.provide('proto.menu.v1.ProductsRequest');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,16 +24,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.admin.v1.DeleteMenuRequest = function(opt_data) {
+proto.menu.v1.ProductsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.admin.v1.DeleteMenuRequest, jspb.Message);
+goog.inherits(proto.menu.v1.ProductsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.admin.v1.DeleteMenuRequest.displayName = 'proto.admin.v1.DeleteMenuRequest';
+  proto.menu.v1.ProductsRequest.displayName = 'proto.menu.v1.ProductsRequest';
 }
 
 
@@ -51,8 +51,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.admin.v1.DeleteMenuRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.admin.v1.DeleteMenuRequest.toObject(opt_includeInstance, this);
+proto.menu.v1.ProductsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.menu.v1.ProductsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -61,13 +61,13 @@ proto.admin.v1.DeleteMenuRequest.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.admin.v1.DeleteMenuRequest} msg The msg instance to transform.
+ * @param {!proto.menu.v1.ProductsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.admin.v1.DeleteMenuRequest.toObject = function(includeInstance, msg) {
+proto.menu.v1.ProductsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
+    categoryId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -81,23 +81,23 @@ proto.admin.v1.DeleteMenuRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.admin.v1.DeleteMenuRequest}
+ * @return {!proto.menu.v1.ProductsRequest}
  */
-proto.admin.v1.DeleteMenuRequest.deserializeBinary = function(bytes) {
+proto.menu.v1.ProductsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.admin.v1.DeleteMenuRequest;
-  return proto.admin.v1.DeleteMenuRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.menu.v1.ProductsRequest;
+  return proto.menu.v1.ProductsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.admin.v1.DeleteMenuRequest} msg The message object to deserialize into.
+ * @param {!proto.menu.v1.ProductsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.admin.v1.DeleteMenuRequest}
+ * @return {!proto.menu.v1.ProductsRequest}
  */
-proto.admin.v1.DeleteMenuRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.menu.v1.ProductsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -106,7 +106,7 @@ proto.admin.v1.DeleteMenuRequest.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
+      msg.setCategoryId(value);
       break;
     default:
       reader.skipField();
@@ -121,9 +121,9 @@ proto.admin.v1.DeleteMenuRequest.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.admin.v1.DeleteMenuRequest.prototype.serializeBinary = function() {
+proto.menu.v1.ProductsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.admin.v1.DeleteMenuRequest.serializeBinaryToWriter(this, writer);
+  proto.menu.v1.ProductsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -131,13 +131,13 @@ proto.admin.v1.DeleteMenuRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.admin.v1.DeleteMenuRequest} message
+ * @param {!proto.menu.v1.ProductsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.admin.v1.DeleteMenuRequest.serializeBinaryToWriter = function(message, writer) {
+proto.menu.v1.ProductsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
+  f = message.getCategoryId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -148,19 +148,19 @@ proto.admin.v1.DeleteMenuRequest.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string id = 1;
+ * optional string category_id = 1;
  * @return {string}
  */
-proto.admin.v1.DeleteMenuRequest.prototype.getId = function() {
+proto.menu.v1.ProductsRequest.prototype.getCategoryId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.admin.v1.DeleteMenuRequest} returns this
+ * @return {!proto.menu.v1.ProductsRequest} returns this
  */
-proto.admin.v1.DeleteMenuRequest.prototype.setId = function(value) {
+proto.menu.v1.ProductsRequest.prototype.setCategoryId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

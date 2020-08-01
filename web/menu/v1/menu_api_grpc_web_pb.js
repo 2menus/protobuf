@@ -16,7 +16,7 @@ const grpc = {};
 grpc.web = require('grpc-web');
 
 
-var menu_v1_menu_pb = require('./menu/v1/menu_pb.js')
+var menu_v1_menu_pb = require('../../menu/v1/menu_pb.js')
 const proto = {};
 proto.menu = {};
 proto.menu.v1 = require('./menu_api_pb.js');

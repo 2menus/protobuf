@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as menu_v1_menu_pb from './menu/v1/menu_pb';
+import * as menu_v1_menu_pb from '../../menu/v1/menu_pb';
 
 import {
   CategoriesRequest,

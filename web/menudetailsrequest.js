@@ -1,4 +1,4 @@
-// source: menu_api.proto
+// source: menu/v1/menu_api.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.menu.v1.ProductsRequest');
+goog.provide('proto.menu.v1.MenuDetailsRequest');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,16 +24,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.menu.v1.ProductsRequest = function(opt_data) {
+proto.menu.v1.MenuDetailsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.menu.v1.ProductsRequest, jspb.Message);
+goog.inherits(proto.menu.v1.MenuDetailsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.menu.v1.ProductsRequest.displayName = 'proto.menu.v1.ProductsRequest';
+  proto.menu.v1.MenuDetailsRequest.displayName = 'proto.menu.v1.MenuDetailsRequest';
 }
 
 
@@ -51,8 +51,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.menu.v1.ProductsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.menu.v1.ProductsRequest.toObject(opt_includeInstance, this);
+proto.menu.v1.MenuDetailsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.menu.v1.MenuDetailsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -61,13 +61,13 @@ proto.menu.v1.ProductsRequest.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.menu.v1.ProductsRequest} msg The msg instance to transform.
+ * @param {!proto.menu.v1.MenuDetailsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.v1.ProductsRequest.toObject = function(includeInstance, msg) {
+proto.menu.v1.MenuDetailsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    menuId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -81,23 +81,23 @@ proto.menu.v1.ProductsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.menu.v1.ProductsRequest}
+ * @return {!proto.menu.v1.MenuDetailsRequest}
  */
-proto.menu.v1.ProductsRequest.deserializeBinary = function(bytes) {
+proto.menu.v1.MenuDetailsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.menu.v1.ProductsRequest;
-  return proto.menu.v1.ProductsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.menu.v1.MenuDetailsRequest;
+  return proto.menu.v1.MenuDetailsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.menu.v1.ProductsRequest} msg The message object to deserialize into.
+ * @param {!proto.menu.v1.MenuDetailsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.menu.v1.ProductsRequest}
+ * @return {!proto.menu.v1.MenuDetailsRequest}
  */
-proto.menu.v1.ProductsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.menu.v1.MenuDetailsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -106,7 +106,7 @@ proto.menu.v1.ProductsRequest.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCategoryId(value);
+      msg.setMenuId(value);
       break;
     default:
       reader.skipField();
@@ -121,9 +121,9 @@ proto.menu.v1.ProductsRequest.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.menu.v1.ProductsRequest.prototype.serializeBinary = function() {
+proto.menu.v1.MenuDetailsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.menu.v1.ProductsRequest.serializeBinaryToWriter(this, writer);
+  proto.menu.v1.MenuDetailsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -131,13 +131,13 @@ proto.menu.v1.ProductsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.menu.v1.ProductsRequest} message
+ * @param {!proto.menu.v1.MenuDetailsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.menu.v1.ProductsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.menu.v1.MenuDetailsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCategoryId();
+  f = message.getMenuId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -148,19 +148,19 @@ proto.menu.v1.ProductsRequest.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional string category_id = 1;
+ * optional string menu_id = 1;
  * @return {string}
  */
-proto.menu.v1.ProductsRequest.prototype.getCategoryId = function() {
+proto.menu.v1.MenuDetailsRequest.prototype.getMenuId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.menu.v1.ProductsRequest} returns this
+ * @return {!proto.menu.v1.MenuDetailsRequest} returns this
  */
-proto.menu.v1.ProductsRequest.prototype.setCategoryId = function(value) {
+proto.menu.v1.MenuDetailsRequest.prototype.setMenuId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
