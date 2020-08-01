@@ -109,8 +109,8 @@ export class Product extends jspb.Message {
   getPrice(): number;
   setPrice(value: number): Product;
 
-  getItemDescription(): string;
-  setItemDescription(value: string): Product;
+  getDescription(): string;
+  setDescription(value: string): Product;
 
   getPic(): string;
   setPic(value: string): Product;
@@ -129,7 +129,7 @@ export namespace Product {
     name: string,
     fullName: string,
     price: number,
-    itemDescription: string,
+    description: string,
     pic: string,
   }
 }

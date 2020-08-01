@@ -847,7 +847,7 @@ proto.menu.v1.Product.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     fullName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     price: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    itemDescription: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     pic: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
@@ -903,7 +903,7 @@ proto.menu.v1.Product.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setItemDescription(value);
+      msg.setDescription(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -966,7 +966,7 @@ proto.menu.v1.Product.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getItemDescription();
+  f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -1056,10 +1056,10 @@ proto.menu.v1.Product.prototype.setPrice = function(value) {
 
 
 /**
- * optional string item_description = 5;
+ * optional string description = 5;
  * @return {string}
  */
-proto.menu.v1.Product.prototype.getItemDescription = function() {
+proto.menu.v1.Product.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1068,7 +1068,7 @@ proto.menu.v1.Product.prototype.getItemDescription = function() {
  * @param {string} value
  * @return {!proto.menu.v1.Product} returns this
  */
-proto.menu.v1.Product.prototype.setItemDescription = function(value) {
+proto.menu.v1.Product.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 

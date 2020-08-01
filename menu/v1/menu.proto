@@ -30,6 +30,6 @@ message Product {
     string name = 2;
     string full_name = 3;
     float  price = 4;
-    string item_description = 5;
+    string description = 5;
     string pic = 6;
 }
