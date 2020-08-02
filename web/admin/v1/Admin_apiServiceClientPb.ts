@@ -13,15 +13,15 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as menu_v1_menu_pb from '../../menu/v1/menu_pb';
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-
 import {
   CreateMenuRequest,
+  CreateMenuResponse,
   DeleteMenuRequest,
-  UpdateMenuRequest} from './admin_api_pb';
+  DeleteMenuResponse,
+  UpdateMenuRequest,
+  UpdateMenuResponse} from './admin_api_pb';
 
-export class AdminClient {
+export class AdminDataLoaderClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
@@ -41,32 +41,32 @@ export class AdminClient {
   }
 
   methodInfoCreateMenu = new grpcWeb.AbstractClientBase.MethodInfo(
-    menu_v1_menu_pb.Menu,
+    CreateMenuResponse,
     (request: CreateMenuRequest) => {
       return request.serializeBinary();
     },
-    menu_v1_menu_pb.Menu.deserializeBinary
+    CreateMenuResponse.deserializeBinary
   );
 
   createMenu(
     request: CreateMenuRequest,
-    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Menu>;
+    metadata: grpcWeb.Metadata | null): Promise<CreateMenuResponse>;
 
   createMenu(
     request: CreateMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Menu) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Menu>;
+               response: CreateMenuResponse) => void): grpcWeb.ClientReadableStream<CreateMenuResponse>;
 
   createMenu(
     request: CreateMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Menu) => void) {
+               response: CreateMenuResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/admin.v1.Admin/CreateMenu',
+          '/admin.v1.AdminDataLoader/CreateMenu',
         request,
         metadata || {},
         this.methodInfoCreateMenu,
@@ -74,39 +74,39 @@ export class AdminClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/admin.v1.Admin/CreateMenu',
+      '/admin.v1.AdminDataLoader/CreateMenu',
     request,
     metadata || {},
     this.methodInfoCreateMenu);
   }
 
   methodInfoUpdateMenu = new grpcWeb.AbstractClientBase.MethodInfo(
-    menu_v1_menu_pb.Menu,
+    UpdateMenuResponse,
     (request: UpdateMenuRequest) => {
       return request.serializeBinary();
     },
-    menu_v1_menu_pb.Menu.deserializeBinary
+    UpdateMenuResponse.deserializeBinary
   );
 
   updateMenu(
     request: UpdateMenuRequest,
-    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Menu>;
+    metadata: grpcWeb.Metadata | null): Promise<UpdateMenuResponse>;
 
   updateMenu(
     request: UpdateMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Menu) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Menu>;
+               response: UpdateMenuResponse) => void): grpcWeb.ClientReadableStream<UpdateMenuResponse>;
 
   updateMenu(
     request: UpdateMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Menu) => void) {
+               response: UpdateMenuResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/admin.v1.Admin/UpdateMenu',
+          '/admin.v1.AdminDataLoader/UpdateMenu',
         request,
         metadata || {},
         this.methodInfoUpdateMenu,
@@ -114,39 +114,39 @@ export class AdminClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/admin.v1.Admin/UpdateMenu',
+      '/admin.v1.AdminDataLoader/UpdateMenu',
     request,
     metadata || {},
     this.methodInfoUpdateMenu);
   }
 
   methodInfoDeleteMenu = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
+    DeleteMenuResponse,
     (request: DeleteMenuRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    DeleteMenuResponse.deserializeBinary
   );
 
   deleteMenu(
     request: DeleteMenuRequest,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+    metadata: grpcWeb.Metadata | null): Promise<DeleteMenuResponse>;
 
   deleteMenu(
     request: DeleteMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: DeleteMenuResponse) => void): grpcWeb.ClientReadableStream<DeleteMenuResponse>;
 
   deleteMenu(
     request: DeleteMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: DeleteMenuResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/admin.v1.Admin/DeleteMenu',
+          '/admin.v1.AdminDataLoader/DeleteMenu',
         request,
         metadata || {},
         this.methodInfoDeleteMenu,
@@ -154,7 +154,7 @@ export class AdminClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/admin.v1.Admin/DeleteMenu',
+      '/admin.v1.AdminDataLoader/DeleteMenu',
     request,
     metadata || {},
     this.methodInfoDeleteMenu);

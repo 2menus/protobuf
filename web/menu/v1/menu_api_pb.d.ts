@@ -58,9 +58,32 @@ export namespace MenuDetailsRequest {
   }
 }
 
+export class MenuDetailsResponse extends jspb.Message {
+  getMenu(): menu_v1_menu_pb.Menu | undefined;
+  setMenu(value?: menu_v1_menu_pb.Menu): MenuDetailsResponse;
+  hasMenu(): boolean;
+  clearMenu(): MenuDetailsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MenuDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MenuDetailsResponse): MenuDetailsResponse.AsObject;
+  static serializeBinaryToWriter(message: MenuDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MenuDetailsResponse;
+  static deserializeBinaryFromReader(message: MenuDetailsResponse, reader: jspb.BinaryReader): MenuDetailsResponse;
+}
+
+export namespace MenuDetailsResponse {
+  export type AsObject = {
+    menu?: menu_v1_menu_pb.Menu.AsObject,
+  }
+}
+
 export class CategoriesRequest extends jspb.Message {
   getMenuId(): string;
   setMenuId(value: string): CategoriesRequest;
+
+  getOwnerId(): string;
+  setOwnerId(value: string): CategoriesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CategoriesRequest.AsObject;
@@ -73,6 +96,7 @@ export class CategoriesRequest extends jspb.Message {
 export namespace CategoriesRequest {
   export type AsObject = {
     menuId: string,
+    ownerId: string,
   }
 }
 
@@ -114,9 +138,32 @@ export namespace CategoryDetailsRequest {
   }
 }
 
+export class CategoryDetailsResponse extends jspb.Message {
+  getCategory(): menu_v1_menu_pb.Category | undefined;
+  setCategory(value?: menu_v1_menu_pb.Category): CategoryDetailsResponse;
+  hasCategory(): boolean;
+  clearCategory(): CategoryDetailsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CategoryDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CategoryDetailsResponse): CategoryDetailsResponse.AsObject;
+  static serializeBinaryToWriter(message: CategoryDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CategoryDetailsResponse;
+  static deserializeBinaryFromReader(message: CategoryDetailsResponse, reader: jspb.BinaryReader): CategoryDetailsResponse;
+}
+
+export namespace CategoryDetailsResponse {
+  export type AsObject = {
+    category?: menu_v1_menu_pb.Category.AsObject,
+  }
+}
+
 export class ProductsRequest extends jspb.Message {
   getCategoryId(): string;
   setCategoryId(value: string): ProductsRequest;
+
+  getOwnerId(): string;
+  setOwnerId(value: string): ProductsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductsRequest.AsObject;
@@ -129,6 +176,7 @@ export class ProductsRequest extends jspb.Message {
 export namespace ProductsRequest {
   export type AsObject = {
     categoryId: string,
+    ownerId: string,
   }
 }
 
@@ -167,6 +215,26 @@ export class ProductDetailsRequest extends jspb.Message {
 export namespace ProductDetailsRequest {
   export type AsObject = {
     productId: string,
+  }
+}
+
+export class ProductDetailsResponse extends jspb.Message {
+  getProduct(): menu_v1_menu_pb.Product | undefined;
+  setProduct(value?: menu_v1_menu_pb.Product): ProductDetailsResponse;
+  hasProduct(): boolean;
+  clearProduct(): ProductDetailsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductDetailsResponse): ProductDetailsResponse.AsObject;
+  static serializeBinaryToWriter(message: ProductDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductDetailsResponse;
+  static deserializeBinaryFromReader(message: ProductDetailsResponse, reader: jspb.BinaryReader): ProductDetailsResponse;
+}
+
+export namespace ProductDetailsResponse {
+  export type AsObject = {
+    product?: menu_v1_menu_pb.Product.AsObject,
   }
 }
 

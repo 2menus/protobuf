@@ -15,10 +15,6 @@
 const grpc = {};
 grpc.web = require('grpc-web');
 
-
-var menu_v1_menu_pb = require('../../menu/v1/menu_pb.js')
-
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
 const proto = {};
 proto.admin = {};
 proto.admin.v1 = require('./admin_api_pb.js');
@@ -31,7 +27,7 @@ proto.admin.v1 = require('./admin_api_pb.js');
  * @struct
  * @final
  */
-proto.admin.v1.AdminClient =
+proto.admin.v1.AdminDataLoaderClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options['format'] = 'text';
@@ -57,7 +53,7 @@ proto.admin.v1.AdminClient =
  * @struct
  * @final
  */
-proto.admin.v1.AdminPromiseClient =
+proto.admin.v1.AdminDataLoaderPromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options['format'] = 'text';
@@ -79,13 +75,13 @@ proto.admin.v1.AdminPromiseClient =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.admin.v1.CreateMenuRequest,
- *   !proto.menu.v1.Menu>}
+ *   !proto.admin.v1.CreateMenuResponse>}
  */
-const methodDescriptor_Admin_CreateMenu = new grpc.web.MethodDescriptor(
-  '/admin.v1.Admin/CreateMenu',
+const methodDescriptor_AdminDataLoader_CreateMenu = new grpc.web.MethodDescriptor(
+  '/admin.v1.AdminDataLoader/CreateMenu',
   grpc.web.MethodType.UNARY,
   proto.admin.v1.CreateMenuRequest,
-  menu_v1_menu_pb.Menu,
+  proto.admin.v1.CreateMenuResponse,
   /**
    * @param {!proto.admin.v1.CreateMenuRequest} request
    * @return {!Uint8Array}
@@ -93,7 +89,7 @@ const methodDescriptor_Admin_CreateMenu = new grpc.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Menu.deserializeBinary
+  proto.admin.v1.CreateMenuResponse.deserializeBinary
 );
 
 
@@ -101,10 +97,10 @@ const methodDescriptor_Admin_CreateMenu = new grpc.web.MethodDescriptor(
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.admin.v1.CreateMenuRequest,
- *   !proto.menu.v1.Menu>}
+ *   !proto.admin.v1.CreateMenuResponse>}
  */
-const methodInfo_Admin_CreateMenu = new grpc.web.AbstractClientBase.MethodInfo(
-  menu_v1_menu_pb.Menu,
+const methodInfo_AdminDataLoader_CreateMenu = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.admin.v1.CreateMenuResponse,
   /**
    * @param {!proto.admin.v1.CreateMenuRequest} request
    * @return {!Uint8Array}
@@ -112,7 +108,7 @@ const methodInfo_Admin_CreateMenu = new grpc.web.AbstractClientBase.MethodInfo(
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Menu.deserializeBinary
+  proto.admin.v1.CreateMenuResponse.deserializeBinary
 );
 
 
@@ -121,18 +117,18 @@ const methodInfo_Admin_CreateMenu = new grpc.web.AbstractClientBase.MethodInfo(
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.Menu)}
+ * @param {function(?grpc.web.Error, ?proto.admin.v1.CreateMenuResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Menu>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.admin.v1.CreateMenuResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.admin.v1.AdminClient.prototype.createMenu =
+proto.admin.v1.AdminDataLoaderClient.prototype.createMenu =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/admin.v1.Admin/CreateMenu',
+      '/admin.v1.AdminDataLoader/CreateMenu',
       request,
       metadata || {},
-      methodDescriptor_Admin_CreateMenu,
+      methodDescriptor_AdminDataLoader_CreateMenu,
       callback);
 };
 
@@ -142,16 +138,16 @@ proto.admin.v1.AdminClient.prototype.createMenu =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.Menu>}
+ * @return {!Promise<!proto.admin.v1.CreateMenuResponse>}
  *     A native promise that resolves to the response
  */
-proto.admin.v1.AdminPromiseClient.prototype.createMenu =
+proto.admin.v1.AdminDataLoaderPromiseClient.prototype.createMenu =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/admin.v1.Admin/CreateMenu',
+      '/admin.v1.AdminDataLoader/CreateMenu',
       request,
       metadata || {},
-      methodDescriptor_Admin_CreateMenu);
+      methodDescriptor_AdminDataLoader_CreateMenu);
 };
 
 
@@ -159,13 +155,13 @@ proto.admin.v1.AdminPromiseClient.prototype.createMenu =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.admin.v1.UpdateMenuRequest,
- *   !proto.menu.v1.Menu>}
+ *   !proto.admin.v1.UpdateMenuResponse>}
  */
-const methodDescriptor_Admin_UpdateMenu = new grpc.web.MethodDescriptor(
-  '/admin.v1.Admin/UpdateMenu',
+const methodDescriptor_AdminDataLoader_UpdateMenu = new grpc.web.MethodDescriptor(
+  '/admin.v1.AdminDataLoader/UpdateMenu',
   grpc.web.MethodType.UNARY,
   proto.admin.v1.UpdateMenuRequest,
-  menu_v1_menu_pb.Menu,
+  proto.admin.v1.UpdateMenuResponse,
   /**
    * @param {!proto.admin.v1.UpdateMenuRequest} request
    * @return {!Uint8Array}
@@ -173,7 +169,7 @@ const methodDescriptor_Admin_UpdateMenu = new grpc.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Menu.deserializeBinary
+  proto.admin.v1.UpdateMenuResponse.deserializeBinary
 );
 
 
@@ -181,10 +177,10 @@ const methodDescriptor_Admin_UpdateMenu = new grpc.web.MethodDescriptor(
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.admin.v1.UpdateMenuRequest,
- *   !proto.menu.v1.Menu>}
+ *   !proto.admin.v1.UpdateMenuResponse>}
  */
-const methodInfo_Admin_UpdateMenu = new grpc.web.AbstractClientBase.MethodInfo(
-  menu_v1_menu_pb.Menu,
+const methodInfo_AdminDataLoader_UpdateMenu = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.admin.v1.UpdateMenuResponse,
   /**
    * @param {!proto.admin.v1.UpdateMenuRequest} request
    * @return {!Uint8Array}
@@ -192,7 +188,7 @@ const methodInfo_Admin_UpdateMenu = new grpc.web.AbstractClientBase.MethodInfo(
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Menu.deserializeBinary
+  proto.admin.v1.UpdateMenuResponse.deserializeBinary
 );
 
 
@@ -201,18 +197,18 @@ const methodInfo_Admin_UpdateMenu = new grpc.web.AbstractClientBase.MethodInfo(
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.Menu)}
+ * @param {function(?grpc.web.Error, ?proto.admin.v1.UpdateMenuResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Menu>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.admin.v1.UpdateMenuResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.admin.v1.AdminClient.prototype.updateMenu =
+proto.admin.v1.AdminDataLoaderClient.prototype.updateMenu =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/admin.v1.Admin/UpdateMenu',
+      '/admin.v1.AdminDataLoader/UpdateMenu',
       request,
       metadata || {},
-      methodDescriptor_Admin_UpdateMenu,
+      methodDescriptor_AdminDataLoader_UpdateMenu,
       callback);
 };
 
@@ -222,16 +218,16 @@ proto.admin.v1.AdminClient.prototype.updateMenu =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.Menu>}
+ * @return {!Promise<!proto.admin.v1.UpdateMenuResponse>}
  *     A native promise that resolves to the response
  */
-proto.admin.v1.AdminPromiseClient.prototype.updateMenu =
+proto.admin.v1.AdminDataLoaderPromiseClient.prototype.updateMenu =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/admin.v1.Admin/UpdateMenu',
+      '/admin.v1.AdminDataLoader/UpdateMenu',
       request,
       metadata || {},
-      methodDescriptor_Admin_UpdateMenu);
+      methodDescriptor_AdminDataLoader_UpdateMenu);
 };
 
 
@@ -239,13 +235,13 @@ proto.admin.v1.AdminPromiseClient.prototype.updateMenu =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.admin.v1.DeleteMenuRequest,
- *   !proto.google.protobuf.Empty>}
+ *   !proto.admin.v1.DeleteMenuResponse>}
  */
-const methodDescriptor_Admin_DeleteMenu = new grpc.web.MethodDescriptor(
-  '/admin.v1.Admin/DeleteMenu',
+const methodDescriptor_AdminDataLoader_DeleteMenu = new grpc.web.MethodDescriptor(
+  '/admin.v1.AdminDataLoader/DeleteMenu',
   grpc.web.MethodType.UNARY,
   proto.admin.v1.DeleteMenuRequest,
-  google_protobuf_empty_pb.Empty,
+  proto.admin.v1.DeleteMenuResponse,
   /**
    * @param {!proto.admin.v1.DeleteMenuRequest} request
    * @return {!Uint8Array}
@@ -253,7 +249,7 @@ const methodDescriptor_Admin_DeleteMenu = new grpc.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+  proto.admin.v1.DeleteMenuResponse.deserializeBinary
 );
 
 
@@ -261,10 +257,10 @@ const methodDescriptor_Admin_DeleteMenu = new grpc.web.MethodDescriptor(
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.admin.v1.DeleteMenuRequest,
- *   !proto.google.protobuf.Empty>}
+ *   !proto.admin.v1.DeleteMenuResponse>}
  */
-const methodInfo_Admin_DeleteMenu = new grpc.web.AbstractClientBase.MethodInfo(
-  google_protobuf_empty_pb.Empty,
+const methodInfo_AdminDataLoader_DeleteMenu = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.admin.v1.DeleteMenuResponse,
   /**
    * @param {!proto.admin.v1.DeleteMenuRequest} request
    * @return {!Uint8Array}
@@ -272,7 +268,7 @@ const methodInfo_Admin_DeleteMenu = new grpc.web.AbstractClientBase.MethodInfo(
   function(request) {
     return request.serializeBinary();
   },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+  proto.admin.v1.DeleteMenuResponse.deserializeBinary
 );
 
 
@@ -281,18 +277,18 @@ const methodInfo_Admin_DeleteMenu = new grpc.web.AbstractClientBase.MethodInfo(
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.google.protobuf.Empty)}
+ * @param {function(?grpc.web.Error, ?proto.admin.v1.DeleteMenuResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.admin.v1.DeleteMenuResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.admin.v1.AdminClient.prototype.deleteMenu =
+proto.admin.v1.AdminDataLoaderClient.prototype.deleteMenu =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/admin.v1.Admin/DeleteMenu',
+      '/admin.v1.AdminDataLoader/DeleteMenu',
       request,
       metadata || {},
-      methodDescriptor_Admin_DeleteMenu,
+      methodDescriptor_AdminDataLoader_DeleteMenu,
       callback);
 };
 
@@ -302,16 +298,16 @@ proto.admin.v1.AdminClient.prototype.deleteMenu =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.google.protobuf.Empty>}
+ * @return {!Promise<!proto.admin.v1.DeleteMenuResponse>}
  *     A native promise that resolves to the response
  */
-proto.admin.v1.AdminPromiseClient.prototype.deleteMenu =
+proto.admin.v1.AdminDataLoaderPromiseClient.prototype.deleteMenu =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/admin.v1.Admin/DeleteMenu',
+      '/admin.v1.AdminDataLoader/DeleteMenu',
       request,
       metadata || {},
-      methodDescriptor_Admin_DeleteMenu);
+      methodDescriptor_AdminDataLoader_DeleteMenu);
 };
 
 

@@ -157,13 +157,13 @@ proto.menu.v1.MenuDataProducerPromiseClient.prototype.menus =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.menu.v1.MenuDetailsRequest,
- *   !proto.menu.v1.Menu>}
+ *   !proto.menu.v1.MenuDetailsResponse>}
  */
 const methodDescriptor_MenuDataProducer_MenuDetails = new grpc.web.MethodDescriptor(
   '/menu.v1.MenuDataProducer/MenuDetails',
   grpc.web.MethodType.UNARY,
   proto.menu.v1.MenuDetailsRequest,
-  menu_v1_menu_pb.Menu,
+  proto.menu.v1.MenuDetailsResponse,
   /**
    * @param {!proto.menu.v1.MenuDetailsRequest} request
    * @return {!Uint8Array}
@@ -171,7 +171,7 @@ const methodDescriptor_MenuDataProducer_MenuDetails = new grpc.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Menu.deserializeBinary
+  proto.menu.v1.MenuDetailsResponse.deserializeBinary
 );
 
 
@@ -179,10 +179,10 @@ const methodDescriptor_MenuDataProducer_MenuDetails = new grpc.web.MethodDescrip
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.menu.v1.MenuDetailsRequest,
- *   !proto.menu.v1.Menu>}
+ *   !proto.menu.v1.MenuDetailsResponse>}
  */
 const methodInfo_MenuDataProducer_MenuDetails = new grpc.web.AbstractClientBase.MethodInfo(
-  menu_v1_menu_pb.Menu,
+  proto.menu.v1.MenuDetailsResponse,
   /**
    * @param {!proto.menu.v1.MenuDetailsRequest} request
    * @return {!Uint8Array}
@@ -190,7 +190,7 @@ const methodInfo_MenuDataProducer_MenuDetails = new grpc.web.AbstractClientBase.
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Menu.deserializeBinary
+  proto.menu.v1.MenuDetailsResponse.deserializeBinary
 );
 
 
@@ -199,9 +199,9 @@ const methodInfo_MenuDataProducer_MenuDetails = new grpc.web.AbstractClientBase.
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.Menu)}
+ * @param {function(?grpc.web.Error, ?proto.menu.v1.MenuDetailsResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Menu>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.MenuDetailsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.menu.v1.MenuDataProducerClient.prototype.menuDetails =
@@ -220,7 +220,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.menuDetails =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.Menu>}
+ * @return {!Promise<!proto.menu.v1.MenuDetailsResponse>}
  *     A native promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.menuDetails =
@@ -317,13 +317,13 @@ proto.menu.v1.MenuDataProducerPromiseClient.prototype.categories =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.menu.v1.CategoryDetailsRequest,
- *   !proto.menu.v1.Category>}
+ *   !proto.menu.v1.CategoryDetailsResponse>}
  */
 const methodDescriptor_MenuDataProducer_CategoryDetails = new grpc.web.MethodDescriptor(
   '/menu.v1.MenuDataProducer/CategoryDetails',
   grpc.web.MethodType.UNARY,
   proto.menu.v1.CategoryDetailsRequest,
-  menu_v1_menu_pb.Category,
+  proto.menu.v1.CategoryDetailsResponse,
   /**
    * @param {!proto.menu.v1.CategoryDetailsRequest} request
    * @return {!Uint8Array}
@@ -331,7 +331,7 @@ const methodDescriptor_MenuDataProducer_CategoryDetails = new grpc.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Category.deserializeBinary
+  proto.menu.v1.CategoryDetailsResponse.deserializeBinary
 );
 
 
@@ -339,10 +339,10 @@ const methodDescriptor_MenuDataProducer_CategoryDetails = new grpc.web.MethodDes
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.menu.v1.CategoryDetailsRequest,
- *   !proto.menu.v1.Category>}
+ *   !proto.menu.v1.CategoryDetailsResponse>}
  */
 const methodInfo_MenuDataProducer_CategoryDetails = new grpc.web.AbstractClientBase.MethodInfo(
-  menu_v1_menu_pb.Category,
+  proto.menu.v1.CategoryDetailsResponse,
   /**
    * @param {!proto.menu.v1.CategoryDetailsRequest} request
    * @return {!Uint8Array}
@@ -350,7 +350,7 @@ const methodInfo_MenuDataProducer_CategoryDetails = new grpc.web.AbstractClientB
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Category.deserializeBinary
+  proto.menu.v1.CategoryDetailsResponse.deserializeBinary
 );
 
 
@@ -359,9 +359,9 @@ const methodInfo_MenuDataProducer_CategoryDetails = new grpc.web.AbstractClientB
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.Category)}
+ * @param {function(?grpc.web.Error, ?proto.menu.v1.CategoryDetailsResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Category>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.CategoryDetailsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.menu.v1.MenuDataProducerClient.prototype.categoryDetails =
@@ -380,7 +380,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.categoryDetails =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.Category>}
+ * @return {!Promise<!proto.menu.v1.CategoryDetailsResponse>}
  *     A native promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.categoryDetails =
@@ -477,13 +477,13 @@ proto.menu.v1.MenuDataProducerPromiseClient.prototype.products =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.menu.v1.ProductDetailsRequest,
- *   !proto.menu.v1.Product>}
+ *   !proto.menu.v1.ProductDetailsResponse>}
  */
 const methodDescriptor_MenuDataProducer_ProductDetails = new grpc.web.MethodDescriptor(
   '/menu.v1.MenuDataProducer/ProductDetails',
   grpc.web.MethodType.UNARY,
   proto.menu.v1.ProductDetailsRequest,
-  menu_v1_menu_pb.Product,
+  proto.menu.v1.ProductDetailsResponse,
   /**
    * @param {!proto.menu.v1.ProductDetailsRequest} request
    * @return {!Uint8Array}
@@ -491,7 +491,7 @@ const methodDescriptor_MenuDataProducer_ProductDetails = new grpc.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Product.deserializeBinary
+  proto.menu.v1.ProductDetailsResponse.deserializeBinary
 );
 
 
@@ -499,10 +499,10 @@ const methodDescriptor_MenuDataProducer_ProductDetails = new grpc.web.MethodDesc
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.menu.v1.ProductDetailsRequest,
- *   !proto.menu.v1.Product>}
+ *   !proto.menu.v1.ProductDetailsResponse>}
  */
 const methodInfo_MenuDataProducer_ProductDetails = new grpc.web.AbstractClientBase.MethodInfo(
-  menu_v1_menu_pb.Product,
+  proto.menu.v1.ProductDetailsResponse,
   /**
    * @param {!proto.menu.v1.ProductDetailsRequest} request
    * @return {!Uint8Array}
@@ -510,7 +510,7 @@ const methodInfo_MenuDataProducer_ProductDetails = new grpc.web.AbstractClientBa
   function(request) {
     return request.serializeBinary();
   },
-  menu_v1_menu_pb.Product.deserializeBinary
+  proto.menu.v1.ProductDetailsResponse.deserializeBinary
 );
 
 
@@ -519,9 +519,9 @@ const methodInfo_MenuDataProducer_ProductDetails = new grpc.web.AbstractClientBa
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.menu.v1.Product)}
+ * @param {function(?grpc.web.Error, ?proto.menu.v1.ProductDetailsResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.Product>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.ProductDetailsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.menu.v1.MenuDataProducerClient.prototype.productDetails =
@@ -540,7 +540,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.productDetails =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.menu.v1.Product>}
+ * @return {!Promise<!proto.menu.v1.ProductDetailsResponse>}
  *     A native promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.productDetails =

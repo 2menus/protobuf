@@ -5,6 +5,7 @@ option go_package = "github.com/2menus/protobuf/menu/v1";
 
 import "menu/v1/menu.proto";
 
+// MENU
 message MenusRequest {
     string owner_id = 1;
 }
@@ -17,21 +18,32 @@ message MenuDetailsRequest {
     string menu_id = 1;
 }
 
+message MenuDetailsResponse {
+    Menu menu = 1;
+}
+
+// CATEGORY
 message CategoriesRequest {
     string menu_id = 1;
+    string owner_id = 2;
 }
 
 message CategoriesResponse {
     repeated Category categories = 1;
 }
 
-// TODO: DELETE IT PROBABLY IN FUTURE
 message CategoryDetailsRequest {
     string category_id = 1;
 }
 
+message CategoryDetailsResponse {
+    Category category = 1;
+}
+
+// PRODUCT
 message ProductsRequest {
     string category_id = 1;
+    string owner_id = 2;
 }
 
 message ProductsResponse {
@@ -42,16 +54,20 @@ message ProductDetailsRequest {
     string product_id = 1;
 }
 
+message ProductDetailsResponse {
+    Product product = 1;
+}
+
 service MenuDataProducer {
     // Menu methods
     rpc Menus(MenusRequest) returns (MenusResponse) {};
-    rpc MenuDetails(MenuDetailsRequest) returns (Menu) {};
+    rpc MenuDetails(MenuDetailsRequest) returns (MenuDetailsResponse) {};
 
     // Category methods
     rpc Categories(CategoriesRequest) returns (CategoriesResponse) {};
-    rpc CategoryDetails(CategoryDetailsRequest) returns (Category) {};
+    rpc CategoryDetails(CategoryDetailsRequest) returns (CategoryDetailsResponse) {};
 
     // Product methods
     rpc Products(ProductsRequest) returns (ProductsResponse) {};
-    rpc ProductDetails(ProductDetailsRequest) returns (Product) {};
+    rpc ProductDetails(ProductDetailsRequest) returns (ProductDetailsResponse) {};
 }

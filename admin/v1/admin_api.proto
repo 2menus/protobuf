@@ -3,8 +3,8 @@ syntax = "proto3";
 package admin.v1;
 option go_package = "github.com/2menus/protobuf/admin/v1";
 
-import "menu/v1/menu.proto";
-import "google/protobuf/empty.proto";
+// import "menu/v1/menu.proto";
+// import "google/protobuf/empty.proto";
 
 message CreateMenuRequest {
     string id = 1;
@@ -13,18 +13,24 @@ message CreateMenuRequest {
     string country = 4;
 }
 
+message CreateMenuResponse {}
+
 message UpdateMenuRequest {
     string id = 1;
     string full_name = 2;
     string country = 3;
 }
 
+message UpdateMenuResponse {}
+
 message DeleteMenuRequest {
     string id = 1;
 }
 
-service Admin {
-    rpc CreateMenu(CreateMenuRequest) returns (menu.v1.Menu) {};
-    rpc UpdateMenu(UpdateMenuRequest) returns (menu.v1.Menu) {};
-    rpc DeleteMenu(DeleteMenuRequest) returns (google.protobuf.Empty) {};
+message DeleteMenuResponse {}
+
+service AdminDataLoader {
+    rpc CreateMenu(CreateMenuRequest) returns (CreateMenuResponse) {};
+    rpc UpdateMenu(UpdateMenuRequest) returns (UpdateMenuResponse) {};
+    rpc DeleteMenu(DeleteMenuRequest) returns (DeleteMenuResponse) {};
 }

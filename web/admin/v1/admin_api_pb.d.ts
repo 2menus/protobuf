@@ -1,8 +1,5 @@
 import * as jspb from "google-protobuf"
 
-import * as menu_v1_menu_pb from '../../menu/v1/menu_pb';
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-
 export class CreateMenuRequest extends jspb.Message {
   getId(): string;
   setId(value: string): CreateMenuRequest;
@@ -33,6 +30,20 @@ export namespace CreateMenuRequest {
   }
 }
 
+export class CreateMenuResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateMenuResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateMenuResponse): CreateMenuResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateMenuResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateMenuResponse;
+  static deserializeBinaryFromReader(message: CreateMenuResponse, reader: jspb.BinaryReader): CreateMenuResponse;
+}
+
+export namespace CreateMenuResponse {
+  export type AsObject = {
+  }
+}
+
 export class UpdateMenuRequest extends jspb.Message {
   getId(): string;
   setId(value: string): UpdateMenuRequest;
@@ -59,6 +70,20 @@ export namespace UpdateMenuRequest {
   }
 }
 
+export class UpdateMenuResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateMenuResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateMenuResponse): UpdateMenuResponse.AsObject;
+  static serializeBinaryToWriter(message: UpdateMenuResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateMenuResponse;
+  static deserializeBinaryFromReader(message: UpdateMenuResponse, reader: jspb.BinaryReader): UpdateMenuResponse;
+}
+
+export namespace UpdateMenuResponse {
+  export type AsObject = {
+  }
+}
+
 export class DeleteMenuRequest extends jspb.Message {
   getId(): string;
   setId(value: string): DeleteMenuRequest;
@@ -74,6 +99,20 @@ export class DeleteMenuRequest extends jspb.Message {
 export namespace DeleteMenuRequest {
   export type AsObject = {
     id: string,
+  }
+}
+
+export class DeleteMenuResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteMenuResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteMenuResponse): DeleteMenuResponse.AsObject;
+  static serializeBinaryToWriter(message: DeleteMenuResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteMenuResponse;
+  static deserializeBinaryFromReader(message: DeleteMenuResponse, reader: jspb.BinaryReader): DeleteMenuResponse;
+}
+
+export namespace DeleteMenuResponse {
+  export type AsObject = {
   }
 }
 

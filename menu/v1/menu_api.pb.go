@@ -29,6 +29,7 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
+// MENU
 type MenusRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -170,18 +171,67 @@ func (x *MenuDetailsRequest) GetMenuId() string {
 	return ""
 }
 
+type MenuDetailsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Menu *Menu `protobuf:"bytes,1,opt,name=menu,proto3" json:"menu,omitempty"`
+}
+
+func (x *MenuDetailsResponse) Reset() {
+	*x = MenuDetailsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_menu_v1_menu_api_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MenuDetailsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MenuDetailsResponse) ProtoMessage() {}
+
+func (x *MenuDetailsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_menu_v1_menu_api_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MenuDetailsResponse.ProtoReflect.Descriptor instead.
+func (*MenuDetailsResponse) Descriptor() ([]byte, []int) {
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *MenuDetailsResponse) GetMenu() *Menu {
+	if x != nil {
+		return x.Menu
+	}
+	return nil
+}
+
+// CATEGORY
 type CategoriesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MenuId string `protobuf:"bytes,1,opt,name=menu_id,json=menuId,proto3" json:"menu_id,omitempty"`
+	MenuId  string `protobuf:"bytes,1,opt,name=menu_id,json=menuId,proto3" json:"menu_id,omitempty"`
+	OwnerId string `protobuf:"bytes,2,opt,name=owner_id,json=ownerId,proto3" json:"owner_id,omitempty"`
 }
 
 func (x *CategoriesRequest) Reset() {
 	*x = CategoriesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_menu_v1_menu_api_proto_msgTypes[3]
+		mi := &file_menu_v1_menu_api_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -194,7 +244,7 @@ func (x *CategoriesRequest) String() string {
 func (*CategoriesRequest) ProtoMessage() {}
 
 func (x *CategoriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_v1_menu_api_proto_msgTypes[3]
+	mi := &file_menu_v1_menu_api_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -207,12 +257,19 @@ func (x *CategoriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CategoriesRequest.ProtoReflect.Descriptor instead.
 func (*CategoriesRequest) Descriptor() ([]byte, []int) {
-	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{3}
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CategoriesRequest) GetMenuId() string {
 	if x != nil {
 		return x.MenuId
+	}
+	return ""
+}
+
+func (x *CategoriesRequest) GetOwnerId() string {
+	if x != nil {
+		return x.OwnerId
 	}
 	return ""
 }
@@ -228,7 +285,7 @@ type CategoriesResponse struct {
 func (x *CategoriesResponse) Reset() {
 	*x = CategoriesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_menu_v1_menu_api_proto_msgTypes[4]
+		mi := &file_menu_v1_menu_api_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -241,7 +298,7 @@ func (x *CategoriesResponse) String() string {
 func (*CategoriesResponse) ProtoMessage() {}
 
 func (x *CategoriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_v1_menu_api_proto_msgTypes[4]
+	mi := &file_menu_v1_menu_api_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -254,7 +311,7 @@ func (x *CategoriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CategoriesResponse.ProtoReflect.Descriptor instead.
 func (*CategoriesResponse) Descriptor() ([]byte, []int) {
-	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{4}
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CategoriesResponse) GetCategories() []*Category {
@@ -264,7 +321,6 @@ func (x *CategoriesResponse) GetCategories() []*Category {
 	return nil
 }
 
-// TODO: DELETE IT PROBABLY IN FUTURE
 type CategoryDetailsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -276,7 +332,7 @@ type CategoryDetailsRequest struct {
 func (x *CategoryDetailsRequest) Reset() {
 	*x = CategoryDetailsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_menu_v1_menu_api_proto_msgTypes[5]
+		mi := &file_menu_v1_menu_api_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -289,7 +345,7 @@ func (x *CategoryDetailsRequest) String() string {
 func (*CategoryDetailsRequest) ProtoMessage() {}
 
 func (x *CategoryDetailsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_v1_menu_api_proto_msgTypes[5]
+	mi := &file_menu_v1_menu_api_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +358,7 @@ func (x *CategoryDetailsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CategoryDetailsRequest.ProtoReflect.Descriptor instead.
 func (*CategoryDetailsRequest) Descriptor() ([]byte, []int) {
-	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{5}
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CategoryDetailsRequest) GetCategoryId() string {
@@ -312,18 +368,67 @@ func (x *CategoryDetailsRequest) GetCategoryId() string {
 	return ""
 }
 
+type CategoryDetailsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Category *Category `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
+}
+
+func (x *CategoryDetailsResponse) Reset() {
+	*x = CategoryDetailsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_menu_v1_menu_api_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CategoryDetailsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CategoryDetailsResponse) ProtoMessage() {}
+
+func (x *CategoryDetailsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_menu_v1_menu_api_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CategoryDetailsResponse.ProtoReflect.Descriptor instead.
+func (*CategoryDetailsResponse) Descriptor() ([]byte, []int) {
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CategoryDetailsResponse) GetCategory() *Category {
+	if x != nil {
+		return x.Category
+	}
+	return nil
+}
+
+// PRODUCT
 type ProductsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	CategoryId string `protobuf:"bytes,1,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
+	OwnerId    string `protobuf:"bytes,2,opt,name=owner_id,json=ownerId,proto3" json:"owner_id,omitempty"`
 }
 
 func (x *ProductsRequest) Reset() {
 	*x = ProductsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_menu_v1_menu_api_proto_msgTypes[6]
+		mi := &file_menu_v1_menu_api_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -336,7 +441,7 @@ func (x *ProductsRequest) String() string {
 func (*ProductsRequest) ProtoMessage() {}
 
 func (x *ProductsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_v1_menu_api_proto_msgTypes[6]
+	mi := &file_menu_v1_menu_api_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -349,12 +454,19 @@ func (x *ProductsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductsRequest.ProtoReflect.Descriptor instead.
 func (*ProductsRequest) Descriptor() ([]byte, []int) {
-	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{6}
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ProductsRequest) GetCategoryId() string {
 	if x != nil {
 		return x.CategoryId
+	}
+	return ""
+}
+
+func (x *ProductsRequest) GetOwnerId() string {
+	if x != nil {
+		return x.OwnerId
 	}
 	return ""
 }
@@ -370,7 +482,7 @@ type ProductsResponse struct {
 func (x *ProductsResponse) Reset() {
 	*x = ProductsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_menu_v1_menu_api_proto_msgTypes[7]
+		mi := &file_menu_v1_menu_api_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +495,7 @@ func (x *ProductsResponse) String() string {
 func (*ProductsResponse) ProtoMessage() {}
 
 func (x *ProductsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_v1_menu_api_proto_msgTypes[7]
+	mi := &file_menu_v1_menu_api_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +508,7 @@ func (x *ProductsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductsResponse.ProtoReflect.Descriptor instead.
 func (*ProductsResponse) Descriptor() ([]byte, []int) {
-	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{7}
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ProductsResponse) GetProducts() []*Product {
@@ -417,7 +529,7 @@ type ProductDetailsRequest struct {
 func (x *ProductDetailsRequest) Reset() {
 	*x = ProductDetailsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_menu_v1_menu_api_proto_msgTypes[8]
+		mi := &file_menu_v1_menu_api_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +542,7 @@ func (x *ProductDetailsRequest) String() string {
 func (*ProductDetailsRequest) ProtoMessage() {}
 
 func (x *ProductDetailsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_v1_menu_api_proto_msgTypes[8]
+	mi := &file_menu_v1_menu_api_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +555,7 @@ func (x *ProductDetailsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductDetailsRequest.ProtoReflect.Descriptor instead.
 func (*ProductDetailsRequest) Descriptor() ([]byte, []int) {
-	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{8}
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ProductDetailsRequest) GetProductId() string {
@@ -451,6 +563,53 @@ func (x *ProductDetailsRequest) GetProductId() string {
 		return x.ProductId
 	}
 	return ""
+}
+
+type ProductDetailsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Product *Product `protobuf:"bytes,1,opt,name=product,proto3" json:"product,omitempty"`
+}
+
+func (x *ProductDetailsResponse) Reset() {
+	*x = ProductDetailsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_menu_v1_menu_api_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ProductDetailsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductDetailsResponse) ProtoMessage() {}
+
+func (x *ProductDetailsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_menu_v1_menu_api_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductDetailsResponse.ProtoReflect.Descriptor instead.
+func (*ProductDetailsResponse) Descriptor() ([]byte, []int) {
+	return file_menu_v1_menu_api_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *ProductDetailsResponse) GetProduct() *Product {
+	if x != nil {
+		return x.Product
+	}
+	return nil
 }
 
 var File_menu_v1_menu_api_proto protoreflect.FileDescriptor
@@ -468,58 +627,77 @@ var file_menu_v1_menu_api_proto_rawDesc = []byte{
 	0x05, 0x6d, 0x65, 0x6e, 0x75, 0x73, 0x22, 0x2d, 0x0a, 0x12, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x65,
 	0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07,
 	0x6d, 0x65, 0x6e, 0x75, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d,
-	0x65, 0x6e, 0x75, 0x49, 0x64, 0x22, 0x2c, 0x0a, 0x11, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72,
-	0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x6d, 0x65,
-	0x6e, 0x75, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x65, 0x6e,
-	0x75, 0x49, 0x64, 0x22, 0x47, 0x0a, 0x12, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x31, 0x0a, 0x0a, 0x63, 0x61, 0x74,
-	0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x11, 0x2e,
-	0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79,
-	0x52, 0x0a, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x22, 0x39, 0x0a, 0x16,
+	0x65, 0x6e, 0x75, 0x49, 0x64, 0x22, 0x38, 0x0a, 0x13, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x65, 0x74,
+	0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x21, 0x0a, 0x04,
+	0x6d, 0x65, 0x6e, 0x75, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x6d, 0x65, 0x6e,
+	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x52, 0x04, 0x6d, 0x65, 0x6e, 0x75, 0x22,
+	0x47, 0x0a, 0x11, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x6d, 0x65, 0x6e, 0x75, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x65, 0x6e, 0x75, 0x49, 0x64, 0x12, 0x19, 0x0a,
+	0x08, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x07, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x49, 0x64, 0x22, 0x47, 0x0a, 0x12, 0x43, 0x61, 0x74, 0x65,
+	0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x31,
+	0x0a, 0x0a, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x11, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74,
+	0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x0a, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65,
+	0x73, 0x22, 0x39, 0x0a, 0x16, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x44, 0x65, 0x74,
+	0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63,
+	0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0a, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x49, 0x64, 0x22, 0x48, 0x0a, 0x17,
 	0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f,
-	0x72, 0x79, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x61, 0x74,
-	0x65, 0x67, 0x6f, 0x72, 0x79, 0x49, 0x64, 0x22, 0x32, 0x0a, 0x0f, 0x50, 0x72, 0x6f, 0x64, 0x75,
-	0x63, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x61,
-	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x0a, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x49, 0x64, 0x22, 0x40, 0x0a, 0x10, 0x50,
-	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
-	0x2c, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
-	0x0b, 0x32, 0x10, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64,
-	0x75, 0x63, 0x74, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x22, 0x36, 0x0a,
-	0x15, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63,
-	0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x64,
-	0x75, 0x63, 0x74, 0x49, 0x64, 0x32, 0xa4, 0x03, 0x0a, 0x10, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x61,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x08, 0x63, 0x61, 0x74, 0x65, 0x67,
+	0x6f, 0x72, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x6d, 0x65, 0x6e, 0x75,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x08, 0x63, 0x61,
+	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x22, 0x4d, 0x0a, 0x0f, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
+	0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x61, 0x74,
+	0x65, 0x67, 0x6f, 0x72, 0x79, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a,
+	0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x49, 0x64, 0x12, 0x19, 0x0a, 0x08, 0x6f, 0x77,
+	0x6e, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6f, 0x77,
+	0x6e, 0x65, 0x72, 0x49, 0x64, 0x22, 0x40, 0x0a, 0x10, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2c, 0x0a, 0x08, 0x70, 0x72, 0x6f,
+	0x64, 0x75, 0x63, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x6d, 0x65,
+	0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52, 0x08, 0x70,
+	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x22, 0x36, 0x0a, 0x15, 0x50, 0x72, 0x6f, 0x64, 0x75,
+	0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x49, 0x64, 0x22,
+	0x44, 0x0a, 0x16, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2a, 0x0a, 0x07, 0x70, 0x72, 0x6f,
+	0x64, 0x75, 0x63, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x6d, 0x65, 0x6e,
+	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52, 0x07, 0x70, 0x72,
+	0x6f, 0x64, 0x75, 0x63, 0x74, 0x32, 0xd1, 0x03, 0x0a, 0x10, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x61,
 	0x74, 0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x65, 0x72, 0x12, 0x38, 0x0a, 0x05, 0x4d, 0x65,
 	0x6e, 0x75, 0x73, 0x12, 0x15, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65,
 	0x6e, 0x75, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x6d, 0x65, 0x6e,
 	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x3b, 0x0a, 0x0b, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x65, 0x74, 0x61,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x4a, 0x0a, 0x0b, 0x4d, 0x65, 0x6e, 0x75, 0x44, 0x65, 0x74, 0x61,
 	0x69, 0x6c, 0x73, 0x12, 0x1b, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65,
 	0x6e, 0x75, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x0d, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x22,
-	0x00, 0x12, 0x47, 0x0a, 0x0a, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x12,
-	0x1a, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f,
-	0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x6d, 0x65,
-	0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x47, 0x0a, 0x0f, 0x43, 0x61,
-	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1f, 0x2e,
-	0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x11,
+	0x1a, 0x1c, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x44,
+	0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x47, 0x0a, 0x0a, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x12, 0x1a,
 	0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72,
-	0x79, 0x22, 0x00, 0x12, 0x41, 0x0a, 0x08, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x12,
-	0x18, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
-	0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x6d, 0x65, 0x6e, 0x75,
-	0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x0e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
-	0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1e, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e,
-	0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
-	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x10, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e,
-	0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x22, 0x00, 0x42, 0x24, 0x5a, 0x22,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x32, 0x6d, 0x65, 0x6e, 0x75,
-	0x73, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x6d, 0x65, 0x6e, 0x75, 0x2f,
-	0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x6d, 0x65, 0x6e,
+	0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x56, 0x0a, 0x0f, 0x43, 0x61, 0x74,
+	0x65, 0x67, 0x6f, 0x72, 0x79, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1f, 0x2e, 0x6d,
+	0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x44,
+	0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e,
+	0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79,
+	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x41, 0x0a, 0x08, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x12, 0x18, 0x2e,
+	0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76,
+	0x31, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x53, 0x0a, 0x0e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x44,
+	0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x1e, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31,
+	0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1f, 0x2e, 0x6d, 0x65, 0x6e, 0x75, 0x2e, 0x76, 0x31,
+	0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x24, 0x5a, 0x22, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x32, 0x6d, 0x65, 0x6e, 0x75, 0x73, 0x2f, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x6d, 0x65, 0x6e, 0x75, 0x2f, 0x76, 0x31, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -534,42 +712,48 @@ func file_menu_v1_menu_api_proto_rawDescGZIP() []byte {
 	return file_menu_v1_menu_api_proto_rawDescData
 }
 
-var file_menu_v1_menu_api_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_menu_v1_menu_api_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_menu_v1_menu_api_proto_goTypes = []interface{}{
-	(*MenusRequest)(nil),           // 0: menu.v1.MenusRequest
-	(*MenusResponse)(nil),          // 1: menu.v1.MenusResponse
-	(*MenuDetailsRequest)(nil),     // 2: menu.v1.MenuDetailsRequest
-	(*CategoriesRequest)(nil),      // 3: menu.v1.CategoriesRequest
-	(*CategoriesResponse)(nil),     // 4: menu.v1.CategoriesResponse
-	(*CategoryDetailsRequest)(nil), // 5: menu.v1.CategoryDetailsRequest
-	(*ProductsRequest)(nil),        // 6: menu.v1.ProductsRequest
-	(*ProductsResponse)(nil),       // 7: menu.v1.ProductsResponse
-	(*ProductDetailsRequest)(nil),  // 8: menu.v1.ProductDetailsRequest
-	(*Menu)(nil),                   // 9: menu.v1.Menu
-	(*Category)(nil),               // 10: menu.v1.Category
-	(*Product)(nil),                // 11: menu.v1.Product
+	(*MenusRequest)(nil),            // 0: menu.v1.MenusRequest
+	(*MenusResponse)(nil),           // 1: menu.v1.MenusResponse
+	(*MenuDetailsRequest)(nil),      // 2: menu.v1.MenuDetailsRequest
+	(*MenuDetailsResponse)(nil),     // 3: menu.v1.MenuDetailsResponse
+	(*CategoriesRequest)(nil),       // 4: menu.v1.CategoriesRequest
+	(*CategoriesResponse)(nil),      // 5: menu.v1.CategoriesResponse
+	(*CategoryDetailsRequest)(nil),  // 6: menu.v1.CategoryDetailsRequest
+	(*CategoryDetailsResponse)(nil), // 7: menu.v1.CategoryDetailsResponse
+	(*ProductsRequest)(nil),         // 8: menu.v1.ProductsRequest
+	(*ProductsResponse)(nil),        // 9: menu.v1.ProductsResponse
+	(*ProductDetailsRequest)(nil),   // 10: menu.v1.ProductDetailsRequest
+	(*ProductDetailsResponse)(nil),  // 11: menu.v1.ProductDetailsResponse
+	(*Menu)(nil),                    // 12: menu.v1.Menu
+	(*Category)(nil),                // 13: menu.v1.Category
+	(*Product)(nil),                 // 14: menu.v1.Product
 }
 var file_menu_v1_menu_api_proto_depIdxs = []int32{
-	9,  // 0: menu.v1.MenusResponse.menus:type_name -> menu.v1.Menu
-	10, // 1: menu.v1.CategoriesResponse.categories:type_name -> menu.v1.Category
-	11, // 2: menu.v1.ProductsResponse.products:type_name -> menu.v1.Product
-	0,  // 3: menu.v1.MenuDataProducer.Menus:input_type -> menu.v1.MenusRequest
-	2,  // 4: menu.v1.MenuDataProducer.MenuDetails:input_type -> menu.v1.MenuDetailsRequest
-	3,  // 5: menu.v1.MenuDataProducer.Categories:input_type -> menu.v1.CategoriesRequest
-	5,  // 6: menu.v1.MenuDataProducer.CategoryDetails:input_type -> menu.v1.CategoryDetailsRequest
-	6,  // 7: menu.v1.MenuDataProducer.Products:input_type -> menu.v1.ProductsRequest
-	8,  // 8: menu.v1.MenuDataProducer.ProductDetails:input_type -> menu.v1.ProductDetailsRequest
-	1,  // 9: menu.v1.MenuDataProducer.Menus:output_type -> menu.v1.MenusResponse
-	9,  // 10: menu.v1.MenuDataProducer.MenuDetails:output_type -> menu.v1.Menu
-	4,  // 11: menu.v1.MenuDataProducer.Categories:output_type -> menu.v1.CategoriesResponse
-	10, // 12: menu.v1.MenuDataProducer.CategoryDetails:output_type -> menu.v1.Category
-	7,  // 13: menu.v1.MenuDataProducer.Products:output_type -> menu.v1.ProductsResponse
-	11, // 14: menu.v1.MenuDataProducer.ProductDetails:output_type -> menu.v1.Product
-	9,  // [9:15] is the sub-list for method output_type
-	3,  // [3:9] is the sub-list for method input_type
-	3,  // [3:3] is the sub-list for extension type_name
-	3,  // [3:3] is the sub-list for extension extendee
-	0,  // [0:3] is the sub-list for field type_name
+	12, // 0: menu.v1.MenusResponse.menus:type_name -> menu.v1.Menu
+	12, // 1: menu.v1.MenuDetailsResponse.menu:type_name -> menu.v1.Menu
+	13, // 2: menu.v1.CategoriesResponse.categories:type_name -> menu.v1.Category
+	13, // 3: menu.v1.CategoryDetailsResponse.category:type_name -> menu.v1.Category
+	14, // 4: menu.v1.ProductsResponse.products:type_name -> menu.v1.Product
+	14, // 5: menu.v1.ProductDetailsResponse.product:type_name -> menu.v1.Product
+	0,  // 6: menu.v1.MenuDataProducer.Menus:input_type -> menu.v1.MenusRequest
+	2,  // 7: menu.v1.MenuDataProducer.MenuDetails:input_type -> menu.v1.MenuDetailsRequest
+	4,  // 8: menu.v1.MenuDataProducer.Categories:input_type -> menu.v1.CategoriesRequest
+	6,  // 9: menu.v1.MenuDataProducer.CategoryDetails:input_type -> menu.v1.CategoryDetailsRequest
+	8,  // 10: menu.v1.MenuDataProducer.Products:input_type -> menu.v1.ProductsRequest
+	10, // 11: menu.v1.MenuDataProducer.ProductDetails:input_type -> menu.v1.ProductDetailsRequest
+	1,  // 12: menu.v1.MenuDataProducer.Menus:output_type -> menu.v1.MenusResponse
+	3,  // 13: menu.v1.MenuDataProducer.MenuDetails:output_type -> menu.v1.MenuDetailsResponse
+	5,  // 14: menu.v1.MenuDataProducer.Categories:output_type -> menu.v1.CategoriesResponse
+	7,  // 15: menu.v1.MenuDataProducer.CategoryDetails:output_type -> menu.v1.CategoryDetailsResponse
+	9,  // 16: menu.v1.MenuDataProducer.Products:output_type -> menu.v1.ProductsResponse
+	11, // 17: menu.v1.MenuDataProducer.ProductDetails:output_type -> menu.v1.ProductDetailsResponse
+	12, // [12:18] is the sub-list for method output_type
+	6,  // [6:12] is the sub-list for method input_type
+	6,  // [6:6] is the sub-list for extension type_name
+	6,  // [6:6] is the sub-list for extension extendee
+	0,  // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_menu_v1_menu_api_proto_init() }
@@ -616,7 +800,7 @@ func file_menu_v1_menu_api_proto_init() {
 			}
 		}
 		file_menu_v1_menu_api_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CategoriesRequest); i {
+			switch v := v.(*MenuDetailsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -628,7 +812,7 @@ func file_menu_v1_menu_api_proto_init() {
 			}
 		}
 		file_menu_v1_menu_api_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CategoriesResponse); i {
+			switch v := v.(*CategoriesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -640,7 +824,7 @@ func file_menu_v1_menu_api_proto_init() {
 			}
 		}
 		file_menu_v1_menu_api_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CategoryDetailsRequest); i {
+			switch v := v.(*CategoriesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -652,7 +836,7 @@ func file_menu_v1_menu_api_proto_init() {
 			}
 		}
 		file_menu_v1_menu_api_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProductsRequest); i {
+			switch v := v.(*CategoryDetailsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -664,7 +848,7 @@ func file_menu_v1_menu_api_proto_init() {
 			}
 		}
 		file_menu_v1_menu_api_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProductsResponse); i {
+			switch v := v.(*CategoryDetailsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -676,7 +860,43 @@ func file_menu_v1_menu_api_proto_init() {
 			}
 		}
 		file_menu_v1_menu_api_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProductsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_menu_v1_menu_api_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProductsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_menu_v1_menu_api_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductDetailsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_menu_v1_menu_api_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProductDetailsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -694,7 +914,7 @@ func file_menu_v1_menu_api_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_menu_v1_menu_api_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -722,13 +942,13 @@ const _ = grpc.SupportPackageIsVersion6
 type MenuDataProducerClient interface {
 	// Menu methods
 	Menus(ctx context.Context, in *MenusRequest, opts ...grpc.CallOption) (*MenusResponse, error)
-	MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*Menu, error)
+	MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*MenuDetailsResponse, error)
 	// Category methods
 	Categories(ctx context.Context, in *CategoriesRequest, opts ...grpc.CallOption) (*CategoriesResponse, error)
-	CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*Category, error)
+	CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*CategoryDetailsResponse, error)
 	// Product methods
 	Products(ctx context.Context, in *ProductsRequest, opts ...grpc.CallOption) (*ProductsResponse, error)
-	ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*Product, error)
+	ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*ProductDetailsResponse, error)
 }
 
 type menuDataProducerClient struct {
@@ -748,8 +968,8 @@ func (c *menuDataProducerClient) Menus(ctx context.Context, in *MenusRequest, op
 	return out, nil
 }
 
-func (c *menuDataProducerClient) MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*Menu, error) {
-	out := new(Menu)
+func (c *menuDataProducerClient) MenuDetails(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*MenuDetailsResponse, error) {
+	out := new(MenuDetailsResponse)
 	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/MenuDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -766,8 +986,8 @@ func (c *menuDataProducerClient) Categories(ctx context.Context, in *CategoriesR
 	return out, nil
 }
 
-func (c *menuDataProducerClient) CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*Category, error) {
-	out := new(Category)
+func (c *menuDataProducerClient) CategoryDetails(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*CategoryDetailsResponse, error) {
+	out := new(CategoryDetailsResponse)
 	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/CategoryDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -784,8 +1004,8 @@ func (c *menuDataProducerClient) Products(ctx context.Context, in *ProductsReque
 	return out, nil
 }
 
-func (c *menuDataProducerClient) ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*Product, error) {
-	out := new(Product)
+func (c *menuDataProducerClient) ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*ProductDetailsResponse, error) {
+	out := new(ProductDetailsResponse)
 	err := c.cc.Invoke(ctx, "/menu.v1.MenuDataProducer/ProductDetails", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -797,13 +1017,13 @@ func (c *menuDataProducerClient) ProductDetails(ctx context.Context, in *Product
 type MenuDataProducerServer interface {
 	// Menu methods
 	Menus(context.Context, *MenusRequest) (*MenusResponse, error)
-	MenuDetails(context.Context, *MenuDetailsRequest) (*Menu, error)
+	MenuDetails(context.Context, *MenuDetailsRequest) (*MenuDetailsResponse, error)
 	// Category methods
 	Categories(context.Context, *CategoriesRequest) (*CategoriesResponse, error)
-	CategoryDetails(context.Context, *CategoryDetailsRequest) (*Category, error)
+	CategoryDetails(context.Context, *CategoryDetailsRequest) (*CategoryDetailsResponse, error)
 	// Product methods
 	Products(context.Context, *ProductsRequest) (*ProductsResponse, error)
-	ProductDetails(context.Context, *ProductDetailsRequest) (*Product, error)
+	ProductDetails(context.Context, *ProductDetailsRequest) (*ProductDetailsResponse, error)
 }
 
 // UnimplementedMenuDataProducerServer can be embedded to have forward compatible implementations.
@@ -813,19 +1033,19 @@ type UnimplementedMenuDataProducerServer struct {
 func (*UnimplementedMenuDataProducerServer) Menus(context.Context, *MenusRequest) (*MenusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Menus not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) MenuDetails(context.Context, *MenuDetailsRequest) (*Menu, error) {
+func (*UnimplementedMenuDataProducerServer) MenuDetails(context.Context, *MenuDetailsRequest) (*MenuDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MenuDetails not implemented")
 }
 func (*UnimplementedMenuDataProducerServer) Categories(context.Context, *CategoriesRequest) (*CategoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Categories not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) CategoryDetails(context.Context, *CategoryDetailsRequest) (*Category, error) {
+func (*UnimplementedMenuDataProducerServer) CategoryDetails(context.Context, *CategoryDetailsRequest) (*CategoryDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CategoryDetails not implemented")
 }
 func (*UnimplementedMenuDataProducerServer) Products(context.Context, *ProductsRequest) (*ProductsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Products not implemented")
 }
-func (*UnimplementedMenuDataProducerServer) ProductDetails(context.Context, *ProductDetailsRequest) (*Product, error) {
+func (*UnimplementedMenuDataProducerServer) ProductDetails(context.Context, *ProductDetailsRequest) (*ProductDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductDetails not implemented")
 }
 

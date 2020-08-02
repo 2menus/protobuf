@@ -19,10 +19,13 @@ import {
   CategoriesRequest,
   CategoriesResponse,
   CategoryDetailsRequest,
+  CategoryDetailsResponse,
   MenuDetailsRequest,
+  MenuDetailsResponse,
   MenusRequest,
   MenusResponse,
   ProductDetailsRequest,
+  ProductDetailsResponse,
   ProductsRequest,
   ProductsResponse} from './menu_api_pb';
 
@@ -86,28 +89,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoMenuDetails = new grpcWeb.AbstractClientBase.MethodInfo(
-    menu_v1_menu_pb.Menu,
+    MenuDetailsResponse,
     (request: MenuDetailsRequest) => {
       return request.serializeBinary();
     },
-    menu_v1_menu_pb.Menu.deserializeBinary
+    MenuDetailsResponse.deserializeBinary
   );
 
   menuDetails(
     request: MenuDetailsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Menu>;
+    metadata: grpcWeb.Metadata | null): Promise<MenuDetailsResponse>;
 
   menuDetails(
     request: MenuDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Menu) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Menu>;
+               response: MenuDetailsResponse) => void): grpcWeb.ClientReadableStream<MenuDetailsResponse>;
 
   menuDetails(
     request: MenuDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Menu) => void) {
+               response: MenuDetailsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -166,28 +169,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoCategoryDetails = new grpcWeb.AbstractClientBase.MethodInfo(
-    menu_v1_menu_pb.Category,
+    CategoryDetailsResponse,
     (request: CategoryDetailsRequest) => {
       return request.serializeBinary();
     },
-    menu_v1_menu_pb.Category.deserializeBinary
+    CategoryDetailsResponse.deserializeBinary
   );
 
   categoryDetails(
     request: CategoryDetailsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Category>;
+    metadata: grpcWeb.Metadata | null): Promise<CategoryDetailsResponse>;
 
   categoryDetails(
     request: CategoryDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Category) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Category>;
+               response: CategoryDetailsResponse) => void): grpcWeb.ClientReadableStream<CategoryDetailsResponse>;
 
   categoryDetails(
     request: CategoryDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Category) => void) {
+               response: CategoryDetailsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -246,28 +249,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoProductDetails = new grpcWeb.AbstractClientBase.MethodInfo(
-    menu_v1_menu_pb.Product,
+    ProductDetailsResponse,
     (request: ProductDetailsRequest) => {
       return request.serializeBinary();
     },
-    menu_v1_menu_pb.Product.deserializeBinary
+    ProductDetailsResponse.deserializeBinary
   );
 
   productDetails(
     request: ProductDetailsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_pb.Product>;
+    metadata: grpcWeb.Metadata | null): Promise<ProductDetailsResponse>;
 
   productDetails(
     request: ProductDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Product) => void): grpcWeb.ClientReadableStream<menu_v1_menu_pb.Product>;
+               response: ProductDetailsResponse) => void): grpcWeb.ClientReadableStream<ProductDetailsResponse>;
 
   productDetails(
     request: ProductDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: menu_v1_menu_pb.Product) => void) {
+               response: ProductDetailsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
