@@ -3,9 +3,6 @@ import * as jspb from "google-protobuf"
 import * as menu_v1_menu_pb from '../../menu/v1/menu_pb';
 
 export class MenusRequest extends jspb.Message {
-  getOwnerId(): string;
-  setOwnerId(value: string): MenusRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MenusRequest.AsObject;
   static toObject(includeInstance: boolean, msg: MenusRequest): MenusRequest.AsObject;
@@ -16,7 +13,6 @@ export class MenusRequest extends jspb.Message {
 
 export namespace MenusRequest {
   export type AsObject = {
-    ownerId: string,
   }
 }
 
@@ -82,9 +78,6 @@ export class CategoriesRequest extends jspb.Message {
   getMenuId(): string;
   setMenuId(value: string): CategoriesRequest;
 
-  getOwnerId(): string;
-  setOwnerId(value: string): CategoriesRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CategoriesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CategoriesRequest): CategoriesRequest.AsObject;
@@ -96,7 +89,6 @@ export class CategoriesRequest extends jspb.Message {
 export namespace CategoriesRequest {
   export type AsObject = {
     menuId: string,
-    ownerId: string,
   }
 }
 
@@ -162,9 +154,6 @@ export class ProductsRequest extends jspb.Message {
   getCategoryId(): string;
   setCategoryId(value: string): ProductsRequest;
 
-  getOwnerId(): string;
-  setOwnerId(value: string): ProductsRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ProductsRequest): ProductsRequest.AsObject;
@@ -176,7 +165,6 @@ export class ProductsRequest extends jspb.Message {
 export namespace ProductsRequest {
   export type AsObject = {
     categoryId: string,
-    ownerId: string,
   }
 }
 

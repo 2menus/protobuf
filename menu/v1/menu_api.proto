@@ -6,9 +6,7 @@ option go_package = "github.com/2menus/protobuf/menu/v1";
 import "menu/v1/menu.proto";
 
 // MENU
-message MenusRequest {
-    string owner_id = 1;
-}
+message MenusRequest {}
 
 message MenusResponse {
     repeated Menu menus = 1;
@@ -25,7 +23,6 @@ message MenuDetailsResponse {
 // CATEGORY
 message CategoriesRequest {
     string menu_id = 1;
-    string owner_id = 2;
 }
 
 message CategoriesResponse {
@@ -43,7 +40,6 @@ message CategoryDetailsResponse {
 // PRODUCT
 message ProductsRequest {
     string category_id = 1;
-    string owner_id = 2;
 }
 
 message ProductsResponse {

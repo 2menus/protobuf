@@ -67,8 +67,7 @@ proto.menu.v1.ProductsRequest.prototype.toObject = function(opt_includeInstance)
  */
 proto.menu.v1.ProductsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    ownerId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    categoryId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -109,10 +108,6 @@ proto.menu.v1.ProductsRequest.deserializeBinaryFromReader = function(msg, reader
       var value = /** @type {string} */ (reader.readString());
       msg.setCategoryId(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOwnerId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -149,13 +144,6 @@ proto.menu.v1.ProductsRequest.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getOwnerId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -174,24 +162,6 @@ proto.menu.v1.ProductsRequest.prototype.getCategoryId = function() {
  */
 proto.menu.v1.ProductsRequest.prototype.setCategoryId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string owner_id = 2;
- * @return {string}
- */
-proto.menu.v1.ProductsRequest.prototype.getOwnerId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.menu.v1.ProductsRequest} returns this
- */
-proto.menu.v1.ProductsRequest.prototype.setOwnerId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
