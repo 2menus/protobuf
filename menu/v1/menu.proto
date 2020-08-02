@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package menu.v1;
+option go_package = "github.com/2menus/protobuf/menu/v1";
+
+message Country {
+    string name = 1;
+    string currency_code = 2;
+    string currency_symbol = 3;
+}
+
+message Menu {
+    string id = 1;
+    string name = 2;
+    string full_name = 3;
+    string owners_message = 4;
+    string top_card_image = 5;  
+    Country country = 6;
+}
+
+message Category {
+    string id = 1;
+    string name = 2;
+    string full_name = 3;
+    string pic = 4;
+}
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string full_name = 3;
+    float  price = 4;
+    string description = 5;
+    string pic = 6;
+}
