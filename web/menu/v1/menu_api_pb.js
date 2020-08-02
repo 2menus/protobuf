@@ -310,7 +310,7 @@ proto.menu.v1.MenusRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.menu.v1.MenusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    ownerId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -347,6 +347,10 @@ proto.menu.v1.MenusRequest.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwnerId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -376,6 +380,31 @@ proto.menu.v1.MenusRequest.prototype.serializeBinary = function() {
  */
 proto.menu.v1.MenusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOwnerId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string owner_id = 1;
+ * @return {string}
+ */
+proto.menu.v1.MenusRequest.prototype.getOwnerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.menu.v1.MenusRequest} returns this
+ */
+proto.menu.v1.MenusRequest.prototype.setOwnerId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

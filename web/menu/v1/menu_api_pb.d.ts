@@ -3,6 +3,9 @@ import * as jspb from "google-protobuf"
 import * as menu_v1_menu_pb from '../../menu/v1/menu_pb';
 
 export class MenusRequest extends jspb.Message {
+  getOwnerId(): string;
+  setOwnerId(value: string): MenusRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MenusRequest.AsObject;
   static toObject(includeInstance: boolean, msg: MenusRequest): MenusRequest.AsObject;
@@ -13,6 +16,7 @@ export class MenusRequest extends jspb.Message {
 
 export namespace MenusRequest {
   export type AsObject = {
+    ownerId: string,
   }
 }
 

@@ -6,7 +6,9 @@ option go_package = "github.com/2menus/protobuf/menu/v1";
 import "menu/v1/menu.proto";
 
 // MENU
-message MenusRequest {}
+message MenusRequest {
+    string owner_id = 1;
+}
 
 message MenusResponse {
     repeated Menu menus = 1;

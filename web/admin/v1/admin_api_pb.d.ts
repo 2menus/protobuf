@@ -1,9 +1,6 @@
 import * as jspb from "google-protobuf"
 
 export class CreateMenuRequest extends jspb.Message {
-  getId(): string;
-  setId(value: string): CreateMenuRequest;
-
   getName(): string;
   setName(value: string): CreateMenuRequest;
 
@@ -23,7 +20,6 @@ export class CreateMenuRequest extends jspb.Message {
 
 export namespace CreateMenuRequest {
   export type AsObject = {
-    id: string,
     name: string,
     fullName: string,
     country: string,
