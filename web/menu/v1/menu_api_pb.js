@@ -2067,7 +2067,7 @@ proto.menu.v1.CountriesRequest.prototype.toObject = function(opt_includeInstance
  */
 proto.menu.v1.CountriesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoryId: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -2104,10 +2104,6 @@ proto.menu.v1.CountriesRequest.deserializeBinaryFromReader = function(msg, reade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCategoryId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2137,31 +2133,6 @@ proto.menu.v1.CountriesRequest.prototype.serializeBinary = function() {
  */
 proto.menu.v1.CountriesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCategoryId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string category_id = 1;
- * @return {string}
- */
-proto.menu.v1.CountriesRequest.prototype.getCategoryId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.menu.v1.CountriesRequest} returns this
- */
-proto.menu.v1.CountriesRequest.prototype.setCategoryId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

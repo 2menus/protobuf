@@ -57,9 +57,7 @@ message ProductDetailsResponse {
 }
 
 // COUNTRIES
-message CountriesRequest {
-    string category_id = 1;
-}
+message CountriesRequest {}
 
 message CountriesResponse {
     repeated Country countries = 1;

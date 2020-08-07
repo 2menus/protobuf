@@ -231,9 +231,6 @@ export namespace ProductDetailsResponse {
 }
 
 export class CountriesRequest extends jspb.Message {
-  getCategoryId(): string;
-  setCategoryId(value: string): CountriesRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CountriesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CountriesRequest): CountriesRequest.AsObject;
@@ -244,7 +241,6 @@ export class CountriesRequest extends jspb.Message {
 
 export namespace CountriesRequest {
   export type AsObject = {
-    categoryId: string,
   }
 }
 
