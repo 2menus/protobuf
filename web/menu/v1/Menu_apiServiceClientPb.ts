@@ -20,6 +20,8 @@ import {
   CategoriesResponse,
   CategoryDetailsRequest,
   CategoryDetailsResponse,
+  CountriesRequest,
+  CountriesResponse,
   MenuDetailsRequest,
   MenuDetailsResponse,
   MenusRequest,
@@ -286,6 +288,46 @@ export class MenuDataProducerClient {
     request,
     metadata || {},
     this.methodInfoProductDetails);
+  }
+
+  methodInfoCountries = new grpcWeb.AbstractClientBase.MethodInfo(
+    CountriesResponse,
+    (request: CountriesRequest) => {
+      return request.serializeBinary();
+    },
+    CountriesResponse.deserializeBinary
+  );
+
+  countries(
+    request: CountriesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<CountriesResponse>;
+
+  countries(
+    request: CountriesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: CountriesResponse) => void): grpcWeb.ClientReadableStream<CountriesResponse>;
+
+  countries(
+    request: CountriesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: CountriesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/menu.v1.MenuDataProducer/Countries',
+        request,
+        metadata || {},
+        this.methodInfoCountries,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/menu.v1.MenuDataProducer/Countries',
+    request,
+    metadata || {},
+    this.methodInfoCountries);
   }
 
 }

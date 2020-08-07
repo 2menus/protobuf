@@ -230,3 +230,41 @@ export namespace ProductDetailsResponse {
   }
 }
 
+export class CountriesRequest extends jspb.Message {
+  getCategoryId(): string;
+  setCategoryId(value: string): CountriesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CountriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CountriesRequest): CountriesRequest.AsObject;
+  static serializeBinaryToWriter(message: CountriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CountriesRequest;
+  static deserializeBinaryFromReader(message: CountriesRequest, reader: jspb.BinaryReader): CountriesRequest;
+}
+
+export namespace CountriesRequest {
+  export type AsObject = {
+    categoryId: string,
+  }
+}
+
+export class CountriesResponse extends jspb.Message {
+  getCountriesList(): Array<menu_v1_menu_pb.Country>;
+  setCountriesList(value: Array<menu_v1_menu_pb.Country>): CountriesResponse;
+  clearCountriesList(): CountriesResponse;
+  addCountries(value?: menu_v1_menu_pb.Country, index?: number): menu_v1_menu_pb.Country;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CountriesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CountriesResponse): CountriesResponse.AsObject;
+  static serializeBinaryToWriter(message: CountriesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CountriesResponse;
+  static deserializeBinaryFromReader(message: CountriesResponse, reader: jspb.BinaryReader): CountriesResponse;
+}
+
+export namespace CountriesResponse {
+  export type AsObject = {
+    countriesList: Array<menu_v1_menu_pb.Country.AsObject>,
+  }
+}
+

@@ -50,6 +50,9 @@ export class UpdateMenuRequest extends jspb.Message {
   getCountry(): string;
   setCountry(value: string): UpdateMenuRequest;
 
+  getName(): string;
+  setName(value: string): UpdateMenuRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateMenuRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateMenuRequest): UpdateMenuRequest.AsObject;
@@ -63,6 +66,7 @@ export namespace UpdateMenuRequest {
     id: string,
     fullName: string,
     country: string,
+    name: string,
   }
 }
 
