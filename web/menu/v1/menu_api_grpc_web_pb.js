@@ -553,5 +553,85 @@ proto.menu.v1.MenuDataProducerPromiseClient.prototype.productDetails =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.menu.v1.CountriesRequest,
+ *   !proto.menu.v1.CountriesResponse>}
+ */
+const methodDescriptor_MenuDataProducer_Countries = new grpc.web.MethodDescriptor(
+  '/menu.v1.MenuDataProducer/Countries',
+  grpc.web.MethodType.UNARY,
+  proto.menu.v1.CountriesRequest,
+  proto.menu.v1.CountriesResponse,
+  /**
+   * @param {!proto.menu.v1.CountriesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.v1.CountriesResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.menu.v1.CountriesRequest,
+ *   !proto.menu.v1.CountriesResponse>}
+ */
+const methodInfo_MenuDataProducer_Countries = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.menu.v1.CountriesResponse,
+  /**
+   * @param {!proto.menu.v1.CountriesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.v1.CountriesResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.menu.v1.CountriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.menu.v1.CountriesResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v1.CountriesResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.menu.v1.MenuDataProducerClient.prototype.countries =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/menu.v1.MenuDataProducer/Countries',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataProducer_Countries,
+      callback);
+};
+
+
+/**
+ * @param {!proto.menu.v1.CountriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.menu.v1.CountriesResponse>}
+ *     A native promise that resolves to the response
+ */
+proto.menu.v1.MenuDataProducerPromiseClient.prototype.countries =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/menu.v1.MenuDataProducer/Countries',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataProducer_Countries);
+};
+
+
 module.exports = proto.menu.v1;
 

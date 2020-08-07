@@ -56,6 +56,13 @@ message ProductDetailsResponse {
     Product product = 1;
 }
 
+// COUNTRIES
+message CountriesRequest {}
+
+message CountriesResponse {
+    repeated Country countries = 1;
+}
+
 service MenuDataProducer {
     // Menu methods
     rpc Menus(MenusRequest) returns (MenusResponse) {};
@@ -68,4 +75,7 @@ service MenuDataProducer {
     // Product methods
     rpc Products(ProductsRequest) returns (ProductsResponse) {};
     rpc ProductDetails(ProductDetailsRequest) returns (ProductDetailsResponse) {};
+
+    // Country menthods
+    rpc Countries(CountriesRequest) returns (CountriesResponse) {};
 }

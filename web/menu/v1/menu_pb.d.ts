@@ -10,6 +10,9 @@ export class Country extends jspb.Message {
   getCurrencySymbol(): string;
   setCurrencySymbol(value: string): Country;
 
+  getFullName(): string;
+  setFullName(value: string): Country;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Country.AsObject;
   static toObject(includeInstance: boolean, msg: Country): Country.AsObject;
@@ -23,6 +26,7 @@ export namespace Country {
     name: string,
     currencyCode: string,
     currencySymbol: string,
+    fullName: string,
   }
 }
 
