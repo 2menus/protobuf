@@ -4,9 +4,11 @@ package menu.v1;
 option go_package = "github.com/2menus/protobuf/menu/v1";
 
 message Country {
+    // name here is a alpha2code
     string name = 1;
     string currency_code = 2;
     string currency_symbol = 3;
+    string full_name = 4;
 }
 
 message Menu {

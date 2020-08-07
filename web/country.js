@@ -69,7 +69,8 @@ proto.menu.v1.Country.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     currencyCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    currencySymbol: jspb.Message.getFieldWithDefault(msg, 3, "")
+    currencySymbol: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    fullName: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -118,6 +119,10 @@ proto.menu.v1.Country.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setCurrencySymbol(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFullName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -165,6 +170,13 @@ proto.menu.v1.Country.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getFullName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -222,6 +234,24 @@ proto.menu.v1.Country.prototype.getCurrencySymbol = function() {
  */
 proto.menu.v1.Country.prototype.setCurrencySymbol = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string full_name = 4;
+ * @return {string}
+ */
+proto.menu.v1.Country.prototype.getFullName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.menu.v1.Country} returns this
+ */
+proto.menu.v1.Country.prototype.setFullName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
