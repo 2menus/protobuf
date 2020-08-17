@@ -116,3 +116,119 @@ export namespace DeleteMenuResponse {
   }
 }
 
+export class CreateCategoryRequest extends jspb.Message {
+  getMenuId(): string;
+  setMenuId(value: string): CreateCategoryRequest;
+
+  getName(): string;
+  setName(value: string): CreateCategoryRequest;
+
+  getFullName(): string;
+  setFullName(value: string): CreateCategoryRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateCategoryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateCategoryRequest): CreateCategoryRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateCategoryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateCategoryRequest;
+  static deserializeBinaryFromReader(message: CreateCategoryRequest, reader: jspb.BinaryReader): CreateCategoryRequest;
+}
+
+export namespace CreateCategoryRequest {
+  export type AsObject = {
+    menuId: string,
+    name: string,
+    fullName: string,
+  }
+}
+
+export class CreateCategoryResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateCategoryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateCategoryResponse): CreateCategoryResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateCategoryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateCategoryResponse;
+  static deserializeBinaryFromReader(message: CreateCategoryResponse, reader: jspb.BinaryReader): CreateCategoryResponse;
+}
+
+export namespace CreateCategoryResponse {
+  export type AsObject = {
+  }
+}
+
+export class UpdateCategoryRequest extends jspb.Message {
+  getId(): string;
+  setId(value: string): UpdateCategoryRequest;
+
+  getMenuId(): string;
+  setMenuId(value: string): UpdateCategoryRequest;
+
+  getName(): string;
+  setName(value: string): UpdateCategoryRequest;
+
+  getFullName(): string;
+  setFullName(value: string): UpdateCategoryRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateCategoryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateCategoryRequest): UpdateCategoryRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateCategoryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateCategoryRequest;
+  static deserializeBinaryFromReader(message: UpdateCategoryRequest, reader: jspb.BinaryReader): UpdateCategoryRequest;
+}
+
+export namespace UpdateCategoryRequest {
+  export type AsObject = {
+    id: string,
+    menuId: string,
+    name: string,
+    fullName: string,
+  }
+}
+
+export class UpdateCategoryResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateCategoryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateCategoryResponse): UpdateCategoryResponse.AsObject;
+  static serializeBinaryToWriter(message: UpdateCategoryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateCategoryResponse;
+  static deserializeBinaryFromReader(message: UpdateCategoryResponse, reader: jspb.BinaryReader): UpdateCategoryResponse;
+}
+
+export namespace UpdateCategoryResponse {
+  export type AsObject = {
+  }
+}
+
+export class DeleteCategoryRequest extends jspb.Message {
+  getId(): string;
+  setId(value: string): DeleteCategoryRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteCategoryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteCategoryRequest): DeleteCategoryRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteCategoryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteCategoryRequest;
+  static deserializeBinaryFromReader(message: DeleteCategoryRequest, reader: jspb.BinaryReader): DeleteCategoryRequest;
+}
+
+export namespace DeleteCategoryRequest {
+  export type AsObject = {
+    id: string,
+  }
+}
+
+export class DeleteCategoryResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteCategoryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteCategoryResponse): DeleteCategoryResponse.AsObject;
+  static serializeBinaryToWriter(message: DeleteCategoryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteCategoryResponse;
+  static deserializeBinaryFromReader(message: DeleteCategoryResponse, reader: jspb.BinaryReader): DeleteCategoryResponse;
+}
+
+export namespace DeleteCategoryResponse {
+  export type AsObject = {
+  }
+}
+

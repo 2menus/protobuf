@@ -6,6 +6,7 @@ option go_package = "github.com/2menus/protobuf/admin/v1";
 // import "menu/v1/menu.proto";
 // import "google/protobuf/empty.proto";
 
+// MENU
 message CreateMenuRequest {
     string name = 1;
     string full_name = 2;
@@ -29,8 +30,36 @@ message DeleteMenuRequest {
 
 message DeleteMenuResponse {}
 
+// CATEGORIES
+message CreateCategoryRequest {
+    string menu_id = 1;
+    string name = 2;
+    string full_name = 3;
+}
+
+message CreateCategoryResponse {}
+
+message UpdateCategoryRequest {
+    string id = 1;
+    string menu_id = 2;
+    string name = 3;
+    string full_name = 4;
+}
+
+message UpdateCategoryResponse {}
+
+message DeleteCategoryRequest {
+    string id = 1;
+}
+
+message DeleteCategoryResponse {}
+
 service AdminDataLoader {
     rpc CreateMenu(CreateMenuRequest) returns (CreateMenuResponse) {};
     rpc UpdateMenu(UpdateMenuRequest) returns (UpdateMenuResponse) {};
     rpc DeleteMenu(DeleteMenuRequest) returns (DeleteMenuResponse) {};
+
+    rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {};
+    rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {};
+    rpc DeleteCategory(DeleteCategoryRequest) returns (DeleteCategoryResponse) {};
 }
