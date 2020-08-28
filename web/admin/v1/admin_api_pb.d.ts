@@ -232,3 +232,135 @@ export namespace DeleteCategoryResponse {
   }
 }
 
+export class CreateProductRequest extends jspb.Message {
+  getCategoryId(): string;
+  setCategoryId(value: string): CreateProductRequest;
+
+  getName(): string;
+  setName(value: string): CreateProductRequest;
+
+  getFullName(): string;
+  setFullName(value: string): CreateProductRequest;
+
+  getPrice(): number;
+  setPrice(value: number): CreateProductRequest;
+
+  getDescription(): string;
+  setDescription(value: string): CreateProductRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateProductRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateProductRequest): CreateProductRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateProductRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateProductRequest;
+  static deserializeBinaryFromReader(message: CreateProductRequest, reader: jspb.BinaryReader): CreateProductRequest;
+}
+
+export namespace CreateProductRequest {
+  export type AsObject = {
+    categoryId: string,
+    name: string,
+    fullName: string,
+    price: number,
+    description: string,
+  }
+}
+
+export class CreateProductResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateProductResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateProductResponse): CreateProductResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateProductResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateProductResponse;
+  static deserializeBinaryFromReader(message: CreateProductResponse, reader: jspb.BinaryReader): CreateProductResponse;
+}
+
+export namespace CreateProductResponse {
+  export type AsObject = {
+  }
+}
+
+export class UpdateProductRequest extends jspb.Message {
+  getId(): string;
+  setId(value: string): UpdateProductRequest;
+
+  getCategoryId(): string;
+  setCategoryId(value: string): UpdateProductRequest;
+
+  getName(): string;
+  setName(value: string): UpdateProductRequest;
+
+  getFullName(): string;
+  setFullName(value: string): UpdateProductRequest;
+
+  getPrice(): number;
+  setPrice(value: number): UpdateProductRequest;
+
+  getDescription(): string;
+  setDescription(value: string): UpdateProductRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateProductRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateProductRequest): UpdateProductRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateProductRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateProductRequest;
+  static deserializeBinaryFromReader(message: UpdateProductRequest, reader: jspb.BinaryReader): UpdateProductRequest;
+}
+
+export namespace UpdateProductRequest {
+  export type AsObject = {
+    id: string,
+    categoryId: string,
+    name: string,
+    fullName: string,
+    price: number,
+    description: string,
+  }
+}
+
+export class UpdateProductResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateProductResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateProductResponse): UpdateProductResponse.AsObject;
+  static serializeBinaryToWriter(message: UpdateProductResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateProductResponse;
+  static deserializeBinaryFromReader(message: UpdateProductResponse, reader: jspb.BinaryReader): UpdateProductResponse;
+}
+
+export namespace UpdateProductResponse {
+  export type AsObject = {
+  }
+}
+
+export class DeleteProductRequest extends jspb.Message {
+  getId(): string;
+  setId(value: string): DeleteProductRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteProductRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteProductRequest): DeleteProductRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteProductRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteProductRequest;
+  static deserializeBinaryFromReader(message: DeleteProductRequest, reader: jspb.BinaryReader): DeleteProductRequest;
+}
+
+export namespace DeleteProductRequest {
+  export type AsObject = {
+    id: string,
+  }
+}
+
+export class DeleteProductResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteProductResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteProductResponse): DeleteProductResponse.AsObject;
+  static serializeBinaryToWriter(message: DeleteProductResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteProductResponse;
+  static deserializeBinaryFromReader(message: DeleteProductResponse, reader: jspb.BinaryReader): DeleteProductResponse;
+}
+
+export namespace DeleteProductResponse {
+  export type AsObject = {
+  }
+}
+

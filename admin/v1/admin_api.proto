@@ -54,6 +54,34 @@ message DeleteCategoryRequest {
 
 message DeleteCategoryResponse {}
 
+// PRODUCTS
+message CreateProductRequest {
+    string category_id = 1;
+    string name = 2;
+    string full_name = 3;
+    float price = 4;
+    string description = 5;
+}
+
+message CreateProductResponse {}
+
+message UpdateProductRequest {
+    string id = 1;
+    string category_id = 2;
+    string name = 3;
+    string full_name = 4;
+    float price = 5;
+    string description = 6;
+}
+
+message UpdateProductResponse {}
+
+message DeleteProductRequest {
+    string id = 1;
+}
+
+message DeleteProductResponse {}
+
 service AdminDataLoader {
     rpc CreateMenu(CreateMenuRequest) returns (CreateMenuResponse) {};
     rpc UpdateMenu(UpdateMenuRequest) returns (UpdateMenuResponse) {};
@@ -62,4 +90,8 @@ service AdminDataLoader {
     rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {};
     rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {};
     rpc DeleteCategory(DeleteCategoryRequest) returns (DeleteCategoryResponse) {};
+
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {};
+    rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse) {};
+    rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {};
 }
