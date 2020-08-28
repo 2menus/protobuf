@@ -14,10 +14,16 @@
 import * as grpcWeb from 'grpc-web';
 
 import {
+  CreateCategoryRequest,
+  CreateCategoryResponse,
   CreateMenuRequest,
   CreateMenuResponse,
+  DeleteCategoryRequest,
+  DeleteCategoryResponse,
   DeleteMenuRequest,
   DeleteMenuResponse,
+  UpdateCategoryRequest,
+  UpdateCategoryResponse,
   UpdateMenuRequest,
   UpdateMenuResponse} from './admin_api_pb';
 
@@ -158,6 +164,126 @@ export class AdminDataLoaderClient {
     request,
     metadata || {},
     this.methodInfoDeleteMenu);
+  }
+
+  methodInfoCreateCategory = new grpcWeb.AbstractClientBase.MethodInfo(
+    CreateCategoryResponse,
+    (request: CreateCategoryRequest) => {
+      return request.serializeBinary();
+    },
+    CreateCategoryResponse.deserializeBinary
+  );
+
+  createCategory(
+    request: CreateCategoryRequest,
+    metadata: grpcWeb.Metadata | null): Promise<CreateCategoryResponse>;
+
+  createCategory(
+    request: CreateCategoryRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: CreateCategoryResponse) => void): grpcWeb.ClientReadableStream<CreateCategoryResponse>;
+
+  createCategory(
+    request: CreateCategoryRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: CreateCategoryResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/admin.v1.AdminDataLoader/CreateCategory',
+        request,
+        metadata || {},
+        this.methodInfoCreateCategory,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/admin.v1.AdminDataLoader/CreateCategory',
+    request,
+    metadata || {},
+    this.methodInfoCreateCategory);
+  }
+
+  methodInfoUpdateCategory = new grpcWeb.AbstractClientBase.MethodInfo(
+    UpdateCategoryResponse,
+    (request: UpdateCategoryRequest) => {
+      return request.serializeBinary();
+    },
+    UpdateCategoryResponse.deserializeBinary
+  );
+
+  updateCategory(
+    request: UpdateCategoryRequest,
+    metadata: grpcWeb.Metadata | null): Promise<UpdateCategoryResponse>;
+
+  updateCategory(
+    request: UpdateCategoryRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: UpdateCategoryResponse) => void): grpcWeb.ClientReadableStream<UpdateCategoryResponse>;
+
+  updateCategory(
+    request: UpdateCategoryRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: UpdateCategoryResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/admin.v1.AdminDataLoader/UpdateCategory',
+        request,
+        metadata || {},
+        this.methodInfoUpdateCategory,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/admin.v1.AdminDataLoader/UpdateCategory',
+    request,
+    metadata || {},
+    this.methodInfoUpdateCategory);
+  }
+
+  methodInfoDeleteCategory = new grpcWeb.AbstractClientBase.MethodInfo(
+    DeleteCategoryResponse,
+    (request: DeleteCategoryRequest) => {
+      return request.serializeBinary();
+    },
+    DeleteCategoryResponse.deserializeBinary
+  );
+
+  deleteCategory(
+    request: DeleteCategoryRequest,
+    metadata: grpcWeb.Metadata | null): Promise<DeleteCategoryResponse>;
+
+  deleteCategory(
+    request: DeleteCategoryRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: DeleteCategoryResponse) => void): grpcWeb.ClientReadableStream<DeleteCategoryResponse>;
+
+  deleteCategory(
+    request: DeleteCategoryRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: DeleteCategoryResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/admin.v1.AdminDataLoader/DeleteCategory',
+        request,
+        metadata || {},
+        this.methodInfoDeleteCategory,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/admin.v1.AdminDataLoader/DeleteCategory',
+    request,
+    metadata || {},
+    this.methodInfoDeleteCategory);
   }
 
 }
