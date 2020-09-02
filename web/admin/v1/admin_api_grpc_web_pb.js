@@ -551,5 +551,245 @@ proto.admin.v1.AdminDataLoaderPromiseClient.prototype.deleteCategory =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.admin.v1.CreateProductRequest,
+ *   !proto.admin.v1.CreateProductResponse>}
+ */
+const methodDescriptor_AdminDataLoader_CreateProduct = new grpc.web.MethodDescriptor(
+  '/admin.v1.AdminDataLoader/CreateProduct',
+  grpc.web.MethodType.UNARY,
+  proto.admin.v1.CreateProductRequest,
+  proto.admin.v1.CreateProductResponse,
+  /**
+   * @param {!proto.admin.v1.CreateProductRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.admin.v1.CreateProductResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.admin.v1.CreateProductRequest,
+ *   !proto.admin.v1.CreateProductResponse>}
+ */
+const methodInfo_AdminDataLoader_CreateProduct = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.admin.v1.CreateProductResponse,
+  /**
+   * @param {!proto.admin.v1.CreateProductRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.admin.v1.CreateProductResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.admin.v1.CreateProductRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.admin.v1.CreateProductResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.admin.v1.CreateProductResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.admin.v1.AdminDataLoaderClient.prototype.createProduct =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/admin.v1.AdminDataLoader/CreateProduct',
+      request,
+      metadata || {},
+      methodDescriptor_AdminDataLoader_CreateProduct,
+      callback);
+};
+
+
+/**
+ * @param {!proto.admin.v1.CreateProductRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.admin.v1.CreateProductResponse>}
+ *     A native promise that resolves to the response
+ */
+proto.admin.v1.AdminDataLoaderPromiseClient.prototype.createProduct =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/admin.v1.AdminDataLoader/CreateProduct',
+      request,
+      metadata || {},
+      methodDescriptor_AdminDataLoader_CreateProduct);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.admin.v1.UpdateProductRequest,
+ *   !proto.admin.v1.UpdateProductResponse>}
+ */
+const methodDescriptor_AdminDataLoader_UpdateProduct = new grpc.web.MethodDescriptor(
+  '/admin.v1.AdminDataLoader/UpdateProduct',
+  grpc.web.MethodType.UNARY,
+  proto.admin.v1.UpdateProductRequest,
+  proto.admin.v1.UpdateProductResponse,
+  /**
+   * @param {!proto.admin.v1.UpdateProductRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.admin.v1.UpdateProductResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.admin.v1.UpdateProductRequest,
+ *   !proto.admin.v1.UpdateProductResponse>}
+ */
+const methodInfo_AdminDataLoader_UpdateProduct = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.admin.v1.UpdateProductResponse,
+  /**
+   * @param {!proto.admin.v1.UpdateProductRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.admin.v1.UpdateProductResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.admin.v1.UpdateProductRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.admin.v1.UpdateProductResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.admin.v1.UpdateProductResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.admin.v1.AdminDataLoaderClient.prototype.updateProduct =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/admin.v1.AdminDataLoader/UpdateProduct',
+      request,
+      metadata || {},
+      methodDescriptor_AdminDataLoader_UpdateProduct,
+      callback);
+};
+
+
+/**
+ * @param {!proto.admin.v1.UpdateProductRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.admin.v1.UpdateProductResponse>}
+ *     A native promise that resolves to the response
+ */
+proto.admin.v1.AdminDataLoaderPromiseClient.prototype.updateProduct =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/admin.v1.AdminDataLoader/UpdateProduct',
+      request,
+      metadata || {},
+      methodDescriptor_AdminDataLoader_UpdateProduct);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.admin.v1.DeleteProductRequest,
+ *   !proto.admin.v1.DeleteProductResponse>}
+ */
+const methodDescriptor_AdminDataLoader_DeleteProduct = new grpc.web.MethodDescriptor(
+  '/admin.v1.AdminDataLoader/DeleteProduct',
+  grpc.web.MethodType.UNARY,
+  proto.admin.v1.DeleteProductRequest,
+  proto.admin.v1.DeleteProductResponse,
+  /**
+   * @param {!proto.admin.v1.DeleteProductRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.admin.v1.DeleteProductResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.admin.v1.DeleteProductRequest,
+ *   !proto.admin.v1.DeleteProductResponse>}
+ */
+const methodInfo_AdminDataLoader_DeleteProduct = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.admin.v1.DeleteProductResponse,
+  /**
+   * @param {!proto.admin.v1.DeleteProductRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.admin.v1.DeleteProductResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.admin.v1.DeleteProductRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.admin.v1.DeleteProductResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.admin.v1.DeleteProductResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.admin.v1.AdminDataLoaderClient.prototype.deleteProduct =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/admin.v1.AdminDataLoader/DeleteProduct',
+      request,
+      metadata || {},
+      methodDescriptor_AdminDataLoader_DeleteProduct,
+      callback);
+};
+
+
+/**
+ * @param {!proto.admin.v1.DeleteProductRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.admin.v1.DeleteProductResponse>}
+ *     A native promise that resolves to the response
+ */
+proto.admin.v1.AdminDataLoaderPromiseClient.prototype.deleteProduct =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/admin.v1.AdminDataLoader/DeleteProduct',
+      request,
+      metadata || {},
+      methodDescriptor_AdminDataLoader_DeleteProduct);
+};
+
+
 module.exports = proto.admin.v1;
 

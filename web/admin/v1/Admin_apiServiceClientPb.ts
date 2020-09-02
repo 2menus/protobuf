@@ -18,14 +18,20 @@ import {
   CreateCategoryResponse,
   CreateMenuRequest,
   CreateMenuResponse,
+  CreateProductRequest,
+  CreateProductResponse,
   DeleteCategoryRequest,
   DeleteCategoryResponse,
   DeleteMenuRequest,
   DeleteMenuResponse,
+  DeleteProductRequest,
+  DeleteProductResponse,
   UpdateCategoryRequest,
   UpdateCategoryResponse,
   UpdateMenuRequest,
-  UpdateMenuResponse} from './admin_api_pb';
+  UpdateMenuResponse,
+  UpdateProductRequest,
+  UpdateProductResponse} from './admin_api_pb';
 
 export class AdminDataLoaderClient {
   client_: grpcWeb.AbstractClientBase;
@@ -284,6 +290,126 @@ export class AdminDataLoaderClient {
     request,
     metadata || {},
     this.methodInfoDeleteCategory);
+  }
+
+  methodInfoCreateProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+    CreateProductResponse,
+    (request: CreateProductRequest) => {
+      return request.serializeBinary();
+    },
+    CreateProductResponse.deserializeBinary
+  );
+
+  createProduct(
+    request: CreateProductRequest,
+    metadata: grpcWeb.Metadata | null): Promise<CreateProductResponse>;
+
+  createProduct(
+    request: CreateProductRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: CreateProductResponse) => void): grpcWeb.ClientReadableStream<CreateProductResponse>;
+
+  createProduct(
+    request: CreateProductRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: CreateProductResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/admin.v1.AdminDataLoader/CreateProduct',
+        request,
+        metadata || {},
+        this.methodInfoCreateProduct,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/admin.v1.AdminDataLoader/CreateProduct',
+    request,
+    metadata || {},
+    this.methodInfoCreateProduct);
+  }
+
+  methodInfoUpdateProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+    UpdateProductResponse,
+    (request: UpdateProductRequest) => {
+      return request.serializeBinary();
+    },
+    UpdateProductResponse.deserializeBinary
+  );
+
+  updateProduct(
+    request: UpdateProductRequest,
+    metadata: grpcWeb.Metadata | null): Promise<UpdateProductResponse>;
+
+  updateProduct(
+    request: UpdateProductRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: UpdateProductResponse) => void): grpcWeb.ClientReadableStream<UpdateProductResponse>;
+
+  updateProduct(
+    request: UpdateProductRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: UpdateProductResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/admin.v1.AdminDataLoader/UpdateProduct',
+        request,
+        metadata || {},
+        this.methodInfoUpdateProduct,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/admin.v1.AdminDataLoader/UpdateProduct',
+    request,
+    metadata || {},
+    this.methodInfoUpdateProduct);
+  }
+
+  methodInfoDeleteProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+    DeleteProductResponse,
+    (request: DeleteProductRequest) => {
+      return request.serializeBinary();
+    },
+    DeleteProductResponse.deserializeBinary
+  );
+
+  deleteProduct(
+    request: DeleteProductRequest,
+    metadata: grpcWeb.Metadata | null): Promise<DeleteProductResponse>;
+
+  deleteProduct(
+    request: DeleteProductRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: DeleteProductResponse) => void): grpcWeb.ClientReadableStream<DeleteProductResponse>;
+
+  deleteProduct(
+    request: DeleteProductRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: DeleteProductResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/admin.v1.AdminDataLoader/DeleteProduct',
+        request,
+        metadata || {},
+        this.methodInfoDeleteProduct,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/admin.v1.AdminDataLoader/DeleteProduct',
+    request,
+    metadata || {},
+    this.methodInfoDeleteProduct);
   }
 
 }
