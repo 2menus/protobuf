@@ -72,7 +72,8 @@ proto.admin.v1.UpdateProductRequest.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     fullName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     price: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    description: jspb.Message.getFieldWithDefault(msg, 6, "")
+    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    imageUrl: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -132,6 +133,10 @@ proto.admin.v1.UpdateProductRequest.deserializeBinaryFromReader = function(msg, 
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageUrl(value);
       break;
     default:
       reader.skipField();
@@ -201,6 +206,13 @@ proto.admin.v1.UpdateProductRequest.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getImageUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -312,6 +324,24 @@ proto.admin.v1.UpdateProductRequest.prototype.getDescription = function() {
  */
 proto.admin.v1.UpdateProductRequest.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string image_url = 7;
+ * @return {string}
+ */
+proto.admin.v1.UpdateProductRequest.prototype.getImageUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.admin.v1.UpdateProductRequest} returns this
+ */
+proto.admin.v1.UpdateProductRequest.prototype.setImageUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

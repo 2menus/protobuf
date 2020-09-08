@@ -139,7 +139,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.createMenu =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.CreateMenuResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.createMenu =
     function(request, metadata) {
@@ -219,7 +219,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.updateMenu =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.UpdateMenuResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.updateMenu =
     function(request, metadata) {
@@ -299,7 +299,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.deleteMenu =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.DeleteMenuResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.deleteMenu =
     function(request, metadata) {
@@ -379,7 +379,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.createCategory =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.CreateCategoryResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.createCategory =
     function(request, metadata) {
@@ -459,7 +459,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.updateCategory =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.UpdateCategoryResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.updateCategory =
     function(request, metadata) {
@@ -539,7 +539,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.deleteCategory =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.DeleteCategoryResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.deleteCategory =
     function(request, metadata) {
@@ -619,7 +619,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.createProduct =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.CreateProductResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.createProduct =
     function(request, metadata) {
@@ -699,7 +699,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.updateProduct =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.UpdateProductResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.updateProduct =
     function(request, metadata) {
@@ -779,7 +779,7 @@ proto.admin.v1.AdminDataLoaderClient.prototype.deleteProduct =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.admin.v1.DeleteProductResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.admin.v1.AdminDataLoaderPromiseClient.prototype.deleteProduct =
     function(request, metadata) {

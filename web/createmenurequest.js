@@ -69,7 +69,8 @@ proto.admin.v1.CreateMenuRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fullName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    country: jspb.Message.getFieldWithDefault(msg, 3, "")
+    country: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    imageUrl: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -118,6 +119,10 @@ proto.admin.v1.CreateMenuRequest.deserializeBinaryFromReader = function(msg, rea
       var value = /** @type {string} */ (reader.readString());
       msg.setCountry(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageUrl(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -165,6 +170,13 @@ proto.admin.v1.CreateMenuRequest.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getImageUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -222,6 +234,24 @@ proto.admin.v1.CreateMenuRequest.prototype.getCountry = function() {
  */
 proto.admin.v1.CreateMenuRequest.prototype.setCountry = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string image_url = 4;
+ * @return {string}
+ */
+proto.admin.v1.CreateMenuRequest.prototype.getImageUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.admin.v1.CreateMenuRequest} returns this
+ */
+proto.admin.v1.CreateMenuRequest.prototype.setImageUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

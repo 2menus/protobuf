@@ -1,4 +1,6 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
+
+
 
 export class CreateMenuRequest extends jspb.Message {
   getName(): string;
@@ -9,6 +11,9 @@ export class CreateMenuRequest extends jspb.Message {
 
   getCountry(): string;
   setCountry(value: string): CreateMenuRequest;
+
+  getImageUrl(): string;
+  setImageUrl(value: string): CreateMenuRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateMenuRequest.AsObject;
@@ -23,6 +28,7 @@ export namespace CreateMenuRequest {
     name: string,
     fullName: string,
     country: string,
+    imageUrl: string,
   }
 }
 
@@ -53,6 +59,9 @@ export class UpdateMenuRequest extends jspb.Message {
   getName(): string;
   setName(value: string): UpdateMenuRequest;
 
+  getImageUrl(): string;
+  setImageUrl(value: string): UpdateMenuRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateMenuRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateMenuRequest): UpdateMenuRequest.AsObject;
@@ -67,6 +76,7 @@ export namespace UpdateMenuRequest {
     fullName: string,
     country: string,
     name: string,
+    imageUrl: string,
   }
 }
 
@@ -248,6 +258,9 @@ export class CreateProductRequest extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): CreateProductRequest;
 
+  getImageUrl(): string;
+  setImageUrl(value: string): CreateProductRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateProductRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateProductRequest): CreateProductRequest.AsObject;
@@ -263,6 +276,7 @@ export namespace CreateProductRequest {
     fullName: string,
     price: number,
     description: string,
+    imageUrl: string,
   }
 }
 
@@ -299,6 +313,9 @@ export class UpdateProductRequest extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): UpdateProductRequest;
 
+  getImageUrl(): string;
+  setImageUrl(value: string): UpdateProductRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateProductRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateProductRequest): UpdateProductRequest.AsObject;
@@ -315,6 +332,7 @@ export namespace UpdateProductRequest {
     fullName: string,
     price: number,
     description: string,
+    imageUrl: string,
   }
 }
 

@@ -13,33 +13,18 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as menu_v1_menu_pb from '../../menu/v1/menu_pb';
+import * as menu_v1_menu_api_pb from '../../menu/v1/menu_api_pb';
 
-import {
-  CategoriesRequest,
-  CategoriesResponse,
-  CategoryDetailsRequest,
-  CategoryDetailsResponse,
-  CountriesRequest,
-  CountriesResponse,
-  MenuDetailsRequest,
-  MenuDetailsResponse,
-  MenusRequest,
-  MenusResponse,
-  ProductDetailsRequest,
-  ProductDetailsResponse,
-  ProductsRequest,
-  ProductsResponse} from './menu_api_pb';
 
 export class MenuDataProducerClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
-  options_: null | { [index: string]: string; };
+  options_: null | { [index: string]: any; };
 
   constructor (hostname: string,
                credentials?: null | { [index: string]: string; },
-               options?: null | { [index: string]: string; }) {
+               options?: null | { [index: string]: any; }) {
     if (!options) options = {};
     if (!credentials) credentials = {};
     options['format'] = 'text';
@@ -51,28 +36,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoMenus = new grpcWeb.AbstractClientBase.MethodInfo(
-    MenusResponse,
-    (request: MenusRequest) => {
+    menu_v1_menu_api_pb.MenusResponse,
+    (request: menu_v1_menu_api_pb.MenusRequest) => {
       return request.serializeBinary();
     },
-    MenusResponse.deserializeBinary
+    menu_v1_menu_api_pb.MenusResponse.deserializeBinary
   );
 
   menus(
-    request: MenusRequest,
-    metadata: grpcWeb.Metadata | null): Promise<MenusResponse>;
+    request: menu_v1_menu_api_pb.MenusRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_api_pb.MenusResponse>;
 
   menus(
-    request: MenusRequest,
+    request: menu_v1_menu_api_pb.MenusRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: MenusResponse) => void): grpcWeb.ClientReadableStream<MenusResponse>;
+               response: menu_v1_menu_api_pb.MenusResponse) => void): grpcWeb.ClientReadableStream<menu_v1_menu_api_pb.MenusResponse>;
 
   menus(
-    request: MenusRequest,
+    request: menu_v1_menu_api_pb.MenusRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: MenusResponse) => void) {
+               response: menu_v1_menu_api_pb.MenusResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -91,28 +76,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoMenuDetails = new grpcWeb.AbstractClientBase.MethodInfo(
-    MenuDetailsResponse,
-    (request: MenuDetailsRequest) => {
+    menu_v1_menu_api_pb.MenuDetailsResponse,
+    (request: menu_v1_menu_api_pb.MenuDetailsRequest) => {
       return request.serializeBinary();
     },
-    MenuDetailsResponse.deserializeBinary
+    menu_v1_menu_api_pb.MenuDetailsResponse.deserializeBinary
   );
 
   menuDetails(
-    request: MenuDetailsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<MenuDetailsResponse>;
+    request: menu_v1_menu_api_pb.MenuDetailsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_api_pb.MenuDetailsResponse>;
 
   menuDetails(
-    request: MenuDetailsRequest,
+    request: menu_v1_menu_api_pb.MenuDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: MenuDetailsResponse) => void): grpcWeb.ClientReadableStream<MenuDetailsResponse>;
+               response: menu_v1_menu_api_pb.MenuDetailsResponse) => void): grpcWeb.ClientReadableStream<menu_v1_menu_api_pb.MenuDetailsResponse>;
 
   menuDetails(
-    request: MenuDetailsRequest,
+    request: menu_v1_menu_api_pb.MenuDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: MenuDetailsResponse) => void) {
+               response: menu_v1_menu_api_pb.MenuDetailsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -131,28 +116,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoCategories = new grpcWeb.AbstractClientBase.MethodInfo(
-    CategoriesResponse,
-    (request: CategoriesRequest) => {
+    menu_v1_menu_api_pb.CategoriesResponse,
+    (request: menu_v1_menu_api_pb.CategoriesRequest) => {
       return request.serializeBinary();
     },
-    CategoriesResponse.deserializeBinary
+    menu_v1_menu_api_pb.CategoriesResponse.deserializeBinary
   );
 
   categories(
-    request: CategoriesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<CategoriesResponse>;
+    request: menu_v1_menu_api_pb.CategoriesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_api_pb.CategoriesResponse>;
 
   categories(
-    request: CategoriesRequest,
+    request: menu_v1_menu_api_pb.CategoriesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: CategoriesResponse) => void): grpcWeb.ClientReadableStream<CategoriesResponse>;
+               response: menu_v1_menu_api_pb.CategoriesResponse) => void): grpcWeb.ClientReadableStream<menu_v1_menu_api_pb.CategoriesResponse>;
 
   categories(
-    request: CategoriesRequest,
+    request: menu_v1_menu_api_pb.CategoriesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: CategoriesResponse) => void) {
+               response: menu_v1_menu_api_pb.CategoriesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -171,28 +156,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoCategoryDetails = new grpcWeb.AbstractClientBase.MethodInfo(
-    CategoryDetailsResponse,
-    (request: CategoryDetailsRequest) => {
+    menu_v1_menu_api_pb.CategoryDetailsResponse,
+    (request: menu_v1_menu_api_pb.CategoryDetailsRequest) => {
       return request.serializeBinary();
     },
-    CategoryDetailsResponse.deserializeBinary
+    menu_v1_menu_api_pb.CategoryDetailsResponse.deserializeBinary
   );
 
   categoryDetails(
-    request: CategoryDetailsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<CategoryDetailsResponse>;
+    request: menu_v1_menu_api_pb.CategoryDetailsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_api_pb.CategoryDetailsResponse>;
 
   categoryDetails(
-    request: CategoryDetailsRequest,
+    request: menu_v1_menu_api_pb.CategoryDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: CategoryDetailsResponse) => void): grpcWeb.ClientReadableStream<CategoryDetailsResponse>;
+               response: menu_v1_menu_api_pb.CategoryDetailsResponse) => void): grpcWeb.ClientReadableStream<menu_v1_menu_api_pb.CategoryDetailsResponse>;
 
   categoryDetails(
-    request: CategoryDetailsRequest,
+    request: menu_v1_menu_api_pb.CategoryDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: CategoryDetailsResponse) => void) {
+               response: menu_v1_menu_api_pb.CategoryDetailsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -211,28 +196,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoProducts = new grpcWeb.AbstractClientBase.MethodInfo(
-    ProductsResponse,
-    (request: ProductsRequest) => {
+    menu_v1_menu_api_pb.ProductsResponse,
+    (request: menu_v1_menu_api_pb.ProductsRequest) => {
       return request.serializeBinary();
     },
-    ProductsResponse.deserializeBinary
+    menu_v1_menu_api_pb.ProductsResponse.deserializeBinary
   );
 
   products(
-    request: ProductsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<ProductsResponse>;
+    request: menu_v1_menu_api_pb.ProductsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_api_pb.ProductsResponse>;
 
   products(
-    request: ProductsRequest,
+    request: menu_v1_menu_api_pb.ProductsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: ProductsResponse) => void): grpcWeb.ClientReadableStream<ProductsResponse>;
+               response: menu_v1_menu_api_pb.ProductsResponse) => void): grpcWeb.ClientReadableStream<menu_v1_menu_api_pb.ProductsResponse>;
 
   products(
-    request: ProductsRequest,
+    request: menu_v1_menu_api_pb.ProductsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: ProductsResponse) => void) {
+               response: menu_v1_menu_api_pb.ProductsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -251,28 +236,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoProductDetails = new grpcWeb.AbstractClientBase.MethodInfo(
-    ProductDetailsResponse,
-    (request: ProductDetailsRequest) => {
+    menu_v1_menu_api_pb.ProductDetailsResponse,
+    (request: menu_v1_menu_api_pb.ProductDetailsRequest) => {
       return request.serializeBinary();
     },
-    ProductDetailsResponse.deserializeBinary
+    menu_v1_menu_api_pb.ProductDetailsResponse.deserializeBinary
   );
 
   productDetails(
-    request: ProductDetailsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<ProductDetailsResponse>;
+    request: menu_v1_menu_api_pb.ProductDetailsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_api_pb.ProductDetailsResponse>;
 
   productDetails(
-    request: ProductDetailsRequest,
+    request: menu_v1_menu_api_pb.ProductDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: ProductDetailsResponse) => void): grpcWeb.ClientReadableStream<ProductDetailsResponse>;
+               response: menu_v1_menu_api_pb.ProductDetailsResponse) => void): grpcWeb.ClientReadableStream<menu_v1_menu_api_pb.ProductDetailsResponse>;
 
   productDetails(
-    request: ProductDetailsRequest,
+    request: menu_v1_menu_api_pb.ProductDetailsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: ProductDetailsResponse) => void) {
+               response: menu_v1_menu_api_pb.ProductDetailsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -291,28 +276,28 @@ export class MenuDataProducerClient {
   }
 
   methodInfoCountries = new grpcWeb.AbstractClientBase.MethodInfo(
-    CountriesResponse,
-    (request: CountriesRequest) => {
+    menu_v1_menu_api_pb.CountriesResponse,
+    (request: menu_v1_menu_api_pb.CountriesRequest) => {
       return request.serializeBinary();
     },
-    CountriesResponse.deserializeBinary
+    menu_v1_menu_api_pb.CountriesResponse.deserializeBinary
   );
 
   countries(
-    request: CountriesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<CountriesResponse>;
+    request: menu_v1_menu_api_pb.CountriesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v1_menu_api_pb.CountriesResponse>;
 
   countries(
-    request: CountriesRequest,
+    request: menu_v1_menu_api_pb.CountriesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: CountriesResponse) => void): grpcWeb.ClientReadableStream<CountriesResponse>;
+               response: menu_v1_menu_api_pb.CountriesResponse) => void): grpcWeb.ClientReadableStream<menu_v1_menu_api_pb.CountriesResponse>;
 
   countries(
-    request: CountriesRequest,
+    request: menu_v1_menu_api_pb.CountriesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: CountriesResponse) => void) {
+               response: menu_v1_menu_api_pb.CountriesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
