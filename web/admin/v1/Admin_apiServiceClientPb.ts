@@ -13,35 +13,18 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import {
-  CreateCategoryRequest,
-  CreateCategoryResponse,
-  CreateMenuRequest,
-  CreateMenuResponse,
-  CreateProductRequest,
-  CreateProductResponse,
-  DeleteCategoryRequest,
-  DeleteCategoryResponse,
-  DeleteMenuRequest,
-  DeleteMenuResponse,
-  DeleteProductRequest,
-  DeleteProductResponse,
-  UpdateCategoryRequest,
-  UpdateCategoryResponse,
-  UpdateMenuRequest,
-  UpdateMenuResponse,
-  UpdateProductRequest,
-  UpdateProductResponse} from './admin_api_pb';
+import * as admin_v1_admin_api_pb from '../../admin/v1/admin_api_pb';
+
 
 export class AdminDataLoaderClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
-  options_: null | { [index: string]: string; };
+  options_: null | { [index: string]: any; };
 
   constructor (hostname: string,
                credentials?: null | { [index: string]: string; },
-               options?: null | { [index: string]: string; }) {
+               options?: null | { [index: string]: any; }) {
     if (!options) options = {};
     if (!credentials) credentials = {};
     options['format'] = 'text';
@@ -53,28 +36,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoCreateMenu = new grpcWeb.AbstractClientBase.MethodInfo(
-    CreateMenuResponse,
-    (request: CreateMenuRequest) => {
+    admin_v1_admin_api_pb.CreateMenuResponse,
+    (request: admin_v1_admin_api_pb.CreateMenuRequest) => {
       return request.serializeBinary();
     },
-    CreateMenuResponse.deserializeBinary
+    admin_v1_admin_api_pb.CreateMenuResponse.deserializeBinary
   );
 
   createMenu(
-    request: CreateMenuRequest,
-    metadata: grpcWeb.Metadata | null): Promise<CreateMenuResponse>;
+    request: admin_v1_admin_api_pb.CreateMenuRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.CreateMenuResponse>;
 
   createMenu(
-    request: CreateMenuRequest,
+    request: admin_v1_admin_api_pb.CreateMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: CreateMenuResponse) => void): grpcWeb.ClientReadableStream<CreateMenuResponse>;
+               response: admin_v1_admin_api_pb.CreateMenuResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.CreateMenuResponse>;
 
   createMenu(
-    request: CreateMenuRequest,
+    request: admin_v1_admin_api_pb.CreateMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: CreateMenuResponse) => void) {
+               response: admin_v1_admin_api_pb.CreateMenuResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -93,28 +76,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoUpdateMenu = new grpcWeb.AbstractClientBase.MethodInfo(
-    UpdateMenuResponse,
-    (request: UpdateMenuRequest) => {
+    admin_v1_admin_api_pb.UpdateMenuResponse,
+    (request: admin_v1_admin_api_pb.UpdateMenuRequest) => {
       return request.serializeBinary();
     },
-    UpdateMenuResponse.deserializeBinary
+    admin_v1_admin_api_pb.UpdateMenuResponse.deserializeBinary
   );
 
   updateMenu(
-    request: UpdateMenuRequest,
-    metadata: grpcWeb.Metadata | null): Promise<UpdateMenuResponse>;
+    request: admin_v1_admin_api_pb.UpdateMenuRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.UpdateMenuResponse>;
 
   updateMenu(
-    request: UpdateMenuRequest,
+    request: admin_v1_admin_api_pb.UpdateMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: UpdateMenuResponse) => void): grpcWeb.ClientReadableStream<UpdateMenuResponse>;
+               response: admin_v1_admin_api_pb.UpdateMenuResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.UpdateMenuResponse>;
 
   updateMenu(
-    request: UpdateMenuRequest,
+    request: admin_v1_admin_api_pb.UpdateMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: UpdateMenuResponse) => void) {
+               response: admin_v1_admin_api_pb.UpdateMenuResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -133,28 +116,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoDeleteMenu = new grpcWeb.AbstractClientBase.MethodInfo(
-    DeleteMenuResponse,
-    (request: DeleteMenuRequest) => {
+    admin_v1_admin_api_pb.DeleteMenuResponse,
+    (request: admin_v1_admin_api_pb.DeleteMenuRequest) => {
       return request.serializeBinary();
     },
-    DeleteMenuResponse.deserializeBinary
+    admin_v1_admin_api_pb.DeleteMenuResponse.deserializeBinary
   );
 
   deleteMenu(
-    request: DeleteMenuRequest,
-    metadata: grpcWeb.Metadata | null): Promise<DeleteMenuResponse>;
+    request: admin_v1_admin_api_pb.DeleteMenuRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.DeleteMenuResponse>;
 
   deleteMenu(
-    request: DeleteMenuRequest,
+    request: admin_v1_admin_api_pb.DeleteMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: DeleteMenuResponse) => void): grpcWeb.ClientReadableStream<DeleteMenuResponse>;
+               response: admin_v1_admin_api_pb.DeleteMenuResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.DeleteMenuResponse>;
 
   deleteMenu(
-    request: DeleteMenuRequest,
+    request: admin_v1_admin_api_pb.DeleteMenuRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: DeleteMenuResponse) => void) {
+               response: admin_v1_admin_api_pb.DeleteMenuResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -173,28 +156,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoCreateCategory = new grpcWeb.AbstractClientBase.MethodInfo(
-    CreateCategoryResponse,
-    (request: CreateCategoryRequest) => {
+    admin_v1_admin_api_pb.CreateCategoryResponse,
+    (request: admin_v1_admin_api_pb.CreateCategoryRequest) => {
       return request.serializeBinary();
     },
-    CreateCategoryResponse.deserializeBinary
+    admin_v1_admin_api_pb.CreateCategoryResponse.deserializeBinary
   );
 
   createCategory(
-    request: CreateCategoryRequest,
-    metadata: grpcWeb.Metadata | null): Promise<CreateCategoryResponse>;
+    request: admin_v1_admin_api_pb.CreateCategoryRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.CreateCategoryResponse>;
 
   createCategory(
-    request: CreateCategoryRequest,
+    request: admin_v1_admin_api_pb.CreateCategoryRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: CreateCategoryResponse) => void): grpcWeb.ClientReadableStream<CreateCategoryResponse>;
+               response: admin_v1_admin_api_pb.CreateCategoryResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.CreateCategoryResponse>;
 
   createCategory(
-    request: CreateCategoryRequest,
+    request: admin_v1_admin_api_pb.CreateCategoryRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: CreateCategoryResponse) => void) {
+               response: admin_v1_admin_api_pb.CreateCategoryResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -213,28 +196,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoUpdateCategory = new grpcWeb.AbstractClientBase.MethodInfo(
-    UpdateCategoryResponse,
-    (request: UpdateCategoryRequest) => {
+    admin_v1_admin_api_pb.UpdateCategoryResponse,
+    (request: admin_v1_admin_api_pb.UpdateCategoryRequest) => {
       return request.serializeBinary();
     },
-    UpdateCategoryResponse.deserializeBinary
+    admin_v1_admin_api_pb.UpdateCategoryResponse.deserializeBinary
   );
 
   updateCategory(
-    request: UpdateCategoryRequest,
-    metadata: grpcWeb.Metadata | null): Promise<UpdateCategoryResponse>;
+    request: admin_v1_admin_api_pb.UpdateCategoryRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.UpdateCategoryResponse>;
 
   updateCategory(
-    request: UpdateCategoryRequest,
+    request: admin_v1_admin_api_pb.UpdateCategoryRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: UpdateCategoryResponse) => void): grpcWeb.ClientReadableStream<UpdateCategoryResponse>;
+               response: admin_v1_admin_api_pb.UpdateCategoryResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.UpdateCategoryResponse>;
 
   updateCategory(
-    request: UpdateCategoryRequest,
+    request: admin_v1_admin_api_pb.UpdateCategoryRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: UpdateCategoryResponse) => void) {
+               response: admin_v1_admin_api_pb.UpdateCategoryResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -253,28 +236,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoDeleteCategory = new grpcWeb.AbstractClientBase.MethodInfo(
-    DeleteCategoryResponse,
-    (request: DeleteCategoryRequest) => {
+    admin_v1_admin_api_pb.DeleteCategoryResponse,
+    (request: admin_v1_admin_api_pb.DeleteCategoryRequest) => {
       return request.serializeBinary();
     },
-    DeleteCategoryResponse.deserializeBinary
+    admin_v1_admin_api_pb.DeleteCategoryResponse.deserializeBinary
   );
 
   deleteCategory(
-    request: DeleteCategoryRequest,
-    metadata: grpcWeb.Metadata | null): Promise<DeleteCategoryResponse>;
+    request: admin_v1_admin_api_pb.DeleteCategoryRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.DeleteCategoryResponse>;
 
   deleteCategory(
-    request: DeleteCategoryRequest,
+    request: admin_v1_admin_api_pb.DeleteCategoryRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: DeleteCategoryResponse) => void): grpcWeb.ClientReadableStream<DeleteCategoryResponse>;
+               response: admin_v1_admin_api_pb.DeleteCategoryResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.DeleteCategoryResponse>;
 
   deleteCategory(
-    request: DeleteCategoryRequest,
+    request: admin_v1_admin_api_pb.DeleteCategoryRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: DeleteCategoryResponse) => void) {
+               response: admin_v1_admin_api_pb.DeleteCategoryResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -293,28 +276,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoCreateProduct = new grpcWeb.AbstractClientBase.MethodInfo(
-    CreateProductResponse,
-    (request: CreateProductRequest) => {
+    admin_v1_admin_api_pb.CreateProductResponse,
+    (request: admin_v1_admin_api_pb.CreateProductRequest) => {
       return request.serializeBinary();
     },
-    CreateProductResponse.deserializeBinary
+    admin_v1_admin_api_pb.CreateProductResponse.deserializeBinary
   );
 
   createProduct(
-    request: CreateProductRequest,
-    metadata: grpcWeb.Metadata | null): Promise<CreateProductResponse>;
+    request: admin_v1_admin_api_pb.CreateProductRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.CreateProductResponse>;
 
   createProduct(
-    request: CreateProductRequest,
+    request: admin_v1_admin_api_pb.CreateProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: CreateProductResponse) => void): grpcWeb.ClientReadableStream<CreateProductResponse>;
+               response: admin_v1_admin_api_pb.CreateProductResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.CreateProductResponse>;
 
   createProduct(
-    request: CreateProductRequest,
+    request: admin_v1_admin_api_pb.CreateProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: CreateProductResponse) => void) {
+               response: admin_v1_admin_api_pb.CreateProductResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -333,28 +316,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoUpdateProduct = new grpcWeb.AbstractClientBase.MethodInfo(
-    UpdateProductResponse,
-    (request: UpdateProductRequest) => {
+    admin_v1_admin_api_pb.UpdateProductResponse,
+    (request: admin_v1_admin_api_pb.UpdateProductRequest) => {
       return request.serializeBinary();
     },
-    UpdateProductResponse.deserializeBinary
+    admin_v1_admin_api_pb.UpdateProductResponse.deserializeBinary
   );
 
   updateProduct(
-    request: UpdateProductRequest,
-    metadata: grpcWeb.Metadata | null): Promise<UpdateProductResponse>;
+    request: admin_v1_admin_api_pb.UpdateProductRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.UpdateProductResponse>;
 
   updateProduct(
-    request: UpdateProductRequest,
+    request: admin_v1_admin_api_pb.UpdateProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: UpdateProductResponse) => void): grpcWeb.ClientReadableStream<UpdateProductResponse>;
+               response: admin_v1_admin_api_pb.UpdateProductResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.UpdateProductResponse>;
 
   updateProduct(
-    request: UpdateProductRequest,
+    request: admin_v1_admin_api_pb.UpdateProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: UpdateProductResponse) => void) {
+               response: admin_v1_admin_api_pb.UpdateProductResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -373,28 +356,28 @@ export class AdminDataLoaderClient {
   }
 
   methodInfoDeleteProduct = new grpcWeb.AbstractClientBase.MethodInfo(
-    DeleteProductResponse,
-    (request: DeleteProductRequest) => {
+    admin_v1_admin_api_pb.DeleteProductResponse,
+    (request: admin_v1_admin_api_pb.DeleteProductRequest) => {
       return request.serializeBinary();
     },
-    DeleteProductResponse.deserializeBinary
+    admin_v1_admin_api_pb.DeleteProductResponse.deserializeBinary
   );
 
   deleteProduct(
-    request: DeleteProductRequest,
-    metadata: grpcWeb.Metadata | null): Promise<DeleteProductResponse>;
+    request: admin_v1_admin_api_pb.DeleteProductRequest,
+    metadata: grpcWeb.Metadata | null): Promise<admin_v1_admin_api_pb.DeleteProductResponse>;
 
   deleteProduct(
-    request: DeleteProductRequest,
+    request: admin_v1_admin_api_pb.DeleteProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: DeleteProductResponse) => void): grpcWeb.ClientReadableStream<DeleteProductResponse>;
+               response: admin_v1_admin_api_pb.DeleteProductResponse) => void): grpcWeb.ClientReadableStream<admin_v1_admin_api_pb.DeleteProductResponse>;
 
   deleteProduct(
-    request: DeleteProductRequest,
+    request: admin_v1_admin_api_pb.DeleteProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: DeleteProductResponse) => void) {
+               response: admin_v1_admin_api_pb.DeleteProductResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

@@ -11,6 +11,7 @@ message CreateMenuRequest {
     string name = 1;
     string full_name = 2;
     string country = 3;
+    string image_url = 4;
 }
 
 message CreateMenuResponse {}
@@ -20,6 +21,7 @@ message UpdateMenuRequest {
     string full_name = 2;
     string country = 3;
     string name = 4;
+    string image_url = 5;
 }
 
 message UpdateMenuResponse {}
@@ -61,6 +63,7 @@ message CreateProductRequest {
     string full_name = 3;
     float price = 4;
     string description = 5;
+    string image_url = 6;
 }
 
 message CreateProductResponse {}
@@ -72,6 +75,7 @@ message UpdateProductRequest {
     string full_name = 4;
     float price = 5;
     string description = 6;
+    string image_url = 7;
 }
 
 message UpdateProductResponse {}

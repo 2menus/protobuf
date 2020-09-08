@@ -141,7 +141,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.menus =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.menu.v1.MenusResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.menus =
     function(request, metadata) {
@@ -221,7 +221,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.menuDetails =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.menu.v1.MenuDetailsResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.menuDetails =
     function(request, metadata) {
@@ -301,7 +301,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.categories =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.menu.v1.CategoriesResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.categories =
     function(request, metadata) {
@@ -381,7 +381,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.categoryDetails =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.menu.v1.CategoryDetailsResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.categoryDetails =
     function(request, metadata) {
@@ -461,7 +461,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.products =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.menu.v1.ProductsResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.products =
     function(request, metadata) {
@@ -541,7 +541,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.productDetails =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.menu.v1.ProductDetailsResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.productDetails =
     function(request, metadata) {
@@ -621,7 +621,7 @@ proto.menu.v1.MenuDataProducerClient.prototype.countries =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.menu.v1.CountriesResponse>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.menu.v1.MenuDataProducerPromiseClient.prototype.countries =
     function(request, metadata) {

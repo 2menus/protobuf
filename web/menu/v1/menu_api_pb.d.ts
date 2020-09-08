@@ -1,6 +1,7 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as menu_v1_menu_pb from '../../menu/v1/menu_pb';
+
 
 export class MenusRequest extends jspb.Message {
   getOwnerId(): string;
