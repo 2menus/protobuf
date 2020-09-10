@@ -71,7 +71,7 @@ proto.admin.v1.UpdateMenuRequest.toObject = function(includeInstance, msg) {
     fullName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     country: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    imageUrl: jspb.Message.getFieldWithDefault(msg, 5, "")
+    topCardImage: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -126,7 +126,7 @@ proto.admin.v1.UpdateMenuRequest.deserializeBinaryFromReader = function(msg, rea
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setImageUrl(value);
+      msg.setTopCardImage(value);
       break;
     default:
       reader.skipField();
@@ -185,7 +185,7 @@ proto.admin.v1.UpdateMenuRequest.serializeBinaryToWriter = function(message, wri
       f
     );
   }
-  f = message.getImageUrl();
+  f = message.getTopCardImage();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -268,10 +268,10 @@ proto.admin.v1.UpdateMenuRequest.prototype.setName = function(value) {
 
 
 /**
- * optional string image_url = 5;
+ * optional string top_card_image = 5;
  * @return {string}
  */
-proto.admin.v1.UpdateMenuRequest.prototype.getImageUrl = function() {
+proto.admin.v1.UpdateMenuRequest.prototype.getTopCardImage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -280,7 +280,7 @@ proto.admin.v1.UpdateMenuRequest.prototype.getImageUrl = function() {
  * @param {string} value
  * @return {!proto.admin.v1.UpdateMenuRequest} returns this
  */
-proto.admin.v1.UpdateMenuRequest.prototype.setImageUrl = function(value) {
+proto.admin.v1.UpdateMenuRequest.prototype.setTopCardImage = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
