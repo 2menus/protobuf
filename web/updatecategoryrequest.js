@@ -70,7 +70,8 @@ proto.admin.v1.UpdateCategoryRequest.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     menuId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    fullName: jspb.Message.getFieldWithDefault(msg, 4, "")
+    fullName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    pic: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -122,6 +123,10 @@ proto.admin.v1.UpdateCategoryRequest.deserializeBinaryFromReader = function(msg,
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setFullName(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPic(value);
       break;
     default:
       reader.skipField();
@@ -177,6 +182,13 @@ proto.admin.v1.UpdateCategoryRequest.serializeBinaryToWriter = function(message,
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getPic();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -252,6 +264,24 @@ proto.admin.v1.UpdateCategoryRequest.prototype.getFullName = function() {
  */
 proto.admin.v1.UpdateCategoryRequest.prototype.setFullName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string pic = 5;
+ * @return {string}
+ */
+proto.admin.v1.UpdateCategoryRequest.prototype.getPic = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.admin.v1.UpdateCategoryRequest} returns this
+ */
+proto.admin.v1.UpdateCategoryRequest.prototype.setPic = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

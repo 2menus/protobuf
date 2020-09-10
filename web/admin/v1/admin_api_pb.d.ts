@@ -12,8 +12,8 @@ export class CreateMenuRequest extends jspb.Message {
   getCountry(): string;
   setCountry(value: string): CreateMenuRequest;
 
-  getImageUrl(): string;
-  setImageUrl(value: string): CreateMenuRequest;
+  getTopCardImage(): string;
+  setTopCardImage(value: string): CreateMenuRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateMenuRequest.AsObject;
@@ -28,7 +28,7 @@ export namespace CreateMenuRequest {
     name: string,
     fullName: string,
     country: string,
-    imageUrl: string,
+    topCardImage: string,
   }
 }
 
@@ -59,8 +59,8 @@ export class UpdateMenuRequest extends jspb.Message {
   getName(): string;
   setName(value: string): UpdateMenuRequest;
 
-  getImageUrl(): string;
-  setImageUrl(value: string): UpdateMenuRequest;
+  getTopCardImage(): string;
+  setTopCardImage(value: string): UpdateMenuRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateMenuRequest.AsObject;
@@ -76,7 +76,7 @@ export namespace UpdateMenuRequest {
     fullName: string,
     country: string,
     name: string,
-    imageUrl: string,
+    topCardImage: string,
   }
 }
 
@@ -136,6 +136,9 @@ export class CreateCategoryRequest extends jspb.Message {
   getFullName(): string;
   setFullName(value: string): CreateCategoryRequest;
 
+  getPic(): string;
+  setPic(value: string): CreateCategoryRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCategoryRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateCategoryRequest): CreateCategoryRequest.AsObject;
@@ -149,6 +152,7 @@ export namespace CreateCategoryRequest {
     menuId: string,
     name: string,
     fullName: string,
+    pic: string,
   }
 }
 
@@ -179,6 +183,9 @@ export class UpdateCategoryRequest extends jspb.Message {
   getFullName(): string;
   setFullName(value: string): UpdateCategoryRequest;
 
+  getPic(): string;
+  setPic(value: string): UpdateCategoryRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateCategoryRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateCategoryRequest): UpdateCategoryRequest.AsObject;
@@ -193,6 +200,7 @@ export namespace UpdateCategoryRequest {
     menuId: string,
     name: string,
     fullName: string,
+    pic: string,
   }
 }
 
@@ -258,8 +266,8 @@ export class CreateProductRequest extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): CreateProductRequest;
 
-  getImageUrl(): string;
-  setImageUrl(value: string): CreateProductRequest;
+  getPic(): string;
+  setPic(value: string): CreateProductRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateProductRequest.AsObject;
@@ -276,7 +284,7 @@ export namespace CreateProductRequest {
     fullName: string,
     price: number,
     description: string,
-    imageUrl: string,
+    pic: string,
   }
 }
 
@@ -313,8 +321,8 @@ export class UpdateProductRequest extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): UpdateProductRequest;
 
-  getImageUrl(): string;
-  setImageUrl(value: string): UpdateProductRequest;
+  getPic(): string;
+  setPic(value: string): UpdateProductRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateProductRequest.AsObject;
@@ -332,7 +340,7 @@ export namespace UpdateProductRequest {
     fullName: string,
     price: number,
     description: string,
-    imageUrl: string,
+    pic: string,
   }
 }
 
