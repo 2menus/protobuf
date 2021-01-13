@@ -7,11 +7,11 @@
 package v2
 
 import (
-	v21 "country/v2"
+	v21 "github.com/2menus/protobuf/country/v2"
+	v2 "github.com/2menus/protobuf/image/v2"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	v2 "image/v2"
 	reflect "reflect"
 	sync "sync"
 )
