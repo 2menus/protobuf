@@ -1,16 +1,11 @@
 syntax = "proto3";
 
-package image.v1;
-option go_package = "github.com/2menus/protobuf/image/v1";
+package image.v2;
+option go_package = "image/v2";
 
 message Image {
     string id = 1;
-    string name = 1;
-
-    enum Type {
-        JPEG = 0;
-        PNG = 1;
-    }
+    string name = 2;
 
     message Size {
         string original = 1;

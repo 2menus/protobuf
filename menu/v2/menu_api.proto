@@ -1,10 +1,9 @@
 syntax = "proto3";
 
 package menu.v2;
-option go_package = "github.com/2menus/protobuf/menu/v2";
+option go_package = "menu/v2";
 
 import "menu/v2/menu.proto";
-import "image/v1/image.proto";
 
 // // // // // //
 // Menu
@@ -57,11 +56,11 @@ message DeleteMenuResponse {}
 // CATEGORY
 // // // // // //
 
-message CatrgoriesRequest {
+message CategoriesRequest {
     string menu_id = 1;
 }
 
-message CatrgoriesResponse {
+message CategoriesResponse {
     repeated Menu menus = 1;
 }
 
