@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package menu.v2;
-option go_package = "menu/v2";
+option go_package = "github.com/2menus/protobuf/menu/v2;menu";
 
 import "image/v2/image.proto";
 import "country/v2/country.proto";
