@@ -20,19 +20,163 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type Size struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Original string `protobuf:"bytes,1,opt,name=original,proto3" json:"original,omitempty"`
+	Small    string `protobuf:"bytes,2,opt,name=small,proto3" json:"small,omitempty"`
+	Medium   string `protobuf:"bytes,3,opt,name=medium,proto3" json:"medium,omitempty"`
+	Large    string `protobuf:"bytes,4,opt,name=large,proto3" json:"large,omitempty"`
+}
+
+func (x *Size) Reset() {
+	*x = Size{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_image_v2_image_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Size) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Size) ProtoMessage() {}
+
+func (x *Size) ProtoReflect() protoreflect.Message {
+	mi := &file_image_v2_image_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Size.ProtoReflect.Descriptor instead.
+func (*Size) Descriptor() ([]byte, []int) {
+	return file_image_v2_image_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *Size) GetOriginal() string {
+	if x != nil {
+		return x.Original
+	}
+	return ""
+}
+
+func (x *Size) GetSmall() string {
+	if x != nil {
+		return x.Small
+	}
+	return ""
+}
+
+func (x *Size) GetMedium() string {
+	if x != nil {
+		return x.Medium
+	}
+	return ""
+}
+
+func (x *Size) GetLarge() string {
+	if x != nil {
+		return x.Large
+	}
+	return ""
+}
+
+type Points struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	X1 int32 `protobuf:"varint,1,opt,name=x1,proto3" json:"x1,omitempty"`
+	Y1 int32 `protobuf:"varint,2,opt,name=y1,proto3" json:"y1,omitempty"`
+	X2 int32 `protobuf:"varint,3,opt,name=x2,proto3" json:"x2,omitempty"`
+	Y2 int32 `protobuf:"varint,4,opt,name=y2,proto3" json:"y2,omitempty"`
+}
+
+func (x *Points) Reset() {
+	*x = Points{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_image_v2_image_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Points) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Points) ProtoMessage() {}
+
+func (x *Points) ProtoReflect() protoreflect.Message {
+	mi := &file_image_v2_image_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Points.ProtoReflect.Descriptor instead.
+func (*Points) Descriptor() ([]byte, []int) {
+	return file_image_v2_image_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *Points) GetX1() int32 {
+	if x != nil {
+		return x.X1
+	}
+	return 0
+}
+
+func (x *Points) GetY1() int32 {
+	if x != nil {
+		return x.Y1
+	}
+	return 0
+}
+
+func (x *Points) GetX2() int32 {
+	if x != nil {
+		return x.X2
+	}
+	return 0
+}
+
+func (x *Points) GetY2() int32 {
+	if x != nil {
+		return x.Y2
+	}
+	return 0
+}
+
 type Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id   string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Id     string  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name   string  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Size   *Size   `protobuf:"bytes,10,opt,name=size,proto3" json:"size,omitempty"`
+	Points *Points `protobuf:"bytes,11,opt,name=points,proto3" json:"points,omitempty"`
 }
 
 func (x *Image) Reset() {
 	*x = Image{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_image_v2_image_proto_msgTypes[0]
+		mi := &file_image_v2_image_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -45,7 +189,7 @@ func (x *Image) String() string {
 func (*Image) ProtoMessage() {}
 
 func (x *Image) ProtoReflect() protoreflect.Message {
-	mi := &file_image_v2_image_proto_msgTypes[0]
+	mi := &file_image_v2_image_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +202,7 @@ func (x *Image) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Image.ProtoReflect.Descriptor instead.
 func (*Image) Descriptor() ([]byte, []int) {
-	return file_image_v2_image_proto_rawDescGZIP(), []int{0}
+	return file_image_v2_image_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Image) GetId() string {
@@ -75,146 +219,18 @@ func (x *Image) GetName() string {
 	return ""
 }
 
-type Image_Size struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Original string `protobuf:"bytes,1,opt,name=original,proto3" json:"original,omitempty"`
-	Small    string `protobuf:"bytes,2,opt,name=small,proto3" json:"small,omitempty"`
-	Medium   string `protobuf:"bytes,3,opt,name=medium,proto3" json:"medium,omitempty"`
-	Large    string `protobuf:"bytes,4,opt,name=large,proto3" json:"large,omitempty"`
-}
-
-func (x *Image_Size) Reset() {
-	*x = Image_Size{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_image_v2_image_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *Image_Size) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Image_Size) ProtoMessage() {}
-
-func (x *Image_Size) ProtoReflect() protoreflect.Message {
-	mi := &file_image_v2_image_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Image_Size.ProtoReflect.Descriptor instead.
-func (*Image_Size) Descriptor() ([]byte, []int) {
-	return file_image_v2_image_proto_rawDescGZIP(), []int{0, 0}
-}
-
-func (x *Image_Size) GetOriginal() string {
+func (x *Image) GetSize() *Size {
 	if x != nil {
-		return x.Original
+		return x.Size
 	}
-	return ""
+	return nil
 }
 
-func (x *Image_Size) GetSmall() string {
+func (x *Image) GetPoints() *Points {
 	if x != nil {
-		return x.Small
+		return x.Points
 	}
-	return ""
-}
-
-func (x *Image_Size) GetMedium() string {
-	if x != nil {
-		return x.Medium
-	}
-	return ""
-}
-
-func (x *Image_Size) GetLarge() string {
-	if x != nil {
-		return x.Large
-	}
-	return ""
-}
-
-type Image_Points struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	X1 int32 `protobuf:"varint,1,opt,name=x1,proto3" json:"x1,omitempty"`
-	Y1 int32 `protobuf:"varint,2,opt,name=y1,proto3" json:"y1,omitempty"`
-	X2 int32 `protobuf:"varint,3,opt,name=x2,proto3" json:"x2,omitempty"`
-	Y2 int32 `protobuf:"varint,4,opt,name=y2,proto3" json:"y2,omitempty"`
-}
-
-func (x *Image_Points) Reset() {
-	*x = Image_Points{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_image_v2_image_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *Image_Points) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Image_Points) ProtoMessage() {}
-
-func (x *Image_Points) ProtoReflect() protoreflect.Message {
-	mi := &file_image_v2_image_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Image_Points.ProtoReflect.Descriptor instead.
-func (*Image_Points) Descriptor() ([]byte, []int) {
-	return file_image_v2_image_proto_rawDescGZIP(), []int{0, 1}
-}
-
-func (x *Image_Points) GetX1() int32 {
-	if x != nil {
-		return x.X1
-	}
-	return 0
-}
-
-func (x *Image_Points) GetY1() int32 {
-	if x != nil {
-		return x.Y1
-	}
-	return 0
-}
-
-func (x *Image_Points) GetX2() int32 {
-	if x != nil {
-		return x.X2
-	}
-	return 0
-}
-
-func (x *Image_Points) GetY2() int32 {
-	if x != nil {
-		return x.Y2
-	}
-	return 0
+	return nil
 }
 
 var File_image_v2_image_proto protoreflect.FileDescriptor
@@ -222,24 +238,29 @@ var File_image_v2_image_proto protoreflect.FileDescriptor
 var file_image_v2_image_proto_rawDesc = []byte{
 	0x0a, 0x14, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x32, 0x2f, 0x69, 0x6d, 0x61, 0x67, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x08, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x32,
-	0x22, 0xdd, 0x01, 0x0a, 0x05, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61,
-	0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x1a, 0x66,
-	0x0a, 0x04, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x6f, 0x72, 0x69, 0x67, 0x69, 0x6e,
-	0x61, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6f, 0x72, 0x69, 0x67, 0x69, 0x6e,
-	0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x6d, 0x61, 0x6c, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x05, 0x73, 0x6d, 0x61, 0x6c, 0x6c, 0x12, 0x16, 0x0a, 0x06, 0x6d, 0x65, 0x64, 0x69,
-	0x75, 0x6d, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x65, 0x64, 0x69, 0x75, 0x6d,
-	0x12, 0x14, 0x0a, 0x05, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x05, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x1a, 0x48, 0x0a, 0x06, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x73,
-	0x12, 0x0e, 0x0a, 0x02, 0x78, 0x31, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x78, 0x31,
-	0x12, 0x0e, 0x0a, 0x02, 0x79, 0x31, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x79, 0x31,
-	0x12, 0x0e, 0x0a, 0x02, 0x78, 0x32, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x78, 0x32,
-	0x12, 0x0e, 0x0a, 0x02, 0x79, 0x32, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x79, 0x32,
-	0x42, 0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x32,
-	0x6d, 0x65, 0x6e, 0x75, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x69,
-	0x6d, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x32, 0x3b, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x22, 0x66, 0x0a, 0x04, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x6f, 0x72, 0x69, 0x67,
+	0x69, 0x6e, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6f, 0x72, 0x69, 0x67,
+	0x69, 0x6e, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x6d, 0x61, 0x6c, 0x6c, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x73, 0x6d, 0x61, 0x6c, 0x6c, 0x12, 0x16, 0x0a, 0x06, 0x6d, 0x65,
+	0x64, 0x69, 0x75, 0x6d, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x65, 0x64, 0x69,
+	0x75, 0x6d, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x05, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x22, 0x48, 0x0a, 0x06, 0x50, 0x6f, 0x69, 0x6e,
+	0x74, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x78, 0x31, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02,
+	0x78, 0x31, 0x12, 0x0e, 0x0a, 0x02, 0x79, 0x31, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02,
+	0x79, 0x31, 0x12, 0x0e, 0x0a, 0x02, 0x78, 0x32, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02,
+	0x78, 0x32, 0x12, 0x0e, 0x0a, 0x02, 0x79, 0x32, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02,
+	0x79, 0x32, 0x22, 0x79, 0x0a, 0x05, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
+	0x22, 0x0a, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e,
+	0x69, 0x6d, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x32, 0x2e, 0x53, 0x69, 0x7a, 0x65, 0x52, 0x04, 0x73,
+	0x69, 0x7a, 0x65, 0x12, 0x28, 0x0a, 0x06, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x73, 0x18, 0x0b, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x32, 0x2e, 0x50,
+	0x6f, 0x69, 0x6e, 0x74, 0x73, 0x52, 0x06, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x73, 0x42, 0x2b, 0x5a,
+	0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x32, 0x6d, 0x65, 0x6e,
+	0x75, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x69, 0x6d, 0x61, 0x67,
+	0x65, 0x2f, 0x76, 0x32, 0x3b, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -256,16 +277,18 @@ func file_image_v2_image_proto_rawDescGZIP() []byte {
 
 var file_image_v2_image_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_image_v2_image_proto_goTypes = []interface{}{
-	(*Image)(nil),        // 0: image.v2.Image
-	(*Image_Size)(nil),   // 1: image.v2.Image.Size
-	(*Image_Points)(nil), // 2: image.v2.Image.Points
+	(*Size)(nil),   // 0: image.v2.Size
+	(*Points)(nil), // 1: image.v2.Points
+	(*Image)(nil),  // 2: image.v2.Image
 }
 var file_image_v2_image_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0, // 0: image.v2.Image.size:type_name -> image.v2.Size
+	1, // 1: image.v2.Image.points:type_name -> image.v2.Points
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_image_v2_image_proto_init() }
@@ -275,7 +298,7 @@ func file_image_v2_image_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_image_v2_image_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Image); i {
+			switch v := v.(*Size); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -287,7 +310,7 @@ func file_image_v2_image_proto_init() {
 			}
 		}
 		file_image_v2_image_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Image_Size); i {
+			switch v := v.(*Points); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -299,7 +322,7 @@ func file_image_v2_image_proto_init() {
 			}
 		}
 		file_image_v2_image_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Image_Points); i {
+			switch v := v.(*Image); i {
 			case 0:
 				return &v.state
 			case 1:
