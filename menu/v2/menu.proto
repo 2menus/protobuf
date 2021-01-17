@@ -19,7 +19,7 @@ message Menu {
     string name = 2;
 
     Status owners_message = 10;
-    image.v2.Image top_card_image = 11;  
+    image.v2.Image image = 11;  
     country.v2.Country country = 12;
 }
 
