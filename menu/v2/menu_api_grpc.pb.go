@@ -27,11 +27,13 @@ type MenuDataApiClient interface {
 	CreateCategory(ctx context.Context, in *CreateCategoryRequest, opts ...grpc.CallOption) (*CreateCategoryResponse, error)
 	UpdateCategory(ctx context.Context, in *UpdateCategoryRequest, opts ...grpc.CallOption) (*UpdateCategoryResponse, error)
 	DeleteCategory(ctx context.Context, in *DeleteCategoryRequest, opts ...grpc.CallOption) (*DeleteCategoryResponse, error)
+	LinkCategoryMenu(ctx context.Context, in *LinkCategoryMenuRequest, opts ...grpc.CallOption) (*LinkCategoryMenuResponse, error)
 	Product(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*ProductDetailsResponse, error)
 	Products(ctx context.Context, in *ProductsRequest, opts ...grpc.CallOption) (*ProductsResponse, error)
 	CreateProduct(ctx context.Context, in *CreateProductRequest, opts ...grpc.CallOption) (*CreateProductResponse, error)
 	UpdateProduct(ctx context.Context, in *UpdateProductRequest, opts ...grpc.CallOption) (*UpdateProductResponse, error)
 	DeleteProduct(ctx context.Context, in *DeleteProductRequest, opts ...grpc.CallOption) (*DeleteProductResponse, error)
+	LinkProductCategory(ctx context.Context, in *LinkProductCategoryRequest, opts ...grpc.CallOption) (*LinkProductCategoryResponse, error)
 }
 
 type menuDataApiClient struct {
@@ -132,6 +134,15 @@ func (c *menuDataApiClient) DeleteCategory(ctx context.Context, in *DeleteCatego
 	return out, nil
 }
 
+func (c *menuDataApiClient) LinkCategoryMenu(ctx context.Context, in *LinkCategoryMenuRequest, opts ...grpc.CallOption) (*LinkCategoryMenuResponse, error) {
+	out := new(LinkCategoryMenuResponse)
+	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/LinkCategoryMenu", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *menuDataApiClient) Product(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*ProductDetailsResponse, error) {
 	out := new(ProductDetailsResponse)
 	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/Product", in, out, opts...)
@@ -177,6 +188,15 @@ func (c *menuDataApiClient) DeleteProduct(ctx context.Context, in *DeleteProduct
 	return out, nil
 }
 
+func (c *menuDataApiClient) LinkProductCategory(ctx context.Context, in *LinkProductCategoryRequest, opts ...grpc.CallOption) (*LinkProductCategoryResponse, error) {
+	out := new(LinkProductCategoryResponse)
+	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/LinkProductCategory", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MenuDataApiServer is the server API for MenuDataApi service.
 // All implementations must embed UnimplementedMenuDataApiServer
 // for forward compatibility
@@ -191,11 +211,13 @@ type MenuDataApiServer interface {
 	CreateCategory(context.Context, *CreateCategoryRequest) (*CreateCategoryResponse, error)
 	UpdateCategory(context.Context, *UpdateCategoryRequest) (*UpdateCategoryResponse, error)
 	DeleteCategory(context.Context, *DeleteCategoryRequest) (*DeleteCategoryResponse, error)
+	LinkCategoryMenu(context.Context, *LinkCategoryMenuRequest) (*LinkCategoryMenuResponse, error)
 	Product(context.Context, *ProductDetailsRequest) (*ProductDetailsResponse, error)
 	Products(context.Context, *ProductsRequest) (*ProductsResponse, error)
 	CreateProduct(context.Context, *CreateProductRequest) (*CreateProductResponse, error)
 	UpdateProduct(context.Context, *UpdateProductRequest) (*UpdateProductResponse, error)
 	DeleteProduct(context.Context, *DeleteProductRequest) (*DeleteProductResponse, error)
+	LinkProductCategory(context.Context, *LinkProductCategoryRequest) (*LinkProductCategoryResponse, error)
 	mustEmbedUnimplementedMenuDataApiServer()
 }
 
@@ -233,6 +255,9 @@ func (UnimplementedMenuDataApiServer) UpdateCategory(context.Context, *UpdateCat
 func (UnimplementedMenuDataApiServer) DeleteCategory(context.Context, *DeleteCategoryRequest) (*DeleteCategoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCategory not implemented")
 }
+func (UnimplementedMenuDataApiServer) LinkCategoryMenu(context.Context, *LinkCategoryMenuRequest) (*LinkCategoryMenuResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LinkCategoryMenu not implemented")
+}
 func (UnimplementedMenuDataApiServer) Product(context.Context, *ProductDetailsRequest) (*ProductDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Product not implemented")
 }
@@ -247,6 +272,9 @@ func (UnimplementedMenuDataApiServer) UpdateProduct(context.Context, *UpdateProd
 }
 func (UnimplementedMenuDataApiServer) DeleteProduct(context.Context, *DeleteProductRequest) (*DeleteProductResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProduct not implemented")
+}
+func (UnimplementedMenuDataApiServer) LinkProductCategory(context.Context, *LinkProductCategoryRequest) (*LinkProductCategoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LinkProductCategory not implemented")
 }
 func (UnimplementedMenuDataApiServer) mustEmbedUnimplementedMenuDataApiServer() {}
 
@@ -441,6 +469,24 @@ func _MenuDataApi_DeleteCategory_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _MenuDataApi_LinkCategoryMenu_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LinkCategoryMenuRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MenuDataApiServer).LinkCategoryMenu(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/menu.v2.MenuDataApi/LinkCategoryMenu",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MenuDataApiServer).LinkCategoryMenu(ctx, req.(*LinkCategoryMenuRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _MenuDataApi_Product_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ProductDetailsRequest)
 	if err := dec(in); err != nil {
@@ -531,6 +577,24 @@ func _MenuDataApi_DeleteProduct_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _MenuDataApi_LinkProductCategory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LinkProductCategoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MenuDataApiServer).LinkProductCategory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/menu.v2.MenuDataApi/LinkProductCategory",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MenuDataApiServer).LinkProductCategory(ctx, req.(*LinkProductCategoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // MenuDataApi_ServiceDesc is the grpc.ServiceDesc for MenuDataApi service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -579,6 +643,10 @@ var MenuDataApi_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _MenuDataApi_DeleteCategory_Handler,
 		},
 		{
+			MethodName: "LinkCategoryMenu",
+			Handler:    _MenuDataApi_LinkCategoryMenu_Handler,
+		},
+		{
 			MethodName: "Product",
 			Handler:    _MenuDataApi_Product_Handler,
 		},
@@ -597,6 +665,10 @@ var MenuDataApi_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteProduct",
 			Handler:    _MenuDataApi_DeleteProduct_Handler,
+		},
+		{
+			MethodName: "LinkProductCategory",
+			Handler:    _MenuDataApi_LinkProductCategory_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

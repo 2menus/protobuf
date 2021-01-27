@@ -97,6 +97,13 @@ message DeleteCategoryRequest {
 
 message DeleteCategoryResponse {}
 
+message LinkCategoryMenuRequest {
+    string category_id = 1;
+    string menu_id = 2;
+}
+
+message LinkCategoryMenuResponse {}
+
 // // // // // //
 // PRODUCT
 // // // // // //
@@ -145,6 +152,13 @@ message DeleteProductRequest {
 
 message DeleteProductResponse {}
 
+message LinkProductCategoryRequest {
+    string product_id = 1;
+    string category_id = 2;
+}
+
+message LinkProductCategoryResponse {}
+
 service MenuDataApi {
     rpc Menu(MenuDetailsRequest) returns (MenuDetailsResponse) {};
     rpc Menus(MenusRequest) returns (MenusResponse) {};
@@ -158,9 +172,13 @@ service MenuDataApi {
     rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {};
     rpc DeleteCategory(DeleteCategoryRequest) returns (DeleteCategoryResponse) {};
 
+    rpc LinkCategoryMenu(LinkCategoryMenuRequest) returns (LinkCategoryMenuResponse) {};
+
     rpc Product(ProductDetailsRequest) returns (ProductDetailsResponse) {};
     rpc Products(ProductsRequest) returns (ProductsResponse) {};
     rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {};
     rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse) {};
     rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {};
+
+    rpc LinkProductCategory(LinkProductCategoryRequest) returns (LinkProductCategoryResponse) {};
 }
