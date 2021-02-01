@@ -61,7 +61,7 @@ message CategoriesRequest {
 }
 
 message CategoriesResponse {
-    repeated Menu menus = 1;
+    repeated Category categories = 1;
 }
 
 message CategoryDetailsRequest {
