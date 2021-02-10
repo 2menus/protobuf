@@ -6,6 +6,7 @@
 protoc menu/v2/menu.proto image/v2/image.proto country/v2/country.proto --js_out=import_style=commonjs:./web/ --proto_path=./
 protoc menu/v2/menu_api.proto --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./web/ --proto_path=./
 protoc menu/v2/menu.proto image/v2/image.proto country/v2/country.proto --js_out=import_style=typescript:./web/ --proto_path=./
+protoc menu/v2/menu.proto image/v2/image.proto country/v2/country.proto --grpc-web_out=import_style=typescript:./web/ --proto_path=./
 protoc menu/v2/menu_api.proto --grpc-web_out=import_style=typescript,mode=grpcwebtext:./web/ --proto_path=./
 
 # golang
