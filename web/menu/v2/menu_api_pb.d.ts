@@ -1,6 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as menu_v2_menu_pb from '../../menu/v2/menu_pb';
+import * as country_v2_country_pb from '../../country/v2/country_pb';
 
 
 export class MenusRequest extends jspb.Message {
@@ -684,6 +685,40 @@ export class LinkProductCategoryResponse extends jspb.Message {
 
 export namespace LinkProductCategoryResponse {
   export type AsObject = {
+  }
+}
+
+export class CountriesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CountriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CountriesRequest): CountriesRequest.AsObject;
+  static serializeBinaryToWriter(message: CountriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CountriesRequest;
+  static deserializeBinaryFromReader(message: CountriesRequest, reader: jspb.BinaryReader): CountriesRequest;
+}
+
+export namespace CountriesRequest {
+  export type AsObject = {
+  }
+}
+
+export class CountriesResponse extends jspb.Message {
+  getCountriesList(): Array<country_v2_country_pb.Country>;
+  setCountriesList(value: Array<country_v2_country_pb.Country>): CountriesResponse;
+  clearCountriesList(): CountriesResponse;
+  addCountries(value?: country_v2_country_pb.Country, index?: number): country_v2_country_pb.Country;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CountriesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CountriesResponse): CountriesResponse.AsObject;
+  static serializeBinaryToWriter(message: CountriesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CountriesResponse;
+  static deserializeBinaryFromReader(message: CountriesResponse, reader: jspb.BinaryReader): CountriesResponse;
+}
+
+export namespace CountriesResponse {
+  export type AsObject = {
+    countriesList: Array<country_v2_country_pb.Country.AsObject>,
   }
 }
 

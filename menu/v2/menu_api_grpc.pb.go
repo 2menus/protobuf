@@ -34,6 +34,7 @@ type MenuDataApiClient interface {
 	UpdateProduct(ctx context.Context, in *UpdateProductRequest, opts ...grpc.CallOption) (*UpdateProductResponse, error)
 	DeleteProduct(ctx context.Context, in *DeleteProductRequest, opts ...grpc.CallOption) (*DeleteProductResponse, error)
 	LinkProductCategory(ctx context.Context, in *LinkProductCategoryRequest, opts ...grpc.CallOption) (*LinkProductCategoryResponse, error)
+	Countries(ctx context.Context, in *CountriesRequest, opts ...grpc.CallOption) (*CountriesResponse, error)
 }
 
 type menuDataApiClient struct {
@@ -197,6 +198,15 @@ func (c *menuDataApiClient) LinkProductCategory(ctx context.Context, in *LinkPro
 	return out, nil
 }
 
+func (c *menuDataApiClient) Countries(ctx context.Context, in *CountriesRequest, opts ...grpc.CallOption) (*CountriesResponse, error) {
+	out := new(CountriesResponse)
+	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/Countries", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MenuDataApiServer is the server API for MenuDataApi service.
 // All implementations must embed UnimplementedMenuDataApiServer
 // for forward compatibility
@@ -218,6 +228,7 @@ type MenuDataApiServer interface {
 	UpdateProduct(context.Context, *UpdateProductRequest) (*UpdateProductResponse, error)
 	DeleteProduct(context.Context, *DeleteProductRequest) (*DeleteProductResponse, error)
 	LinkProductCategory(context.Context, *LinkProductCategoryRequest) (*LinkProductCategoryResponse, error)
+	Countries(context.Context, *CountriesRequest) (*CountriesResponse, error)
 	mustEmbedUnimplementedMenuDataApiServer()
 }
 
@@ -275,6 +286,9 @@ func (UnimplementedMenuDataApiServer) DeleteProduct(context.Context, *DeleteProd
 }
 func (UnimplementedMenuDataApiServer) LinkProductCategory(context.Context, *LinkProductCategoryRequest) (*LinkProductCategoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LinkProductCategory not implemented")
+}
+func (UnimplementedMenuDataApiServer) Countries(context.Context, *CountriesRequest) (*CountriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Countries not implemented")
 }
 func (UnimplementedMenuDataApiServer) mustEmbedUnimplementedMenuDataApiServer() {}
 
@@ -595,6 +609,24 @@ func _MenuDataApi_LinkProductCategory_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _MenuDataApi_Countries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MenuDataApiServer).Countries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/menu.v2.MenuDataApi/Countries",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MenuDataApiServer).Countries(ctx, req.(*CountriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // MenuDataApi_ServiceDesc is the grpc.ServiceDesc for MenuDataApi service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -669,6 +701,10 @@ var MenuDataApi_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "LinkProductCategory",
 			Handler:    _MenuDataApi_LinkProductCategory_Handler,
+		},
+		{
+			MethodName: "Countries",
+			Handler:    _MenuDataApi_Countries_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

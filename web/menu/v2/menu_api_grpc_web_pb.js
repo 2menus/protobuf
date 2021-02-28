@@ -17,6 +17,8 @@ grpc.web = require('grpc-web');
 
 
 var menu_v2_menu_pb = require('../../menu/v2/menu_pb.js')
+
+var country_v2_country_pb = require('../../country/v2/country_pb.js')
 const proto = {};
 proto.menu = {};
 proto.menu.v2 = require('./menu_api_pb.js');
@@ -1430,6 +1432,86 @@ proto.menu.v2.MenuDataApiPromiseClient.prototype.linkProductCategory =
       request,
       metadata || {},
       methodDescriptor_MenuDataApi_LinkProductCategory);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.menu.v2.CountriesRequest,
+ *   !proto.menu.v2.CountriesResponse>}
+ */
+const methodDescriptor_MenuDataApi_Countries = new grpc.web.MethodDescriptor(
+  '/menu.v2.MenuDataApi/Countries',
+  grpc.web.MethodType.UNARY,
+  proto.menu.v2.CountriesRequest,
+  proto.menu.v2.CountriesResponse,
+  /**
+   * @param {!proto.menu.v2.CountriesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.v2.CountriesResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.menu.v2.CountriesRequest,
+ *   !proto.menu.v2.CountriesResponse>}
+ */
+const methodInfo_MenuDataApi_Countries = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.menu.v2.CountriesResponse,
+  /**
+   * @param {!proto.menu.v2.CountriesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.v2.CountriesResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.menu.v2.CountriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.menu.v2.CountriesResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v2.CountriesResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.menu.v2.MenuDataApiClient.prototype.countries =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/menu.v2.MenuDataApi/Countries',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataApi_Countries,
+      callback);
+};
+
+
+/**
+ * @param {!proto.menu.v2.CountriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.menu.v2.CountriesResponse>}
+ *     Promise that resolves to the response
+ */
+proto.menu.v2.MenuDataApiPromiseClient.prototype.countries =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/menu.v2.MenuDataApi/Countries',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataApi_Countries);
 };
 
 
