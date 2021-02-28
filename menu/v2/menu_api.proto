@@ -1,0 +1,184 @@
+syntax = "proto3";
+
+package menu.v2;
+option go_package = "github.com/2menus/protobuf/menu/v2;menu";
+
+import "menu/v2/menu.proto";
+
+// // // // // //
+// Menu
+// // // // // //
+
+message MenusRequest {
+    string owner_id = 1;
+}
+
+message MenusResponse {
+    repeated Menu menus = 1;
+}
+
+message MenuDetailsRequest {
+    string menu_id = 1;
+}
+
+message MenuDetailsResponse {
+    Menu menu = 1;
+}
+
+message CreateMenuRequest {
+    string name = 1;
+    string country_id = 2;
+    string image_id = 3;
+}
+
+message CreateMenuResponse {
+    Menu menu = 1;
+}
+
+message UpdateMenuRequest {
+    string menu_id = 1;
+    string name = 2;
+    string country_id = 3;
+    string image_id = 4;
+}
+
+message UpdateMenuResponse {
+    Menu menu = 1;
+}
+
+message DeleteMenuRequest {
+    string menu_id = 1;
+}
+
+message DeleteMenuResponse {}
+
+// // // // // //
+// CATEGORY
+// // // // // //
+
+message CategoriesRequest {
+    string menu_id = 1;
+}
+
+message CategoriesResponse {
+    repeated Category categories = 1;
+}
+
+message CategoryDetailsRequest {
+    string category_id = 1;
+}
+
+message CategoryDetailsResponse {
+    Category category = 1;
+}
+
+message CreateCategoryRequest {
+    string name = 1;
+    string image_id = 3;
+}
+
+message CreateCategoryResponse {
+    Category category = 1;
+}
+
+message UpdateCategoryRequest {
+    string category_id = 1;
+    string name = 2;
+    string image_id = 3;
+}
+
+message UpdateCategoryResponse {
+    Category category = 1;
+}
+
+message DeleteCategoryRequest {
+    string category_id = 1;
+}
+
+message DeleteCategoryResponse {}
+
+message LinkCategoryMenuRequest {
+    string category_id = 1;
+    string menu_id = 2;
+}
+
+message LinkCategoryMenuResponse {}
+
+// // // // // //
+// PRODUCT
+// // // // // //
+message ProductsRequest {
+    string category_id = 1;
+}
+
+message ProductsResponse {
+    repeated Product products = 1;
+}
+
+message ProductDetailsRequest {
+    string product_id = 1;
+}
+
+message ProductDetailsResponse {
+    Product product = 1;
+}
+
+message CreateProductRequest {
+    string name = 1;
+    string description = 2;
+    float  price = 3;
+    string image_id = 4;
+}
+
+message CreateProductResponse {
+    Product product = 1;
+}
+
+message UpdateProductRequest {
+    string product_id = 1;
+    string name = 2;
+    string description = 3;
+    float  price = 4;
+    string image_id = 5;
+}
+
+message UpdateProductResponse {
+    Product product = 1;
+}
+
+message DeleteProductRequest {
+    string product_id = 1;
+}
+
+message DeleteProductResponse {}
+
+message LinkProductCategoryRequest {
+    string product_id = 1;
+    string category_id = 2;
+}
+
+message LinkProductCategoryResponse {}
+
+service MenuDataApi {
+    rpc Menu(MenuDetailsRequest) returns (MenuDetailsResponse) {};
+    rpc Menus(MenusRequest) returns (MenusResponse) {};
+    rpc CreateMenu(CreateMenuRequest) returns (CreateMenuResponse) {};
+    rpc UpdateMenu(UpdateMenuRequest) returns (UpdateMenuResponse) {};
+    rpc DeleteMenu(DeleteMenuRequest) returns (DeleteMenuResponse) {};
+
+    rpc Category(CategoryDetailsRequest) returns (CategoryDetailsResponse) {};
+    rpc Categories(CategoriesRequest) returns (CategoriesResponse) {};
+    rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {};
+    rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {};
+    rpc DeleteCategory(DeleteCategoryRequest) returns (DeleteCategoryResponse) {};
+
+    rpc LinkCategoryMenu(LinkCategoryMenuRequest) returns (LinkCategoryMenuResponse) {};
+
+    rpc Product(ProductDetailsRequest) returns (ProductDetailsResponse) {};
+    rpc Products(ProductsRequest) returns (ProductsResponse) {};
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {};
+    rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse) {};
+    rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {};
+
+    rpc LinkProductCategory(LinkProductCategoryRequest) returns (LinkProductCategoryResponse) {};
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package image.v2;
+option go_package = "github.com/2menus/protobuf/image/v2;image";
+
+message Size {
+    string original = 1;
+    string small = 2;
+    string medium = 3;
+    string large = 4;
+}
+
+message Points {
+    int32 x1 = 1;
+    int32 y1 = 2;
+    int32 x2 = 3;
+    int32 y2 = 4;
+}
+
+message Image {
+    string id = 1;
+    string name = 2;
+
+    Size size = 10;
+    Points points = 11;
+}

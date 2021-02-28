@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package menu.v2;
+option go_package = "github.com/2menus/protobuf/menu/v2;menu";
+
+import "image/v2/image.proto";
+import "country/v2/country.proto";
+import "google/protobuf/timestamp.proto";
+
+message Status {
+    string id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    string message = 3;
+    string author = 4;
+}
+
+message Menu {
+    string id = 1;
+    string name = 2;
+
+    Status owners_message = 10;
+    image.v2.Image image = 11;  
+    country.v2.Country country = 12;
+}
+
+message Category {
+    string id = 1;
+    string name = 2;
+    image.v2.Image image = 10;
+}
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    float  price = 4;
+    image.v2.Image image = 10;
+}

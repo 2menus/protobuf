@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package country.v2;
+option go_package = "github.com/2menus/protobuf/country/v2;country";
+
+message Currency {
+    string id = 1;
+    string name = 2;
+    string code = 3;
+    string symbol = 4;
+}
+
+message Language {
+    string id = 1;
+    string name = 2;
+    string code = 3;
+    string native = 4;
+}
+
+message Country {
+    string id = 1;
+    string name = 2;
+    string code = 3;
+    string native = 4;
+
+    repeated Currency currency = 10;
+    repeated Language language = 11;
+}
