@@ -715,5 +715,45 @@ export class MenuDataApiClient {
     this.methodInfoLinkProductCategory);
   }
 
+  methodInfoCountries = new grpcWeb.AbstractClientBase.MethodInfo(
+    menu_v2_menu_api_pb.CountriesResponse,
+    (request: menu_v2_menu_api_pb.CountriesRequest) => {
+      return request.serializeBinary();
+    },
+    menu_v2_menu_api_pb.CountriesResponse.deserializeBinary
+  );
+
+  countries(
+    request: menu_v2_menu_api_pb.CountriesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v2_menu_api_pb.CountriesResponse>;
+
+  countries(
+    request: menu_v2_menu_api_pb.CountriesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: menu_v2_menu_api_pb.CountriesResponse) => void): grpcWeb.ClientReadableStream<menu_v2_menu_api_pb.CountriesResponse>;
+
+  countries(
+    request: menu_v2_menu_api_pb.CountriesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: menu_v2_menu_api_pb.CountriesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/menu.v2.MenuDataApi/Countries',
+        request,
+        metadata || {},
+        this.methodInfoCountries,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/menu.v2.MenuDataApi/Countries',
+    request,
+    metadata || {},
+    this.methodInfoCountries);
+  }
+
 }
 

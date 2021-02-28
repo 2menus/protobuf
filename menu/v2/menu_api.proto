@@ -4,6 +4,7 @@ package menu.v2;
 option go_package = "github.com/2menus/protobuf/menu/v2;menu";
 
 import "menu/v2/menu.proto";
+import "country/v2/country.proto";
 
 // // // // // //
 // Menu
@@ -159,6 +160,11 @@ message LinkProductCategoryRequest {
 
 message LinkProductCategoryResponse {}
 
+message CountriesRequest {}
+message CountriesResponse{
+    repeated country.v2.Country countries = 1;
+}
+
 service MenuDataApi {
     rpc Menu(MenuDetailsRequest) returns (MenuDetailsResponse) {};
     rpc Menus(MenusRequest) returns (MenusResponse) {};
@@ -181,4 +187,6 @@ service MenuDataApi {
     rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {};
 
     rpc LinkProductCategory(LinkProductCategoryRequest) returns (LinkProductCategoryResponse) {};
+
+    rpc Countries(CountriesRequest) returns (CountriesResponse) {};
 }
