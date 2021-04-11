@@ -74,7 +74,8 @@ proto.menu.v2.Menu.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     ownersMessage: (f = msg.getOwnersMessage()) && proto.menu.v2.Status.toObject(includeInstance, f),
     image: (f = msg.getImage()) && proto.image.v2.Image.toObject(includeInstance, f),
-    country: (f = msg.getCountry()) && proto.country.v2.Country.toObject(includeInstance, f)
+    country: (f = msg.getCountry()) && proto.country.v2.Country.toObject(includeInstance, f),
+    logo: (f = msg.getLogo()) && proto.image.v2.Image.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -133,6 +134,11 @@ proto.menu.v2.Menu.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.country.v2.Country;
       reader.readMessage(value,proto.country.v2.Country.deserializeBinaryFromReader);
       msg.setCountry(value);
+      break;
+    case 13:
+      var value = new proto.image.v2.Image;
+      reader.readMessage(value,proto.image.v2.Image.deserializeBinaryFromReader);
+      msg.setLogo(value);
       break;
     default:
       reader.skipField();
@@ -199,6 +205,14 @@ proto.menu.v2.Menu.serializeBinaryToWriter = function(message, writer) {
       12,
       f,
       proto.country.v2.Country.serializeBinaryToWriter
+    );
+  }
+  f = message.getLogo();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.image.v2.Image.serializeBinaryToWriter
     );
   }
 };
@@ -348,6 +362,43 @@ proto.menu.v2.Menu.prototype.clearCountry = function() {
  */
 proto.menu.v2.Menu.prototype.hasCountry = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional image.v2.Image logo = 13;
+ * @return {?proto.image.v2.Image}
+ */
+proto.menu.v2.Menu.prototype.getLogo = function() {
+  return /** @type{?proto.image.v2.Image} */ (
+    jspb.Message.getWrapperField(this, proto.image.v2.Image, 13));
+};
+
+
+/**
+ * @param {?proto.image.v2.Image|undefined} value
+ * @return {!proto.menu.v2.Menu} returns this
+*/
+proto.menu.v2.Menu.prototype.setLogo = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.menu.v2.Menu} returns this
+ */
+proto.menu.v2.Menu.prototype.clearLogo = function() {
+  return this.setLogo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.menu.v2.Menu.prototype.hasLogo = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 

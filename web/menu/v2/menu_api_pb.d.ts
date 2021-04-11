@@ -90,6 +90,9 @@ export class CreateMenuRequest extends jspb.Message {
   getImageId(): string;
   setImageId(value: string): CreateMenuRequest;
 
+  getLogoId(): string;
+  setLogoId(value: string): CreateMenuRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateMenuRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateMenuRequest): CreateMenuRequest.AsObject;
@@ -103,6 +106,7 @@ export namespace CreateMenuRequest {
     name: string,
     countryId: string,
     imageId: string,
+    logoId: string,
   }
 }
 
@@ -719,6 +723,80 @@ export class CountriesResponse extends jspb.Message {
 export namespace CountriesResponse {
   export type AsObject = {
     countriesList: Array<country_v2_country_pb.Country.AsObject>,
+  }
+}
+
+export class CreateStatusMessageRequest extends jspb.Message {
+  getMessage(): string;
+  setMessage(value: string): CreateStatusMessageRequest;
+
+  getAuthor(): string;
+  setAuthor(value: string): CreateStatusMessageRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateStatusMessageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateStatusMessageRequest): CreateStatusMessageRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateStatusMessageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateStatusMessageRequest;
+  static deserializeBinaryFromReader(message: CreateStatusMessageRequest, reader: jspb.BinaryReader): CreateStatusMessageRequest;
+}
+
+export namespace CreateStatusMessageRequest {
+  export type AsObject = {
+    message: string,
+    author: string,
+  }
+}
+
+export class CreateStatusMessageResponse extends jspb.Message {
+  getStatus(): menu_v2_menu_pb.Status | undefined;
+  setStatus(value?: menu_v2_menu_pb.Status): CreateStatusMessageResponse;
+  hasStatus(): boolean;
+  clearStatus(): CreateStatusMessageResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateStatusMessageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateStatusMessageResponse): CreateStatusMessageResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateStatusMessageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateStatusMessageResponse;
+  static deserializeBinaryFromReader(message: CreateStatusMessageResponse, reader: jspb.BinaryReader): CreateStatusMessageResponse;
+}
+
+export namespace CreateStatusMessageResponse {
+  export type AsObject = {
+    status?: menu_v2_menu_pb.Status.AsObject,
+  }
+}
+
+export class DeleteStatusMessageRequest extends jspb.Message {
+  getStatusId(): string;
+  setStatusId(value: string): DeleteStatusMessageRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteStatusMessageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteStatusMessageRequest): DeleteStatusMessageRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteStatusMessageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteStatusMessageRequest;
+  static deserializeBinaryFromReader(message: DeleteStatusMessageRequest, reader: jspb.BinaryReader): DeleteStatusMessageRequest;
+}
+
+export namespace DeleteStatusMessageRequest {
+  export type AsObject = {
+    statusId: string,
+  }
+}
+
+export class DeleteStatusMessageResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteStatusMessageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteStatusMessageResponse): DeleteStatusMessageResponse.AsObject;
+  static serializeBinaryToWriter(message: DeleteStatusMessageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteStatusMessageResponse;
+  static deserializeBinaryFromReader(message: DeleteStatusMessageResponse, reader: jspb.BinaryReader): DeleteStatusMessageResponse;
+}
+
+export namespace DeleteStatusMessageResponse {
+  export type AsObject = {
   }
 }
 

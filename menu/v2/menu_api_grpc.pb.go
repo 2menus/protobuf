@@ -17,24 +17,31 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MenuDataApiClient interface {
+	// menus
 	Menu(ctx context.Context, in *MenuDetailsRequest, opts ...grpc.CallOption) (*MenuDetailsResponse, error)
 	Menus(ctx context.Context, in *MenusRequest, opts ...grpc.CallOption) (*MenusResponse, error)
 	CreateMenu(ctx context.Context, in *CreateMenuRequest, opts ...grpc.CallOption) (*CreateMenuResponse, error)
 	UpdateMenu(ctx context.Context, in *UpdateMenuRequest, opts ...grpc.CallOption) (*UpdateMenuResponse, error)
 	DeleteMenu(ctx context.Context, in *DeleteMenuRequest, opts ...grpc.CallOption) (*DeleteMenuResponse, error)
+	// categories
 	Category(ctx context.Context, in *CategoryDetailsRequest, opts ...grpc.CallOption) (*CategoryDetailsResponse, error)
 	Categories(ctx context.Context, in *CategoriesRequest, opts ...grpc.CallOption) (*CategoriesResponse, error)
 	CreateCategory(ctx context.Context, in *CreateCategoryRequest, opts ...grpc.CallOption) (*CreateCategoryResponse, error)
 	UpdateCategory(ctx context.Context, in *UpdateCategoryRequest, opts ...grpc.CallOption) (*UpdateCategoryResponse, error)
 	DeleteCategory(ctx context.Context, in *DeleteCategoryRequest, opts ...grpc.CallOption) (*DeleteCategoryResponse, error)
 	LinkCategoryMenu(ctx context.Context, in *LinkCategoryMenuRequest, opts ...grpc.CallOption) (*LinkCategoryMenuResponse, error)
+	// products
 	Product(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*ProductDetailsResponse, error)
 	Products(ctx context.Context, in *ProductsRequest, opts ...grpc.CallOption) (*ProductsResponse, error)
 	CreateProduct(ctx context.Context, in *CreateProductRequest, opts ...grpc.CallOption) (*CreateProductResponse, error)
 	UpdateProduct(ctx context.Context, in *UpdateProductRequest, opts ...grpc.CallOption) (*UpdateProductResponse, error)
 	DeleteProduct(ctx context.Context, in *DeleteProductRequest, opts ...grpc.CallOption) (*DeleteProductResponse, error)
 	LinkProductCategory(ctx context.Context, in *LinkProductCategoryRequest, opts ...grpc.CallOption) (*LinkProductCategoryResponse, error)
+	// countries
 	Countries(ctx context.Context, in *CountriesRequest, opts ...grpc.CallOption) (*CountriesResponse, error)
+	// status
+	CreateStatusMessage(ctx context.Context, in *CreateStatusMessageRequest, opts ...grpc.CallOption) (*CreateStatusMessageResponse, error)
+	DeleteStatusMessage(ctx context.Context, in *DeleteStatusMessageRequest, opts ...grpc.CallOption) (*DeleteStatusMessageResponse, error)
 }
 
 type menuDataApiClient struct {
@@ -207,28 +214,53 @@ func (c *menuDataApiClient) Countries(ctx context.Context, in *CountriesRequest,
 	return out, nil
 }
 
+func (c *menuDataApiClient) CreateStatusMessage(ctx context.Context, in *CreateStatusMessageRequest, opts ...grpc.CallOption) (*CreateStatusMessageResponse, error) {
+	out := new(CreateStatusMessageResponse)
+	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/CreateStatusMessage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *menuDataApiClient) DeleteStatusMessage(ctx context.Context, in *DeleteStatusMessageRequest, opts ...grpc.CallOption) (*DeleteStatusMessageResponse, error) {
+	out := new(DeleteStatusMessageResponse)
+	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/DeleteStatusMessage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MenuDataApiServer is the server API for MenuDataApi service.
 // All implementations must embed UnimplementedMenuDataApiServer
 // for forward compatibility
 type MenuDataApiServer interface {
+	// menus
 	Menu(context.Context, *MenuDetailsRequest) (*MenuDetailsResponse, error)
 	Menus(context.Context, *MenusRequest) (*MenusResponse, error)
 	CreateMenu(context.Context, *CreateMenuRequest) (*CreateMenuResponse, error)
 	UpdateMenu(context.Context, *UpdateMenuRequest) (*UpdateMenuResponse, error)
 	DeleteMenu(context.Context, *DeleteMenuRequest) (*DeleteMenuResponse, error)
+	// categories
 	Category(context.Context, *CategoryDetailsRequest) (*CategoryDetailsResponse, error)
 	Categories(context.Context, *CategoriesRequest) (*CategoriesResponse, error)
 	CreateCategory(context.Context, *CreateCategoryRequest) (*CreateCategoryResponse, error)
 	UpdateCategory(context.Context, *UpdateCategoryRequest) (*UpdateCategoryResponse, error)
 	DeleteCategory(context.Context, *DeleteCategoryRequest) (*DeleteCategoryResponse, error)
 	LinkCategoryMenu(context.Context, *LinkCategoryMenuRequest) (*LinkCategoryMenuResponse, error)
+	// products
 	Product(context.Context, *ProductDetailsRequest) (*ProductDetailsResponse, error)
 	Products(context.Context, *ProductsRequest) (*ProductsResponse, error)
 	CreateProduct(context.Context, *CreateProductRequest) (*CreateProductResponse, error)
 	UpdateProduct(context.Context, *UpdateProductRequest) (*UpdateProductResponse, error)
 	DeleteProduct(context.Context, *DeleteProductRequest) (*DeleteProductResponse, error)
 	LinkProductCategory(context.Context, *LinkProductCategoryRequest) (*LinkProductCategoryResponse, error)
+	// countries
 	Countries(context.Context, *CountriesRequest) (*CountriesResponse, error)
+	// status
+	CreateStatusMessage(context.Context, *CreateStatusMessageRequest) (*CreateStatusMessageResponse, error)
+	DeleteStatusMessage(context.Context, *DeleteStatusMessageRequest) (*DeleteStatusMessageResponse, error)
 	mustEmbedUnimplementedMenuDataApiServer()
 }
 
@@ -289,6 +321,12 @@ func (UnimplementedMenuDataApiServer) LinkProductCategory(context.Context, *Link
 }
 func (UnimplementedMenuDataApiServer) Countries(context.Context, *CountriesRequest) (*CountriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Countries not implemented")
+}
+func (UnimplementedMenuDataApiServer) CreateStatusMessage(context.Context, *CreateStatusMessageRequest) (*CreateStatusMessageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateStatusMessage not implemented")
+}
+func (UnimplementedMenuDataApiServer) DeleteStatusMessage(context.Context, *DeleteStatusMessageRequest) (*DeleteStatusMessageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteStatusMessage not implemented")
 }
 func (UnimplementedMenuDataApiServer) mustEmbedUnimplementedMenuDataApiServer() {}
 
@@ -627,6 +665,42 @@ func _MenuDataApi_Countries_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _MenuDataApi_CreateStatusMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateStatusMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MenuDataApiServer).CreateStatusMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/menu.v2.MenuDataApi/CreateStatusMessage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MenuDataApiServer).CreateStatusMessage(ctx, req.(*CreateStatusMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MenuDataApi_DeleteStatusMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteStatusMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MenuDataApiServer).DeleteStatusMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/menu.v2.MenuDataApi/DeleteStatusMessage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MenuDataApiServer).DeleteStatusMessage(ctx, req.(*DeleteStatusMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // MenuDataApi_ServiceDesc is the grpc.ServiceDesc for MenuDataApi service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -705,6 +779,14 @@ var MenuDataApi_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Countries",
 			Handler:    _MenuDataApi_Countries_Handler,
+		},
+		{
+			MethodName: "CreateStatusMessage",
+			Handler:    _MenuDataApi_CreateStatusMessage_Handler,
+		},
+		{
+			MethodName: "DeleteStatusMessage",
+			Handler:    _MenuDataApi_DeleteStatusMessage_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

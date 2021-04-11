@@ -755,5 +755,85 @@ export class MenuDataApiClient {
     this.methodInfoCountries);
   }
 
+  methodInfoCreateStatusMessage = new grpcWeb.AbstractClientBase.MethodInfo(
+    menu_v2_menu_api_pb.CreateStatusMessageResponse,
+    (request: menu_v2_menu_api_pb.CreateStatusMessageRequest) => {
+      return request.serializeBinary();
+    },
+    menu_v2_menu_api_pb.CreateStatusMessageResponse.deserializeBinary
+  );
+
+  createStatusMessage(
+    request: menu_v2_menu_api_pb.CreateStatusMessageRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v2_menu_api_pb.CreateStatusMessageResponse>;
+
+  createStatusMessage(
+    request: menu_v2_menu_api_pb.CreateStatusMessageRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: menu_v2_menu_api_pb.CreateStatusMessageResponse) => void): grpcWeb.ClientReadableStream<menu_v2_menu_api_pb.CreateStatusMessageResponse>;
+
+  createStatusMessage(
+    request: menu_v2_menu_api_pb.CreateStatusMessageRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: menu_v2_menu_api_pb.CreateStatusMessageResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/menu.v2.MenuDataApi/CreateStatusMessage',
+        request,
+        metadata || {},
+        this.methodInfoCreateStatusMessage,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/menu.v2.MenuDataApi/CreateStatusMessage',
+    request,
+    metadata || {},
+    this.methodInfoCreateStatusMessage);
+  }
+
+  methodInfoDeleteStatusMessage = new grpcWeb.AbstractClientBase.MethodInfo(
+    menu_v2_menu_api_pb.DeleteStatusMessageResponse,
+    (request: menu_v2_menu_api_pb.DeleteStatusMessageRequest) => {
+      return request.serializeBinary();
+    },
+    menu_v2_menu_api_pb.DeleteStatusMessageResponse.deserializeBinary
+  );
+
+  deleteStatusMessage(
+    request: menu_v2_menu_api_pb.DeleteStatusMessageRequest,
+    metadata: grpcWeb.Metadata | null): Promise<menu_v2_menu_api_pb.DeleteStatusMessageResponse>;
+
+  deleteStatusMessage(
+    request: menu_v2_menu_api_pb.DeleteStatusMessageRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: menu_v2_menu_api_pb.DeleteStatusMessageResponse) => void): grpcWeb.ClientReadableStream<menu_v2_menu_api_pb.DeleteStatusMessageResponse>;
+
+  deleteStatusMessage(
+    request: menu_v2_menu_api_pb.DeleteStatusMessageRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: menu_v2_menu_api_pb.DeleteStatusMessageResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/menu.v2.MenuDataApi/DeleteStatusMessage',
+        request,
+        metadata || {},
+        this.methodInfoDeleteStatusMessage,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/menu.v2.MenuDataApi/DeleteStatusMessage',
+    request,
+    metadata || {},
+    this.methodInfoDeleteStatusMessage);
+  }
+
 }
 
