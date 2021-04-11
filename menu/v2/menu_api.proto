@@ -166,20 +166,14 @@ message CountriesResponse{
     repeated country.v2.Country countries = 1;
 }
 
-message CreateStatusMessageRequest {
+message SetStatusMessageRequest {
     string message = 1;
     string author = 2;
 }
 
-message CreateStatusMessageResponse {
-    Status status = 1;
+message SetStatusMessageResponse {
+    string id = 1;
 }
-
-message DeleteStatusMessageRequest {
-    string status_id = 1;
-}
-
-message DeleteStatusMessageResponse {}
 
 service MenuDataApi {
     // menus
@@ -209,6 +203,5 @@ service MenuDataApi {
     rpc Countries(CountriesRequest) returns (CountriesResponse) {};
 
     // status
-    rpc CreateStatusMessage(CreateStatusMessageRequest) returns (CreateStatusMessageResponse) {};
-    rpc DeleteStatusMessage(DeleteStatusMessageRequest) returns (DeleteStatusMessageResponse) {};
+    rpc SetStatusMessage(SetStatusMessageRequest) returns (SetStatusMessageResponse) {};
 }

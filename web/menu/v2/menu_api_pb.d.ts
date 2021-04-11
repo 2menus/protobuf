@@ -726,77 +726,43 @@ export namespace CountriesResponse {
   }
 }
 
-export class CreateStatusMessageRequest extends jspb.Message {
+export class SetStatusMessageRequest extends jspb.Message {
   getMessage(): string;
-  setMessage(value: string): CreateStatusMessageRequest;
+  setMessage(value: string): SetStatusMessageRequest;
 
   getAuthor(): string;
-  setAuthor(value: string): CreateStatusMessageRequest;
+  setAuthor(value: string): SetStatusMessageRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateStatusMessageRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateStatusMessageRequest): CreateStatusMessageRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateStatusMessageRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateStatusMessageRequest;
-  static deserializeBinaryFromReader(message: CreateStatusMessageRequest, reader: jspb.BinaryReader): CreateStatusMessageRequest;
+  toObject(includeInstance?: boolean): SetStatusMessageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetStatusMessageRequest): SetStatusMessageRequest.AsObject;
+  static serializeBinaryToWriter(message: SetStatusMessageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetStatusMessageRequest;
+  static deserializeBinaryFromReader(message: SetStatusMessageRequest, reader: jspb.BinaryReader): SetStatusMessageRequest;
 }
 
-export namespace CreateStatusMessageRequest {
+export namespace SetStatusMessageRequest {
   export type AsObject = {
     message: string,
     author: string,
   }
 }
 
-export class CreateStatusMessageResponse extends jspb.Message {
-  getStatus(): menu_v2_menu_pb.Status | undefined;
-  setStatus(value?: menu_v2_menu_pb.Status): CreateStatusMessageResponse;
-  hasStatus(): boolean;
-  clearStatus(): CreateStatusMessageResponse;
+export class SetStatusMessageResponse extends jspb.Message {
+  getId(): string;
+  setId(value: string): SetStatusMessageResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateStatusMessageResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateStatusMessageResponse): CreateStatusMessageResponse.AsObject;
-  static serializeBinaryToWriter(message: CreateStatusMessageResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateStatusMessageResponse;
-  static deserializeBinaryFromReader(message: CreateStatusMessageResponse, reader: jspb.BinaryReader): CreateStatusMessageResponse;
+  toObject(includeInstance?: boolean): SetStatusMessageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetStatusMessageResponse): SetStatusMessageResponse.AsObject;
+  static serializeBinaryToWriter(message: SetStatusMessageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetStatusMessageResponse;
+  static deserializeBinaryFromReader(message: SetStatusMessageResponse, reader: jspb.BinaryReader): SetStatusMessageResponse;
 }
 
-export namespace CreateStatusMessageResponse {
+export namespace SetStatusMessageResponse {
   export type AsObject = {
-    status?: menu_v2_menu_pb.Status.AsObject,
-  }
-}
-
-export class DeleteStatusMessageRequest extends jspb.Message {
-  getStatusId(): string;
-  setStatusId(value: string): DeleteStatusMessageRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteStatusMessageRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteStatusMessageRequest): DeleteStatusMessageRequest.AsObject;
-  static serializeBinaryToWriter(message: DeleteStatusMessageRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteStatusMessageRequest;
-  static deserializeBinaryFromReader(message: DeleteStatusMessageRequest, reader: jspb.BinaryReader): DeleteStatusMessageRequest;
-}
-
-export namespace DeleteStatusMessageRequest {
-  export type AsObject = {
-    statusId: string,
-  }
-}
-
-export class DeleteStatusMessageResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteStatusMessageResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteStatusMessageResponse): DeleteStatusMessageResponse.AsObject;
-  static serializeBinaryToWriter(message: DeleteStatusMessageResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteStatusMessageResponse;
-  static deserializeBinaryFromReader(message: DeleteStatusMessageResponse, reader: jspb.BinaryReader): DeleteStatusMessageResponse;
-}
-
-export namespace DeleteStatusMessageResponse {
-  export type AsObject = {
+    id: string,
   }
 }
 

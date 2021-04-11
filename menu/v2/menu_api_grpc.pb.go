@@ -40,8 +40,7 @@ type MenuDataApiClient interface {
 	// countries
 	Countries(ctx context.Context, in *CountriesRequest, opts ...grpc.CallOption) (*CountriesResponse, error)
 	// status
-	CreateStatusMessage(ctx context.Context, in *CreateStatusMessageRequest, opts ...grpc.CallOption) (*CreateStatusMessageResponse, error)
-	DeleteStatusMessage(ctx context.Context, in *DeleteStatusMessageRequest, opts ...grpc.CallOption) (*DeleteStatusMessageResponse, error)
+	SetStatusMessage(ctx context.Context, in *SetStatusMessageRequest, opts ...grpc.CallOption) (*SetStatusMessageResponse, error)
 }
 
 type menuDataApiClient struct {
@@ -214,18 +213,9 @@ func (c *menuDataApiClient) Countries(ctx context.Context, in *CountriesRequest,
 	return out, nil
 }
 
-func (c *menuDataApiClient) CreateStatusMessage(ctx context.Context, in *CreateStatusMessageRequest, opts ...grpc.CallOption) (*CreateStatusMessageResponse, error) {
-	out := new(CreateStatusMessageResponse)
-	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/CreateStatusMessage", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *menuDataApiClient) DeleteStatusMessage(ctx context.Context, in *DeleteStatusMessageRequest, opts ...grpc.CallOption) (*DeleteStatusMessageResponse, error) {
-	out := new(DeleteStatusMessageResponse)
-	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/DeleteStatusMessage", in, out, opts...)
+func (c *menuDataApiClient) SetStatusMessage(ctx context.Context, in *SetStatusMessageRequest, opts ...grpc.CallOption) (*SetStatusMessageResponse, error) {
+	out := new(SetStatusMessageResponse)
+	err := c.cc.Invoke(ctx, "/menu.v2.MenuDataApi/SetStatusMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -259,8 +249,7 @@ type MenuDataApiServer interface {
 	// countries
 	Countries(context.Context, *CountriesRequest) (*CountriesResponse, error)
 	// status
-	CreateStatusMessage(context.Context, *CreateStatusMessageRequest) (*CreateStatusMessageResponse, error)
-	DeleteStatusMessage(context.Context, *DeleteStatusMessageRequest) (*DeleteStatusMessageResponse, error)
+	SetStatusMessage(context.Context, *SetStatusMessageRequest) (*SetStatusMessageResponse, error)
 	mustEmbedUnimplementedMenuDataApiServer()
 }
 
@@ -322,11 +311,8 @@ func (UnimplementedMenuDataApiServer) LinkProductCategory(context.Context, *Link
 func (UnimplementedMenuDataApiServer) Countries(context.Context, *CountriesRequest) (*CountriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Countries not implemented")
 }
-func (UnimplementedMenuDataApiServer) CreateStatusMessage(context.Context, *CreateStatusMessageRequest) (*CreateStatusMessageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateStatusMessage not implemented")
-}
-func (UnimplementedMenuDataApiServer) DeleteStatusMessage(context.Context, *DeleteStatusMessageRequest) (*DeleteStatusMessageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteStatusMessage not implemented")
+func (UnimplementedMenuDataApiServer) SetStatusMessage(context.Context, *SetStatusMessageRequest) (*SetStatusMessageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetStatusMessage not implemented")
 }
 func (UnimplementedMenuDataApiServer) mustEmbedUnimplementedMenuDataApiServer() {}
 
@@ -665,38 +651,20 @@ func _MenuDataApi_Countries_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MenuDataApi_CreateStatusMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateStatusMessageRequest)
+func _MenuDataApi_SetStatusMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetStatusMessageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MenuDataApiServer).CreateStatusMessage(ctx, in)
+		return srv.(MenuDataApiServer).SetStatusMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/menu.v2.MenuDataApi/CreateStatusMessage",
+		FullMethod: "/menu.v2.MenuDataApi/SetStatusMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MenuDataApiServer).CreateStatusMessage(ctx, req.(*CreateStatusMessageRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _MenuDataApi_DeleteStatusMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteStatusMessageRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MenuDataApiServer).DeleteStatusMessage(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/menu.v2.MenuDataApi/DeleteStatusMessage",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MenuDataApiServer).DeleteStatusMessage(ctx, req.(*DeleteStatusMessageRequest))
+		return srv.(MenuDataApiServer).SetStatusMessage(ctx, req.(*SetStatusMessageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -781,12 +749,8 @@ var MenuDataApi_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _MenuDataApi_Countries_Handler,
 		},
 		{
-			MethodName: "CreateStatusMessage",
-			Handler:    _MenuDataApi_CreateStatusMessage_Handler,
-		},
-		{
-			MethodName: "DeleteStatusMessage",
-			Handler:    _MenuDataApi_DeleteStatusMessage_Handler,
+			MethodName: "SetStatusMessage",
+			Handler:    _MenuDataApi_SetStatusMessage_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
