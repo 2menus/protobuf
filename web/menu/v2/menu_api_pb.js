@@ -1458,7 +1458,8 @@ proto.menu.v2.CreateMenuRequest.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     countryId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     imageId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    logoId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    logoId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    statusId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1510,6 +1511,10 @@ proto.menu.v2.CreateMenuRequest.deserializeBinaryFromReader = function(msg, read
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setLogoId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatusId(value);
       break;
     default:
       reader.skipField();
@@ -1565,6 +1570,13 @@ proto.menu.v2.CreateMenuRequest.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getStatusId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -1640,6 +1652,24 @@ proto.menu.v2.CreateMenuRequest.prototype.getLogoId = function() {
  */
 proto.menu.v2.CreateMenuRequest.prototype.setLogoId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string status_id = 5;
+ * @return {string}
+ */
+proto.menu.v2.CreateMenuRequest.prototype.getStatusId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.menu.v2.CreateMenuRequest} returns this
+ */
+proto.menu.v2.CreateMenuRequest.prototype.setStatusId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1829,7 +1859,9 @@ proto.menu.v2.UpdateMenuRequest.toObject = function(includeInstance, msg) {
     menuId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     countryId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    imageId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    imageId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    logoId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    statusId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1881,6 +1913,14 @@ proto.menu.v2.UpdateMenuRequest.deserializeBinaryFromReader = function(msg, read
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLogoId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatusId(value);
       break;
     default:
       reader.skipField();
@@ -1936,6 +1976,20 @@ proto.menu.v2.UpdateMenuRequest.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getLogoId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getStatusId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -2011,6 +2065,42 @@ proto.menu.v2.UpdateMenuRequest.prototype.getImageId = function() {
  */
 proto.menu.v2.UpdateMenuRequest.prototype.setImageId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string logo_id = 5;
+ * @return {string}
+ */
+proto.menu.v2.UpdateMenuRequest.prototype.getLogoId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.menu.v2.UpdateMenuRequest} returns this
+ */
+proto.menu.v2.UpdateMenuRequest.prototype.setLogoId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string status_id = 6;
+ * @return {string}
+ */
+proto.menu.v2.UpdateMenuRequest.prototype.getStatusId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.menu.v2.UpdateMenuRequest} returns this
+ */
+proto.menu.v2.UpdateMenuRequest.prototype.setStatusId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

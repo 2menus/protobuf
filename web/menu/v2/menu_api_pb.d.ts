@@ -93,6 +93,9 @@ export class CreateMenuRequest extends jspb.Message {
   getLogoId(): string;
   setLogoId(value: string): CreateMenuRequest;
 
+  getStatusId(): string;
+  setStatusId(value: string): CreateMenuRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateMenuRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateMenuRequest): CreateMenuRequest.AsObject;
@@ -107,6 +110,7 @@ export namespace CreateMenuRequest {
     countryId: string,
     imageId: string,
     logoId: string,
+    statusId: string,
   }
 }
 
@@ -143,6 +147,12 @@ export class UpdateMenuRequest extends jspb.Message {
   getImageId(): string;
   setImageId(value: string): UpdateMenuRequest;
 
+  getLogoId(): string;
+  setLogoId(value: string): UpdateMenuRequest;
+
+  getStatusId(): string;
+  setStatusId(value: string): UpdateMenuRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateMenuRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateMenuRequest): UpdateMenuRequest.AsObject;
@@ -157,6 +167,8 @@ export namespace UpdateMenuRequest {
     name: string,
     countryId: string,
     imageId: string,
+    logoId: string,
+    statusId: string,
   }
 }
 

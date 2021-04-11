@@ -31,6 +31,7 @@ message CreateMenuRequest {
     string country_id = 2;
     string image_id = 3;
     string logo_id = 4;
+    string status_id = 5;
 }
 
 message CreateMenuResponse {
@@ -42,6 +43,8 @@ message UpdateMenuRequest {
     string name = 2;
     string country_id = 3;
     string image_id = 4;
+    string logo_id = 5;
+    string status_id = 6;
 }
 
 message UpdateMenuResponse {
