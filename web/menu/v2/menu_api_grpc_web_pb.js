@@ -1515,5 +1515,165 @@ proto.menu.v2.MenuDataApiPromiseClient.prototype.countries =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.menu.v2.CreateStatusMessageRequest,
+ *   !proto.menu.v2.CreateStatusMessageResponse>}
+ */
+const methodDescriptor_MenuDataApi_CreateStatusMessage = new grpc.web.MethodDescriptor(
+  '/menu.v2.MenuDataApi/CreateStatusMessage',
+  grpc.web.MethodType.UNARY,
+  proto.menu.v2.CreateStatusMessageRequest,
+  proto.menu.v2.CreateStatusMessageResponse,
+  /**
+   * @param {!proto.menu.v2.CreateStatusMessageRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.v2.CreateStatusMessageResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.menu.v2.CreateStatusMessageRequest,
+ *   !proto.menu.v2.CreateStatusMessageResponse>}
+ */
+const methodInfo_MenuDataApi_CreateStatusMessage = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.menu.v2.CreateStatusMessageResponse,
+  /**
+   * @param {!proto.menu.v2.CreateStatusMessageRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.v2.CreateStatusMessageResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.menu.v2.CreateStatusMessageRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.menu.v2.CreateStatusMessageResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v2.CreateStatusMessageResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.menu.v2.MenuDataApiClient.prototype.createStatusMessage =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/menu.v2.MenuDataApi/CreateStatusMessage',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataApi_CreateStatusMessage,
+      callback);
+};
+
+
+/**
+ * @param {!proto.menu.v2.CreateStatusMessageRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.menu.v2.CreateStatusMessageResponse>}
+ *     Promise that resolves to the response
+ */
+proto.menu.v2.MenuDataApiPromiseClient.prototype.createStatusMessage =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/menu.v2.MenuDataApi/CreateStatusMessage',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataApi_CreateStatusMessage);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.menu.v2.DeleteStatusMessageRequest,
+ *   !proto.menu.v2.DeleteStatusMessageResponse>}
+ */
+const methodDescriptor_MenuDataApi_DeleteStatusMessage = new grpc.web.MethodDescriptor(
+  '/menu.v2.MenuDataApi/DeleteStatusMessage',
+  grpc.web.MethodType.UNARY,
+  proto.menu.v2.DeleteStatusMessageRequest,
+  proto.menu.v2.DeleteStatusMessageResponse,
+  /**
+   * @param {!proto.menu.v2.DeleteStatusMessageRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.v2.DeleteStatusMessageResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.menu.v2.DeleteStatusMessageRequest,
+ *   !proto.menu.v2.DeleteStatusMessageResponse>}
+ */
+const methodInfo_MenuDataApi_DeleteStatusMessage = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.menu.v2.DeleteStatusMessageResponse,
+  /**
+   * @param {!proto.menu.v2.DeleteStatusMessageRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.menu.v2.DeleteStatusMessageResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.menu.v2.DeleteStatusMessageRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.menu.v2.DeleteStatusMessageResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.menu.v2.DeleteStatusMessageResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.menu.v2.MenuDataApiClient.prototype.deleteStatusMessage =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/menu.v2.MenuDataApi/DeleteStatusMessage',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataApi_DeleteStatusMessage,
+      callback);
+};
+
+
+/**
+ * @param {!proto.menu.v2.DeleteStatusMessageRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.menu.v2.DeleteStatusMessageResponse>}
+ *     Promise that resolves to the response
+ */
+proto.menu.v2.MenuDataApiPromiseClient.prototype.deleteStatusMessage =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/menu.v2.MenuDataApi/DeleteStatusMessage',
+      request,
+      metadata || {},
+      methodDescriptor_MenuDataApi_DeleteStatusMessage);
+};
+
+
 module.exports = proto.menu.v2;
 

@@ -30,6 +30,7 @@ message CreateMenuRequest {
     string name = 1;
     string country_id = 2;
     string image_id = 3;
+    string logo_id = 4;
 }
 
 message CreateMenuResponse {
@@ -165,28 +166,49 @@ message CountriesResponse{
     repeated country.v2.Country countries = 1;
 }
 
+message CreateStatusMessageRequest {
+    string message = 1;
+    string author = 2;
+}
+
+message CreateStatusMessageResponse {
+    Status status = 1;
+}
+
+message DeleteStatusMessageRequest {
+    string status_id = 1;
+}
+
+message DeleteStatusMessageResponse {}
+
 service MenuDataApi {
+    // menus
     rpc Menu(MenuDetailsRequest) returns (MenuDetailsResponse) {};
     rpc Menus(MenusRequest) returns (MenusResponse) {};
     rpc CreateMenu(CreateMenuRequest) returns (CreateMenuResponse) {};
     rpc UpdateMenu(UpdateMenuRequest) returns (UpdateMenuResponse) {};
     rpc DeleteMenu(DeleteMenuRequest) returns (DeleteMenuResponse) {};
 
+    // categories
     rpc Category(CategoryDetailsRequest) returns (CategoryDetailsResponse) {};
     rpc Categories(CategoriesRequest) returns (CategoriesResponse) {};
     rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {};
     rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {};
     rpc DeleteCategory(DeleteCategoryRequest) returns (DeleteCategoryResponse) {};
-
     rpc LinkCategoryMenu(LinkCategoryMenuRequest) returns (LinkCategoryMenuResponse) {};
 
+    // products
     rpc Product(ProductDetailsRequest) returns (ProductDetailsResponse) {};
     rpc Products(ProductsRequest) returns (ProductsResponse) {};
     rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {};
     rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse) {};
     rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {};
-
     rpc LinkProductCategory(LinkProductCategoryRequest) returns (LinkProductCategoryResponse) {};
 
+    // countries
     rpc Countries(CountriesRequest) returns (CountriesResponse) {};
+
+    // status
+    rpc CreateStatusMessage(CreateStatusMessageRequest) returns (CreateStatusMessageResponse) {};
+    rpc DeleteStatusMessage(DeleteStatusMessageRequest) returns (DeleteStatusMessageResponse) {};
 }

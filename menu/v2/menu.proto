@@ -21,6 +21,7 @@ message Menu {
     Status owners_message = 10;
     image.v2.Image image = 11;  
     country.v2.Country country = 12;
+    image.v2.Image logo = 13;  
 }
 
 message Category {

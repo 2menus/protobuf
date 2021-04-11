@@ -59,6 +59,11 @@ export class Menu extends jspb.Message {
   hasCountry(): boolean;
   clearCountry(): Menu;
 
+  getLogo(): image_v2_image_pb.Image | undefined;
+  setLogo(value?: image_v2_image_pb.Image): Menu;
+  hasLogo(): boolean;
+  clearLogo(): Menu;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Menu.AsObject;
   static toObject(includeInstance: boolean, msg: Menu): Menu.AsObject;
@@ -74,6 +79,7 @@ export namespace Menu {
     ownersMessage?: Status.AsObject,
     image?: image_v2_image_pb.Image.AsObject,
     country?: country_v2_country_pb.Country.AsObject,
+    logo?: image_v2_image_pb.Image.AsObject,
   }
 }
 
