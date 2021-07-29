@@ -5,13 +5,14 @@ option go_package = "github.com/2menus/protobuf/menu/v2;menu";
 
 import "menu/v2/menu.proto";
 import "country/v2/country.proto";
+import "validate/validate.proto";
 
 // // // // // //
 // Menu
 // // // // // //
 
 message MenusRequest {
-    string owner_id = 1;
+    string owner_id = 1 [(validate.rules).string = {ignore_empty: false}];
 }
 
 message MenusResponse {
@@ -19,7 +20,7 @@ message MenusResponse {
 }
 
 message MenuDetailsRequest {
-    string menu_id = 1;
+    string menu_id = 1 [(validate.rules).string.uuid = true];
 }
 
 message MenuDetailsResponse {
@@ -27,11 +28,11 @@ message MenuDetailsResponse {
 }
 
 message CreateMenuRequest {
-    string name = 1;
-    string country_id = 2;
-    string image_id = 3;
-    string logo_id = 4;
-    string status_id = 5;
+    string name = 1 [(validate.rules).string = {ignore_empty: false, min_len: 1, max_len: 55}];
+    string country_id = 2 [(validate.rules).string.uuid = true];
+    string image_id = 3 [(validate.rules).string.uuid = true];
+    string logo_id = 4 [(validate.rules).string.uuid = true];
+    string status_id = 5 [(validate.rules).string.uuid = true];
 }
 
 message CreateMenuResponse {
@@ -39,12 +40,12 @@ message CreateMenuResponse {
 }
 
 message UpdateMenuRequest {
-    string menu_id = 1;
-    string name = 2;
-    string country_id = 3;
-    string image_id = 4;
-    string logo_id = 5;
-    string status_id = 6;
+    string menu_id = 1 [(validate.rules).string.uuid = true];
+    string name = 2 [(validate.rules).string = {ignore_empty: false, min_len: 1, max_len: 55}];
+    string country_id = 3 [(validate.rules).string.uuid = true];
+    string image_id = 4 [(validate.rules).string.uuid = true];
+    string logo_id = 5 [(validate.rules).string.uuid = true];
+    string status_id = 6 [(validate.rules).string.uuid = true];
 }
 
 message UpdateMenuResponse {
@@ -52,7 +53,7 @@ message UpdateMenuResponse {
 }
 
 message DeleteMenuRequest {
-    string menu_id = 1;
+    string menu_id = 1 [(validate.rules).string.uuid = true];
 }
 
 message DeleteMenuResponse {}
@@ -62,7 +63,7 @@ message DeleteMenuResponse {}
 // // // // // //
 
 message CategoriesRequest {
-    string menu_id = 1;
+    string menu_id = 1 [(validate.rules).string.uuid = true];
 }
 
 message CategoriesResponse {
@@ -70,7 +71,7 @@ message CategoriesResponse {
 }
 
 message CategoryDetailsRequest {
-    string category_id = 1;
+    string category_id = 1 [(validate.rules).string.uuid = true];
 }
 
 message CategoryDetailsResponse {
@@ -78,8 +79,8 @@ message CategoryDetailsResponse {
 }
 
 message CreateCategoryRequest {
-    string name = 1;
-    string image_id = 3;
+    string name = 1 [(validate.rules).string = {ignore_empty: false, min_len: 1, max_len: 55}];
+    string image_id = 3 [(validate.rules).string.uuid = true];
 }
 
 message CreateCategoryResponse {
@@ -87,9 +88,9 @@ message CreateCategoryResponse {
 }
 
 message UpdateCategoryRequest {
-    string category_id = 1;
-    string name = 2;
-    string image_id = 3;
+    string category_id = 1 [(validate.rules).string.uuid = true];
+    string name = 2 [(validate.rules).string = {ignore_empty: false, min_len: 1, max_len: 55}];
+    string image_id = 3 [(validate.rules).string.uuid = true];
 }
 
 message UpdateCategoryResponse {
@@ -97,14 +98,14 @@ message UpdateCategoryResponse {
 }
 
 message DeleteCategoryRequest {
-    string category_id = 1;
+    string category_id = 1 [(validate.rules).string.uuid = true];
 }
 
 message DeleteCategoryResponse {}
 
 message LinkCategoryMenuRequest {
-    string category_id = 1;
-    string menu_id = 2;
+    string category_id = 1 [(validate.rules).string.uuid = true];
+    string menu_id = 2 [(validate.rules).string.uuid = true];
 }
 
 message LinkCategoryMenuResponse {}
@@ -113,7 +114,7 @@ message LinkCategoryMenuResponse {}
 // PRODUCT
 // // // // // //
 message ProductsRequest {
-    string category_id = 1;
+    string category_id = 1 [(validate.rules).string.uuid = true];
 }
 
 message ProductsResponse {
@@ -121,7 +122,7 @@ message ProductsResponse {
 }
 
 message ProductDetailsRequest {
-    string product_id = 1;
+    string product_id = 1 [(validate.rules).string.uuid = true];
 }
 
 message ProductDetailsResponse {
@@ -129,10 +130,10 @@ message ProductDetailsResponse {
 }
 
 message CreateProductRequest {
-    string name = 1;
-    string description = 2;
+    string name = 1 [(validate.rules).string = {ignore_empty: false, min_len: 1, max_len: 55}];
+    string description = 2 [(validate.rules).string = {ignore_empty: true, max_len: 255}];
     float  price = 3;
-    string image_id = 4;
+    string image_id = 4 [(validate.rules).string.uuid = true];
 }
 
 message CreateProductResponse {
@@ -140,11 +141,11 @@ message CreateProductResponse {
 }
 
 message UpdateProductRequest {
-    string product_id = 1;
-    string name = 2;
-    string description = 3;
+    string product_id = 1 [(validate.rules).string.uuid = true];
+    string name = 2 [(validate.rules).string = {ignore_empty: false, min_len: 1, max_len: 55}];
+    string description = 3 [(validate.rules).string = {ignore_empty: true, min_len: 1, max_len: 255}];
     float  price = 4;
-    string image_id = 5;
+    string image_id = 5 [(validate.rules).string.uuid = true];
 }
 
 message UpdateProductResponse {
@@ -152,14 +153,14 @@ message UpdateProductResponse {
 }
 
 message DeleteProductRequest {
-    string product_id = 1;
+    string product_id = 1 [(validate.rules).string.uuid = true];
 }
 
 message DeleteProductResponse {}
 
 message LinkProductCategoryRequest {
-    string product_id = 1;
-    string category_id = 2;
+    string product_id = 1 [(validate.rules).string.uuid = true];
+    string category_id = 2 [(validate.rules).string.uuid = true];
 }
 
 message LinkProductCategoryResponse {}

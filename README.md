@@ -23,3 +23,8 @@ protoc menu/v2/menu.proto image/v2/image.proto country/v2/country.proto --grpc-w
 # golang
 protoc -I=. --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative --proto_path=./  ./menu/v2/*.proto ./image/v2/*.proto ./country/v2/*.proto
 ```
+
+```
+docker build --build-arg USER_ID=$UID -t protoc:local .
+docker run -it -v "$(pwd)":/app/ protoc:local
+```
