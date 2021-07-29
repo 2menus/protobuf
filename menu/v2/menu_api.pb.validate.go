@@ -563,40 +563,52 @@ func (m *CreateMenuRequest) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
-	if err := m._validateUuid(m.GetImageId()); err != nil {
-		err = CreateMenuRequestValidationError{
-			field:  "ImageId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetImageId() != "" {
+
+		if err := m._validateUuid(m.GetImageId()); err != nil {
+			err = CreateMenuRequestValidationError{
+				field:  "ImageId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
-	if err := m._validateUuid(m.GetLogoId()); err != nil {
-		err = CreateMenuRequestValidationError{
-			field:  "LogoId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetLogoId() != "" {
+
+		if err := m._validateUuid(m.GetLogoId()); err != nil {
+			err = CreateMenuRequestValidationError{
+				field:  "LogoId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
-	if err := m._validateUuid(m.GetStatusId()); err != nil {
-		err = CreateMenuRequestValidationError{
-			field:  "StatusId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetStatusId() != "" {
+
+		if err := m._validateUuid(m.GetStatusId()); err != nil {
+			err = CreateMenuRequestValidationError{
+				field:  "StatusId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
 	if len(errors) > 0 {
@@ -873,40 +885,52 @@ func (m *UpdateMenuRequest) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
-	if err := m._validateUuid(m.GetImageId()); err != nil {
-		err = UpdateMenuRequestValidationError{
-			field:  "ImageId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetImageId() != "" {
+
+		if err := m._validateUuid(m.GetImageId()); err != nil {
+			err = UpdateMenuRequestValidationError{
+				field:  "ImageId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
-	if err := m._validateUuid(m.GetLogoId()); err != nil {
-		err = UpdateMenuRequestValidationError{
-			field:  "LogoId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetLogoId() != "" {
+
+		if err := m._validateUuid(m.GetLogoId()); err != nil {
+			err = UpdateMenuRequestValidationError{
+				field:  "LogoId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
-	if err := m._validateUuid(m.GetStatusId()); err != nil {
-		err = UpdateMenuRequestValidationError{
-			field:  "StatusId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetStatusId() != "" {
+
+		if err := m._validateUuid(m.GetStatusId()); err != nil {
+			err = UpdateMenuRequestValidationError{
+				field:  "StatusId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
 	if len(errors) > 0 {
@@ -1888,16 +1912,20 @@ func (m *CreateCategoryRequest) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
-	if err := m._validateUuid(m.GetImageId()); err != nil {
-		err = CreateCategoryRequestValidationError{
-			field:  "ImageId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetImageId() != "" {
+
+		if err := m._validateUuid(m.GetImageId()); err != nil {
+			err = CreateCategoryRequestValidationError{
+				field:  "ImageId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
 	if len(errors) > 0 {
@@ -2162,16 +2190,20 @@ func (m *UpdateCategoryRequest) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
-	if err := m._validateUuid(m.GetImageId()); err != nil {
-		err = UpdateCategoryRequestValidationError{
-			field:  "ImageId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetImageId() != "" {
+
+		if err := m._validateUuid(m.GetImageId()); err != nil {
+			err = UpdateCategoryRequestValidationError{
+				field:  "ImageId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
 	if len(errors) > 0 {
@@ -3400,16 +3432,20 @@ func (m *CreateProductRequest) validate(all bool) error {
 
 	// no validation rules for Price
 
-	if err := m._validateUuid(m.GetImageId()); err != nil {
-		err = CreateProductRequestValidationError{
-			field:  "ImageId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetImageId() != "" {
+
+		if err := m._validateUuid(m.GetImageId()); err != nil {
+			err = CreateProductRequestValidationError{
+				field:  "ImageId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
 	if len(errors) > 0 {
@@ -3691,16 +3727,20 @@ func (m *UpdateProductRequest) validate(all bool) error {
 
 	// no validation rules for Price
 
-	if err := m._validateUuid(m.GetImageId()); err != nil {
-		err = UpdateProductRequestValidationError{
-			field:  "ImageId",
-			reason: "value must be a valid UUID",
-			cause:  err,
+	if m.GetImageId() != "" {
+
+		if err := m._validateUuid(m.GetImageId()); err != nil {
+			err = UpdateProductRequestValidationError{
+				field:  "ImageId",
+				reason: "value must be a valid UUID",
+				cause:  err,
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
 		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+
 	}
 
 	if len(errors) > 0 {
